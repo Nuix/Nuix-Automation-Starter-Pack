@@ -1,0 +1,370 @@
+{
+  "templateMetadata": {
+    "id": "57729002-4062178544-1646963915258",
+    "name": "Sensitive Data Search",
+    "description": "PII, GDPR, Sensitive or privileged search",
+    "lastEditedOn": 1649657273581,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local:9200",
+              "nuix-demo-es.nuixdemo.local:9202",
+              "nuix-demo-es.nuixdemo.local:9203",
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "New Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Choose NDF Profile"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_ChooseNDFProfile.rb",
+              "async": true,
+              "customArguments": {
+                "ndf.profileName": "date range with slater"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "3da55f19-61a1-4a87-aa5b-6e489b006fad",
+              "uiMetadata": {
+                "paneId": "pane-9636806911-1645585245584"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Choose NDF Profile",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Ingestion"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestion",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "processorSettings": {
+            "processText": null,
+            "processLooseFileContents": null,
+            "processForensicImages": null,
+            "analysisLanguage": null,
+            "stopWords": null,
+            "stemming": null,
+            "enableExactQueries": null,
+            "extractNamedEntities": null,
+            "extractNamedEntitiesFromText": null,
+            "extractNamedEntitiesFromProperties": null,
+            "extractNamedEntitiesFromTextStripped": null,
+            "extractNamedEntitiesFromTextCommunications": null,
+            "extractShingles": null,
+            "processTextSummaries": null,
+            "calculateSSDeepFuzzyHash": null,
+            "calculatePhotoDNARobustHash": null,
+            "detectFaces": null,
+            "classifyImagesWithDeepLearning": null,
+            "imageClassificationModelUrl": null,
+            "extractFromSlackSpace": null,
+            "carveFileSystemUnallocatedSpace": null,
+            "carveUnidentifiedData": null,
+            "carvingBlockSize": null,
+            "recoverDeletedFiles": null,
+            "extractEndOfFileSlackSpace": null,
+            "smartProcessRegistry": null,
+            "identifyPhysicalFiles": null,
+            "createThumbnails": null,
+            "skinToneAnalysis": null,
+            "calculateAuditedSize": null,
+            "storeBinary": null,
+            "maxStoredBinarySize": null,
+            "maxDigestSize": null,
+            "digests": [
+
+            ],
+            "addBccToEmailDigests": null,
+            "addCommunicationDateToEmailDigests": null,
+            "reuseEvidenceStores": null,
+            "processFamilyFields": null,
+            "hideEmbeddedImmaterialData": null,
+            "reportProcessingStatus": null,
+            "enableCustomProcessing": [
+
+            ],
+            "performOcr": null,
+            "ocrProfileName": null,
+            "createPrintedImage": null,
+            "imagingProfileName": null,
+            "exportMetadata": null,
+            "metadataExportProfileName": null,
+            "workerItemCallback": null,
+            "workerItemCallbacks": null,
+            "traversalScope": null,
+            "namedEntities": null
+          },
+          "mimeTypeProcessorSettings": [
+
+          ],
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 4096,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "keystoreKeyParameters": [
+
+          ],
+          "rescanEvidenceRepositories": false,
+          "rescanEvidenceRepositoriesSettings": {
+            "depth": null
+          },
+          "configurationProfile": null,
+          "processingProfile": "Nuix Data Finder",
+          "repositories": [
+
+          ],
+          "containers": [
+
+          ],
+          "numberOfWorkers": 2,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "umsSession": null,
+          "usesWorkers": true,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.IngestionContext",
+        "lockableProperties": [
+          "processingProfile",
+          "nuixLicenceType"
+        ]
+      },
+      "id": "Ingestion",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Ingestion Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestionReport",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.RequiresNuixLicenceContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Ingestion Report",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "Ingestion"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    }
+  ],
+  "id": 354,
+  "createdOn": 1649657273581,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

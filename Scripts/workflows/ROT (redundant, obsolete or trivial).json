@@ -1,0 +1,3906 @@
+{
+  "templateMetadata": {
+    "id": "40820388-9159125112-1646858500039",
+    "name": "ROT (redundant, obsolete or trivial)",
+    "description": "Network Drive processing",
+    "lastEditedOn": 1658892176812,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "New Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "List Only Scan"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestion",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "processorSettings": {
+            "processText": null,
+            "processLooseFileContents": null,
+            "processForensicImages": null,
+            "analysisLanguage": null,
+            "stopWords": null,
+            "stemming": null,
+            "enableExactQueries": null,
+            "extractNamedEntities": null,
+            "extractNamedEntitiesFromText": null,
+            "extractNamedEntitiesFromProperties": null,
+            "extractNamedEntitiesFromTextStripped": null,
+            "extractNamedEntitiesFromTextCommunications": null,
+            "extractShingles": null,
+            "processTextSummaries": null,
+            "calculateSSDeepFuzzyHash": null,
+            "calculatePhotoDNARobustHash": null,
+            "detectFaces": null,
+            "classifyImagesWithDeepLearning": null,
+            "imageClassificationModelUrl": null,
+            "extractFromSlackSpace": null,
+            "carveFileSystemUnallocatedSpace": null,
+            "carveUnidentifiedData": null,
+            "carvingBlockSize": null,
+            "recoverDeletedFiles": null,
+            "extractEndOfFileSlackSpace": null,
+            "smartProcessRegistry": null,
+            "identifyPhysicalFiles": null,
+            "createThumbnails": null,
+            "skinToneAnalysis": null,
+            "calculateAuditedSize": null,
+            "storeBinary": null,
+            "maxStoredBinarySize": null,
+            "maxDigestSize": null,
+            "digests": [
+
+            ],
+            "addBccToEmailDigests": null,
+            "addCommunicationDateToEmailDigests": null,
+            "reuseEvidenceStores": null,
+            "processFamilyFields": null,
+            "hideEmbeddedImmaterialData": null,
+            "reportProcessingStatus": null,
+            "enableCustomProcessing": [
+
+            ],
+            "performOcr": null,
+            "ocrProfileName": null,
+            "createPrintedImage": null,
+            "imagingProfileName": null,
+            "exportMetadata": null,
+            "metadataExportProfileName": null,
+            "workerItemCallback": null,
+            "workerItemCallbacks": null,
+            "traversalScope": null,
+            "namedEntities": null
+          },
+          "mimeTypeProcessorSettings": [
+
+          ],
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "keystoreKeyParameters": [
+
+          ],
+          "rescanEvidenceRepositories": false,
+          "rescanEvidenceRepositoriesSettings": {
+            "depth": null
+          },
+          "configurationProfile": null,
+          "processingProfile": "ListOnly",
+          "repositories": [
+
+          ],
+          "containers": [
+
+          ],
+          "numberOfWorkers": 2,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "umsSession": null,
+          "usesWorkers": true,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.IngestionContext",
+        "lockableProperties": [
+          "processingProfile",
+          "nuixLicenceType"
+        ]
+      },
+      "id": "List Only Scan",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Light Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "processingProfile",
+        "nuixLicenceType"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestionReport",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.RequiresNuixLicenceContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Light Report",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Light Detect Redundant files"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "List Only Scan"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_LightDedup.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "b676dea2-2ba2-42dc-b0ed-588076aa1fb5",
+              "uiMetadata": {
+                "paneId": "pane-3616077960-1652921110531"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Light Detect Redundant files",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Light Analyse (Search and Tag)"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkSearchAndTag",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "item-date:[* TO 20120101}",
+              "tags": [
+                "Obsolete|Date"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1935391082-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "item-date:[* TO 20120101}",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "properties:FailureDetail AND NOT flag:encrypted",
+              "tags": [
+                "Redundant|Corrupted"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1211862055-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "properties:FailureDetail AND NOT flag:encrypted",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:bat",
+              "tags": [
+                "Redundant|Dangerous|bat"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1599706904-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:bat",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:cmd",
+              "tags": [
+                "Redundant|Dangerous|cmd"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2606463786-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:cmd",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dll or mime-type:application/dll",
+              "tags": [
+                "Redundant|Dangerous|dll"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1822585943-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dll or mime-type:application/dll",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dmg or mime-type:(application/x-apple-diskimage or application/vnd.apple-udif)",
+              "tags": [
+                "Redundant|Dangerous|dmg"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-9656374531-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dmg or mime-type:(application/x-apple-diskimage or application/vnd.apple-udif)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:exe or mime-type:(application/x-dotnet or application/x-self-extracting-archive or application/exe)",
+              "tags": [
+                "Redundant|Dangerous|exe"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4000373255-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:exe or mime-type:(application/x-dotnet or application/x-self-extracting-archive or application/exe)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:htm",
+              "tags": [
+                "Redundant|Dangerous|htm"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1822888768-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:htm",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:html or mime-type:(application/vnd.google-takeout-my-activity-discover+html or application/vnd.google-takeout-my-activity-assistant+html or application/vnd.google-takeout-my-activity-google-play-movies-tv+html or application/vnd.google-takeout-my-activity-help+html or application/vnd.google-takeout-my-activity-google-play-store+html or application/vnd.google-takeout-my-activity-podcasts+html or application/vnd.google-takeout-my-activity-voice-and-audio+html or application/vnd.google-takeout-my-activity-books+html or application/vnd.google-takeout-my-activity-image-search+html or application/vnd.google-takeout-my-activity-google-play-music+html or application/vnd.google-takeout-my-activity-google-lens+html or application/vnd.google-takeout-my-activity-google-analytics+html or application/vnd.google-takeout-my-activity-google-play-games+html or application/vnd.google-takeout-my-activity-news+html or application/vnd.google-takeout-my-activity-g-suite+html or application/vnd.google-takeout-my-activity-shopping+html or application/vnd.google-takeout-my-activity-takeout+html or application/vnd.google-takeout-my-activity+html or application/vnd.google-takeout-my-activity-developers+html or application/vnd.google-takeout-my-activity-google-apps+html or application/vnd.google-takeout-my-activity-google-cloud+html or application/vnd.google-takeout-my-activity-google-play-books+html or application/vnd.google-takeout-my-activity-gmail+html or application/vnd.google-takeout-my-activity-google-pay+html or application/vnd.google-takeout-my-activity-chrome+html or application/vnd.google-takeout-my-activity-ads+html or application/vnd.google-takeout-my-activity-android+html or application/vnd.google-takeout-my-activity-drive+html or text/html or application/vnd.google-takeout-my-activity-video-search+html or application/vnd.google-takeout-my-activity-youtube+html or application/vnd.google-takeout-my-activity-google-translate+html or application/vnd.google-takeout-my-activity-maps+html or application/vnd.google-takeout-my-activity-search+html or application/vnd.google-takeout-my-activity-finance+html or application/xhtml+xml)",
+              "tags": [
+                "Redundant|Dangerous|html"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2865061042-1653356530931",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:html or mime-type:(application/vnd.google-takeout-my-activity-discover+html or application/vnd.google-takeout-my-activity-assistant+html or application/vnd.google-takeout-my-activity-google-play-movies-tv+html or application/vnd.google-takeout-my-activity-help+html or application/vnd.google-takeout-my-activity-google-play-store+html or application/vnd.google-takeout-my-activity-podcasts+html or application/vnd.google-takeout-my-activity-voice-and-audio+html or application/vnd.google-takeout-my-activity-books+html or application/vnd.google-takeout-my-activity-image-search+html or application/vnd.google-takeout-my-activity-google-play-music+html or application/vnd.google-takeout-my-activity-google-lens+html or application/vnd.google-takeout-my-activity-google-analytics+html or application/vnd.google-takeout-my-activity-google-play-games+html or application/vnd.google-takeout-my-activity-news+html or application/vnd.google-takeout-my-activity-g-suite+html or application/vnd.google-takeout-my-activity-shopping+html or application/vnd.google-takeout-my-activity-takeout+html or application/vnd.google-takeout-my-activity+html or application/vnd.google-takeout-my-activity-developers+html or application/vnd.google-takeout-my-activity-google-apps+html or application/vnd.google-takeout-my-activity-google-cloud+html or application/vnd.google-takeout-my-activity-google-play-books+html or application/vnd.google-takeout-my-activity-gmail+html or application/vnd.google-takeout-my-activity-google-pay+html or application/vnd.google-takeout-my-activity-chrome+html or application/vnd.google-takeout-my-activity-ads+html or application/vnd.google-takeout-my-activity-android+html or application/vnd.google-takeout-my-activity-drive+html or text/html or application/vnd.google-takeout-my-activity-video-search+html or application/vnd.google-takeout-my-activity-youtube+html or application/vnd.google-takeout-my-activity-google-translate+html or application/vnd.google-takeout-my-activity-maps+html or application/vnd.google-takeout-my-activity-search+html or application/vnd.google-takeout-my-activity-finance+html or application/xhtml+xml)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:jar or mime-type:(application/java-archive)",
+              "tags": [
+                "Redundant|Dangerous|java"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-6676728561-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:jar or mime-type:(application/java-archive)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:js or mime-type:(application/vnd.mozilla-firefox-session-store)",
+              "tags": [
+                "Redundant|Dangerous|js"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-7737457931-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:js or mime-type:(application/vnd.mozilla-firefox-session-store)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:mht or mime-type:(application/x-mime-html)",
+              "tags": [
+                "Redundant|Dangerous|mht"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1919314094-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:mht or mime-type:(application/x-mime-html)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:msi or mime-type:(application/vnd.ms-installer)",
+              "tags": [
+                "Redundant|Dangerous|msi"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3375691265-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:msi or mime-type:(application/vnd.ms-installer)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:ps1",
+              "tags": [
+                "Redundant|Dangerous|ps1"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1980084227-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:ps1",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:rpm or mime-type:(application/x-rpm)",
+              "tags": [
+                "Redundant|Dangerous|rpm"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4092593811-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:rpm or mime-type:(application/x-rpm)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:sh",
+              "tags": [
+                "Redundant|Dangerous|sh"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3133164574-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:sh",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:vbs",
+              "tags": [
+                "Redundant|Dangerous|vbs"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1405723518-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:vbs",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "has-item-set:1 is-item-original:0",
+              "tags": [
+                "Redundant|Duplicates"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2389060880-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "has-item-set:1 is-item-original:0",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+              "tags": [
+                "Redundant|FileExtension|csv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1133010968-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dat",
+              "tags": [
+                "Redundant|FileExtension|dat"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1565534843-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dat",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(pst or mbox or edb or nsf) or mime-type:(application/vnd.ms-exchange-edb or application/vnd.ms-outlook or application/vnd.hancom-binary-data-file or application/mbox or application/vnd.lotus-notes)",
+              "tags": [
+                "Redundant|FileExtension|EmailContainers"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3233571557-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(pst or mbox or edb or nsf) or mime-type:(application/vnd.ms-exchange-edb or application/vnd.ms-outlook or application/vnd.hancom-binary-data-file or application/mbox or application/vnd.lotus-notes)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(ini or sii) or mime-type:(text/x-ini)",
+              "tags": [
+                "Redundant|FileExtension|ini"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3970480144-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(ini or sii) or mime-type:(text/x-ini)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+              "tags": [
+                "Redundant|FileExtension|IT"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-8387788311-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:lnk or mime-type:filesystem/symlink",
+              "tags": [
+                "Redundant|FileExtension|lnk"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3644039649-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:lnk or mime-type:filesystem/symlink",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+              "tags": [
+                "Redundant|FileExtension|log"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2884223867-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "flag:loose_file and not file-extension:*",
+              "tags": [
+                "Redundant|FileExtension|None"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2306071621-1653356530932",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:loose_file and not file-extension:*",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:quarantine",
+              "tags": [
+                "Redundant|FileExtension|quarantine"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4250605632-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:quarantine",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+              "tags": [
+                "Redundant|FileExtension|tsv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2565018586-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:url",
+              "tags": [
+                "Redundant|FileExtension|url"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3613469315-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:url",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+              "tags": [
+                "Redundant|FileExtension|xml"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3130757850-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(properties or class or java or strings or pom or irs or cpm or pcl) or mime-type:(application/java-class)",
+              "tags": [
+                "Redundant|IP|developer"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3780919978-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(properties or class or java or strings or pom or irs or cpm or pcl) or mime-type:(application/java-class)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "path-name:(\"Stores\" OR \"TextIndex\" ) or file-extension:(fbi2 or nli)",
+              "tags": [
+                "Redundant|Nuix|Case Files"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3761429911-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "path-name:(\"Stores\" OR \"TextIndex\" ) or file-extension:(fbi2 or nli)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "path-name:(\"nodes\" or \"indices\")",
+              "tags": [
+                "Redundant|Nuix|Elasticsearch"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2774351659-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "path-name:(\"nodes\" or \"indices\")",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-size:[1000000000 TO *]",
+              "tags": [
+                "Redundant|Size|Excessive Size"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3330130618-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-size:[1000000000 TO *]",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/vnd.nuix-evidence",
+              "tags": [
+                "Trivial|evidence|container"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2367112202-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/vnd.nuix-evidence",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+              "tags": [
+                "Trivial|FileExtension|txt"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3598464701-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:filesystem/drive",
+              "tags": [
+                "Trivial|filesystem|drive"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4518965191-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:filesystem/drive",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:filesystem/directory",
+              "tags": [
+                "Trivial|filesystem|EmptyDirectory"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1179192328-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:filesystem/directory",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "flag:loose_file AND file-size:0",
+              "tags": [
+                "Trivial|Size|Empty files"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4030160091-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:loose_file AND file-size:0",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:afpinfo",
+              "tags": [
+                "Trivial|System|AfpInfo"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1594519446-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:afpinfo",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Cache.db\"",
+              "tags": [
+                "Trivial|System|Cache.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2196097771-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Cache.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:DS_Store",
+              "tags": [
+                "Trivial|System|DS_Store"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1772532411-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:DS_Store",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(inf) or mime-type:(text/x-inf)",
+              "tags": [
+                "Trivial|System|inf"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3159513965-1653356530933",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(inf) or mime-type:(text/x-inf)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+              "tags": [
+                "Trivial|System|plist"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2787626479-1653356530934",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Thumbs.db\"",
+              "tags": [
+                "Trivial|System|Thumbs.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4176767121-1653356530934",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Thumbs.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "bulkSearcherOptions": {
+            "includeFamilies": false,
+            "deduplicateFamilies": false,
+            "omitExcludedItems": true,
+            "omitImmaterialFamilyItems": true,
+            "tagUniqueItems": false,
+            "countResponsiveItems": false,
+            "tagResponsiveItemsEnabled": false,
+            "matchingItemsAction": "addTags",
+            "createUnusedTags": false,
+            "removeEmptyTags": false,
+            "showTagColumns": true,
+            "allowDuplicateTags": true,
+            "allowDuplicateQueries": true,
+            "missingTagsAction": "fillWithQuery",
+            "expandTags": false,
+            "tagExpansions": null,
+            "scopingQuery": null,
+            "tagResponsiveItemsTag": null,
+            "searchFields": null
+          },
+          "uiMetadata": {
+            "entryType": "csv"
+          },
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "requests",
+          "userId",
+          "bulkSearcherOptions",
+          "canUseRemoteWorkers",
+          "nuixLicenceType",
+          "class",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Light Analyse (Search and Tag)",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Remove Empty Folders"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 1200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_TagEmptyDirectories.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "56e7a97d-27bb-4213-a13c-d5710aaacf75",
+              "uiMetadata": {
+                "paneId": "pane-1597759103-1652235213226"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Remove Empty Folders",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Medium Scan"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 1400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "reprocess",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "processorSettings": {
+            "processText": null,
+            "processLooseFileContents": null,
+            "processForensicImages": null,
+            "analysisLanguage": null,
+            "stopWords": null,
+            "stemming": null,
+            "enableExactQueries": null,
+            "extractNamedEntities": null,
+            "extractNamedEntitiesFromText": null,
+            "extractNamedEntitiesFromProperties": null,
+            "extractNamedEntitiesFromTextStripped": null,
+            "extractNamedEntitiesFromTextCommunications": null,
+            "extractShingles": null,
+            "processTextSummaries": null,
+            "calculateSSDeepFuzzyHash": null,
+            "calculatePhotoDNARobustHash": null,
+            "detectFaces": null,
+            "classifyImagesWithDeepLearning": null,
+            "imageClassificationModelUrl": null,
+            "extractFromSlackSpace": null,
+            "carveFileSystemUnallocatedSpace": null,
+            "carveUnidentifiedData": null,
+            "carvingBlockSize": null,
+            "recoverDeletedFiles": null,
+            "extractEndOfFileSlackSpace": null,
+            "smartProcessRegistry": null,
+            "identifyPhysicalFiles": null,
+            "createThumbnails": null,
+            "skinToneAnalysis": null,
+            "calculateAuditedSize": null,
+            "storeBinary": null,
+            "maxStoredBinarySize": null,
+            "maxDigestSize": null,
+            "digests": [
+
+            ],
+            "addBccToEmailDigests": null,
+            "addCommunicationDateToEmailDigests": null,
+            "reuseEvidenceStores": null,
+            "processFamilyFields": null,
+            "hideEmbeddedImmaterialData": null,
+            "reportProcessingStatus": null,
+            "enableCustomProcessing": [
+
+            ],
+            "performOcr": null,
+            "ocrProfileName": null,
+            "createPrintedImage": null,
+            "imagingProfileName": null,
+            "exportMetadata": null,
+            "metadataExportProfileName": null,
+            "workerItemCallback": null,
+            "workerItemCallbacks": null,
+            "traversalScope": null,
+            "namedEntities": null
+          },
+          "mimeTypeProcessorSettings": [
+
+          ],
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "keystoreKeyParameters": [
+
+          ],
+          "rescanEvidenceRepositories": false,
+          "rescanEvidenceRepositoriesSettings": {
+            "depth": null
+          },
+          "configurationProfile": null,
+          "processingProfile": "MD5,Identify,NoChildren",
+          "query": "not tag:*",
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "numberOfWorkers": 2,
+          "umsSession": null,
+          "userId": null,
+          "uiMetadata": {
+            "queryMetadata": {
+              "type": "Custom Nql Query",
+              "value": "not tag:*",
+              "validationStatus": "INITIAL",
+              "errors": [
+
+              ],
+              "isValid": false
+            }
+          },
+          "canUseRemoteWorkers": false,
+          "usesWorkers": true,
+          "selectableLicenceType": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "processorSettings",
+          "usesWorkers",
+          "selectableLicenceType",
+          "keystoreKeyParameters",
+          "processingProfile",
+          "query",
+          "rescanEvidenceRepositories",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "userId",
+          "canUseRemoteWorkers",
+          "parallelProcessingSettings",
+          "rescanEvidenceRepositoriesSettings",
+          "configurationProfile",
+          "restClusterSettings",
+          "nuixLicenceType",
+          "class",
+          "mimeTypeProcessorSettings",
+          "umsSession"
+        ]
+      },
+      "id": "Medium Scan",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Medium Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 1600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestionReport",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.RequiresNuixLicenceContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Medium Report",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Medium Detect Redundant files"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "Medium Scan"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 1800,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkItemSet",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "-tag:*",
+              "deduplicate": "",
+              "relationType": null,
+              "batchName": "batch1",
+              "restClusterSettings": null,
+              "name": "RemainingItems",
+              "deduplication": "MD5",
+              "description": null,
+              "deduplicateBy": "INDIVIDUAL",
+              "custodianRanking": null,
+              "uiMetadata": {
+                "paneId": "pane-1261387787-1652230048915",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "-tag:*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              },
+              "existingItemSet": false
+            }
+          ],
+          "scopeToBatch": false,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkItemSetContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Medium Detect Redundant files",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Determine OCR Candidates"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "Medium Scan"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2000,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Determine_OCR_Candidates.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "533f5ed3-ccb9-4ff7-89b0-47f990235548",
+              "uiMetadata": {
+                "paneId": "pane-3067231826-1652231225811"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Determine OCR Candidates",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Medium Analyse (Search and Tag)"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkSearchAndTag",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "file-extension:sh",
+              "tags": [
+                "Redundant|Dangerous|sh"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-9917545641-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:sh",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "has-item-set:1 is-item-original:0",
+              "tags": [
+                "Redundant|Duplicates"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2456114692-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "has-item-set:1 is-item-original:0",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+              "tags": [
+                "Redundant|FileExtension|csv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5068677215-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+              "tags": [
+                "Redundant|FileExtension|IT"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3980897063-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+              "tags": [
+                "Redundant|FileExtension|log"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4107992511-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+              "tags": [
+                "Redundant|FileExtension|tsv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5319319501-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:text/x-ini",
+              "tags": [
+                "Redundant|FileExtension|x-ini"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2384169747-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:text/x-ini",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+              "tags": [
+                "Redundant|FileExtension|xml"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2286402922-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+              "tags": [
+                "Trivial|FileExtension|txt"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3279564081-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:filesystem/directory",
+              "tags": [
+                "Trivial|filesystem|EmptyDirectory"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3908959342-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:filesystem/directory",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "tag:( \"OCR|PDF Avg Words Per Page*\" NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+              "tags": [
+                "Trivial|LowText|PDF"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1928302473-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:( \"OCR|PDF Avg Words Per Page*\" NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/pdf AND -content:* and flag:encrypted",
+              "tags": [
+                "Trivial|NoText|PDF"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1485814876-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/pdf AND -content:* and flag:encrypted",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Cache.db\"",
+              "tags": [
+                "Trivial|System|Cache.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4077883830-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Cache.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+              "tags": [
+                "Trivial|System|plist"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1058254407-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Thumbs.db\"",
+              "tags": [
+                "Trivial|System|Thumbs.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3681461405-1653356556669",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Thumbs.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "(word-list:explosives)",
+              "tags": [
+                "Redundant|Text|Wordlist"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3148092939-1653356568056",
+                "queryMetadata": {
+                  "type": "Word List Query",
+                  "value": [
+                    "explosives"
+                  ],
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "bulkSearcherOptions": {
+            "includeFamilies": false,
+            "deduplicateFamilies": false,
+            "omitExcludedItems": true,
+            "omitImmaterialFamilyItems": true,
+            "tagUniqueItems": false,
+            "countResponsiveItems": false,
+            "tagResponsiveItemsEnabled": false,
+            "matchingItemsAction": "addTags",
+            "createUnusedTags": false,
+            "removeEmptyTags": false,
+            "showTagColumns": true,
+            "allowDuplicateTags": true,
+            "allowDuplicateQueries": true,
+            "missingTagsAction": "fillWithQuery",
+            "expandTags": false,
+            "tagExpansions": null,
+            "scopingQuery": null,
+            "tagResponsiveItemsTag": null,
+            "searchFields": null
+          },
+          "uiMetadata": {
+            "entryType": "manual"
+          },
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "requests",
+          "userId",
+          "bulkSearcherOptions",
+          "canUseRemoteWorkers",
+          "nuixLicenceType",
+          "class",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Medium Analyse (Search and Tag)",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Remove Empty Folders2"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_TagEmptyDirectories.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "56e7a97d-27bb-4213-a13c-d5710aaacf75",
+              "uiMetadata": {
+                "paneId": "pane-1597759103-1652235213226"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Remove Empty Folders2",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Heavy Scan"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "reprocess",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "processorSettings": {
+            "processText": null,
+            "processLooseFileContents": null,
+            "processForensicImages": null,
+            "analysisLanguage": null,
+            "stopWords": null,
+            "stemming": null,
+            "enableExactQueries": null,
+            "extractNamedEntities": null,
+            "extractNamedEntitiesFromText": null,
+            "extractNamedEntitiesFromProperties": null,
+            "extractNamedEntitiesFromTextStripped": null,
+            "extractNamedEntitiesFromTextCommunications": null,
+            "extractShingles": null,
+            "processTextSummaries": null,
+            "calculateSSDeepFuzzyHash": null,
+            "calculatePhotoDNARobustHash": null,
+            "detectFaces": null,
+            "classifyImagesWithDeepLearning": null,
+            "imageClassificationModelUrl": null,
+            "extractFromSlackSpace": null,
+            "carveFileSystemUnallocatedSpace": null,
+            "carveUnidentifiedData": null,
+            "carvingBlockSize": null,
+            "recoverDeletedFiles": null,
+            "extractEndOfFileSlackSpace": null,
+            "smartProcessRegistry": null,
+            "identifyPhysicalFiles": null,
+            "createThumbnails": null,
+            "skinToneAnalysis": null,
+            "calculateAuditedSize": null,
+            "storeBinary": null,
+            "maxStoredBinarySize": null,
+            "maxDigestSize": null,
+            "digests": [
+
+            ],
+            "addBccToEmailDigests": null,
+            "addCommunicationDateToEmailDigests": null,
+            "reuseEvidenceStores": null,
+            "processFamilyFields": null,
+            "hideEmbeddedImmaterialData": null,
+            "reportProcessingStatus": null,
+            "enableCustomProcessing": [
+
+            ],
+            "performOcr": null,
+            "ocrProfileName": null,
+            "createPrintedImage": null,
+            "imagingProfileName": null,
+            "exportMetadata": null,
+            "metadataExportProfileName": null,
+            "workerItemCallback": null,
+            "workerItemCallbacks": null,
+            "traversalScope": null,
+            "namedEntities": null
+          },
+          "mimeTypeProcessorSettings": [
+
+          ],
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "keystoreKeyParameters": [
+
+          ],
+          "rescanEvidenceRepositories": false,
+          "rescanEvidenceRepositoriesSettings": {
+            "depth": null
+          },
+          "configurationProfile": null,
+          "processingProfile": "Full Traversal, with text",
+          "query": "flag:loose_file not tag:*",
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "numberOfWorkers": 2,
+          "umsSession": null,
+          "userId": null,
+          "uiMetadata": {
+            "queryMetadata": {
+              "type": "Custom Nql Query",
+              "value": "flag:loose_file not tag:*",
+              "validationStatus": "INITIAL",
+              "errors": [
+
+              ],
+              "isValid": false
+            }
+          },
+          "canUseRemoteWorkers": false,
+          "usesWorkers": true,
+          "selectableLicenceType": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "processorSettings",
+          "usesWorkers",
+          "selectableLicenceType",
+          "keystoreKeyParameters",
+          "processingProfile",
+          "query",
+          "rescanEvidenceRepositories",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "userId",
+          "canUseRemoteWorkers",
+          "parallelProcessingSettings",
+          "rescanEvidenceRepositoriesSettings",
+          "configurationProfile",
+          "restClusterSettings",
+          "nuixLicenceType",
+          "class",
+          "mimeTypeProcessorSettings",
+          "umsSession"
+        ]
+      },
+      "id": "Heavy Scan",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Heavy Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2800,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ingestionReport",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.RequiresNuixLicenceContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Heavy Report",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Heavy Detect Redundant (family)"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "Heavy Scan"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 3000,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkItemSet",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "-tag:* flag:top_level",
+              "deduplicate": "",
+              "relationType": null,
+              "batchName": "batch1",
+              "restClusterSettings": null,
+              "name": "HeavyRemainingItems",
+              "deduplication": "MD5",
+              "description": null,
+              "deduplicateBy": "Family",
+              "custodianRanking": null,
+              "uiMetadata": {
+                "paneId": "pane-1261387787-1652230048915",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "-tag:* flag:top_level",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              },
+              "existingItemSet": false
+            }
+          ],
+          "scopeToBatch": false,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkItemSetContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Heavy Detect Redundant (family)",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Determine OCR Candidates2"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": "Heavy Scan"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 3200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Determine_OCR_Candidates.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "533f5ed3-ccb9-4ff7-89b0-47f990235548",
+              "uiMetadata": {
+                "paneId": "pane-3067231826-1652231225811"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Determine OCR Candidates2",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Bulk Search And Tag"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 3400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkSearchAndTag",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "item-date:[* TO 20120101}",
+              "tags": [
+                "﻿Obsolete|Date"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1349654308-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "item-date:[* TO 20120101}",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "properties:FailureDetail AND NOT flag:encrypted",
+              "tags": [
+                "Redundant|Corrupted"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1771946358-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "properties:FailureDetail AND NOT flag:encrypted",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:bat",
+              "tags": [
+                "Redundant|Dangerous|bat"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4426949751-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:bat",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:cmd",
+              "tags": [
+                "Redundant|Dangerous|cmd"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3811235917-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:cmd",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dll or mime-type:application/dll",
+              "tags": [
+                "Redundant|Dangerous|dll"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-7238821351-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dll or mime-type:application/dll",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dmg or mime-type:(application/x-apple-diskimage or application/vnd.apple-udif)",
+              "tags": [
+                "Redundant|Dangerous|dmg"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1704605672-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dmg or mime-type:(application/x-apple-diskimage or application/vnd.apple-udif)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:exe or mime-type:(application/x-dotnet or application/x-self-extracting-archive or application/exe)",
+              "tags": [
+                "Redundant|Dangerous|exe"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4262021805-1653612887973",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:exe or mime-type:(application/x-dotnet or application/x-self-extracting-archive or application/exe)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:htm",
+              "tags": [
+                "Redundant|Dangerous|htm"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2126379484-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:htm",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:html or mime-type:(application/vnd.google-takeout-my-activity-discover+html or application/vnd.google-takeout-my-activity-assistant+html or application/vnd.google-takeout-my-activity-google-play-movies-tv+html or application/vnd.google-takeout-my-activity-help+html or application/vnd.google-takeout-my-activity-google-play-store+html or application/vnd.google-takeout-my-activity-podcasts+html or application/vnd.google-takeout-my-activity-voice-and-audio+html or application/vnd.google-takeout-my-activity-books+html or application/vnd.google-takeout-my-activity-image-search+html or application/vnd.google-takeout-my-activity-google-play-music+html or application/vnd.google-takeout-my-activity-google-lens+html or application/vnd.google-takeout-my-activity-google-analytics+html or application/vnd.google-takeout-my-activity-google-play-games+html or application/vnd.google-takeout-my-activity-news+html or application/vnd.google-takeout-my-activity-g-suite+html or application/vnd.google-takeout-my-activity-shopping+html or application/vnd.google-takeout-my-activity-takeout+html or application/vnd.google-takeout-my-activity+html or application/vnd.google-takeout-my-activity-developers+html or application/vnd.google-takeout-my-activity-google-apps+html or application/vnd.google-takeout-my-activity-google-cloud+html or application/vnd.google-takeout-my-activity-google-play-books+html or application/vnd.google-takeout-my-activity-gmail+html or application/vnd.google-takeout-my-activity-google-pay+html or application/vnd.google-takeout-my-activity-chrome+html or application/vnd.google-takeout-my-activity-ads+html or application/vnd.google-takeout-my-activity-android+html or application/vnd.google-takeout-my-activity-drive+html or text/html or application/vnd.google-takeout-my-activity-video-search+html or application/vnd.google-takeout-my-activity-youtube+html or application/vnd.google-takeout-my-activity-google-translate+html or application/vnd.google-takeout-my-activity-maps+html or application/vnd.google-takeout-my-activity-search+html or application/vnd.google-takeout-my-activity-finance+html or application/xhtml+xml)",
+              "tags": [
+                "Redundant|Dangerous|html"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2341929401-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:html or mime-type:(application/vnd.google-takeout-my-activity-discover+html or application/vnd.google-takeout-my-activity-assistant+html or application/vnd.google-takeout-my-activity-google-play-movies-tv+html or application/vnd.google-takeout-my-activity-help+html or application/vnd.google-takeout-my-activity-google-play-store+html or application/vnd.google-takeout-my-activity-podcasts+html or application/vnd.google-takeout-my-activity-voice-and-audio+html or application/vnd.google-takeout-my-activity-books+html or application/vnd.google-takeout-my-activity-image-search+html or application/vnd.google-takeout-my-activity-google-play-music+html or application/vnd.google-takeout-my-activity-google-lens+html or application/vnd.google-takeout-my-activity-google-analytics+html or application/vnd.google-takeout-my-activity-google-play-games+html or application/vnd.google-takeout-my-activity-news+html or application/vnd.google-takeout-my-activity-g-suite+html or application/vnd.google-takeout-my-activity-shopping+html or application/vnd.google-takeout-my-activity-takeout+html or application/vnd.google-takeout-my-activity+html or application/vnd.google-takeout-my-activity-developers+html or application/vnd.google-takeout-my-activity-google-apps+html or application/vnd.google-takeout-my-activity-google-cloud+html or application/vnd.google-takeout-my-activity-google-play-books+html or application/vnd.google-takeout-my-activity-gmail+html or application/vnd.google-takeout-my-activity-google-pay+html or application/vnd.google-takeout-my-activity-chrome+html or application/vnd.google-takeout-my-activity-ads+html or application/vnd.google-takeout-my-activity-android+html or application/vnd.google-takeout-my-activity-drive+html or text/html or application/vnd.google-takeout-my-activity-video-search+html or application/vnd.google-takeout-my-activity-youtube+html or application/vnd.google-takeout-my-activity-google-translate+html or application/vnd.google-takeout-my-activity-maps+html or application/vnd.google-takeout-my-activity-search+html or application/vnd.google-takeout-my-activity-finance+html or application/xhtml+xml)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:jar or mime-type:(application/java-archive)",
+              "tags": [
+                "Redundant|Dangerous|java"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-9292846991-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:jar or mime-type:(application/java-archive)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:js or mime-type:(application/vnd.mozilla-firefox-session-store)",
+              "tags": [
+                "Redundant|Dangerous|js"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3658012109-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:js or mime-type:(application/vnd.mozilla-firefox-session-store)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:mht or mime-type:(application/x-mime-html)",
+              "tags": [
+                "Redundant|Dangerous|mht"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3576401124-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:mht or mime-type:(application/x-mime-html)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:msi or mime-type:(application/vnd.ms-installer)",
+              "tags": [
+                "Redundant|Dangerous|msi"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3596227383-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:msi or mime-type:(application/vnd.ms-installer)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:ps1",
+              "tags": [
+                "Redundant|Dangerous|ps1"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3592600681-1653612887974",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:ps1",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:rpm or mime-type:(application/x-rpm)",
+              "tags": [
+                "Redundant|Dangerous|rpm"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2367419871-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:rpm or mime-type:(application/x-rpm)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:vbs",
+              "tags": [
+                "Redundant|Dangerous|vbs"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-8548684431-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:vbs",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "has-item-set:1 is-item-original:0",
+              "tags": [
+                "Redundant|Duplicates"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2722602643-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "has-item-set:1 is-item-original:0",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:dat",
+              "tags": [
+                "Redundant|FileExtension|dat"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2813722986-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:dat",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(pst or mbox or edb or nsf) or mime-type:(application/vnd.ms-exchange-edb or application/vnd.ms-outlook or application/vnd.hancom-binary-data-file or application/mbox or application/vnd.lotus-notes)",
+              "tags": [
+                "Redundant|FileExtension|EmailContainers"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3975447305-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(pst or mbox or edb or nsf) or mime-type:(application/vnd.ms-exchange-edb or application/vnd.ms-outlook or application/vnd.hancom-binary-data-file or application/mbox or application/vnd.lotus-notes)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(ini or sii) or mime-type:(text/x-ini)",
+              "tags": [
+                "Redundant|FileExtension|ini"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2827408092-1653612887975",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(ini or sii) or mime-type:(text/x-ini)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:lnk or mime-type:filesystem/symlink",
+              "tags": [
+                "Redundant|FileExtension|lnk"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1817165784-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:lnk or mime-type:filesystem/symlink",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "flag:loose_file and not file-extension:*",
+              "tags": [
+                "Redundant|FileExtension|None"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4090078833-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:loose_file and not file-extension:*",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:quarantine",
+              "tags": [
+                "Redundant|FileExtension|quarantine"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1809846529-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:quarantine",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:url",
+              "tags": [
+                "Redundant|FileExtension|url"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3179978011-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:url",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(properties or class or java or strings or pom or irs or cpm or pcl) or mime-type:(application/java-class)",
+              "tags": [
+                "Redundant|IP|developer"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1144195451-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(properties or class or java or strings or pom or irs or cpm or pcl) or mime-type:(application/java-class)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "path-name:(\"Stores\" OR \"TextIndex\" ) or file-extension:(fbi2 or nli)",
+              "tags": [
+                "Redundant|Nuix|Case Files"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5897431481-1653612887976",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "path-name:(\"Stores\" OR \"TextIndex\" ) or file-extension:(fbi2 or nli)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "path-name:(\"nodes\" or \"indices\")",
+              "tags": [
+                "Redundant|Nuix|Elasticsearch"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5609972781-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "path-name:(\"nodes\" or \"indices\")",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-size:[1000000000 TO *]",
+              "tags": [
+                "Redundant|Size|Excessive Size"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3628830415-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-size:[1000000000 TO *]",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/vnd.nuix-evidence",
+              "tags": [
+                "Trivial|evidence|container"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3109348471-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/vnd.nuix-evidence",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:filesystem/drive",
+              "tags": [
+                "Trivial|filesystem|drive"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3058969566-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:filesystem/drive",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:filesystem/directory or kind:container",
+              "tags": [
+                "Trivial|filesystem|EmptyDirectory"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5703502214-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:filesystem/directory or kind:container",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "flag:loose_file AND file-size:0",
+              "tags": [
+                "Trivial|Size|Empty files"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3115331271-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:loose_file AND file-size:0",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:afpinfo",
+              "tags": [
+                "Trivial|System|AfpInfo"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3621803534-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:afpinfo",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Cache.db\"",
+              "tags": [
+                "Trivial|System|Cache.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3368304160-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Cache.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:DS_Store",
+              "tags": [
+                "Trivial|System|DS_Store"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4133903532-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:DS_Store",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(inf) or mime-type:(text/x-inf)",
+              "tags": [
+                "Trivial|System|inf"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2114342431-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(inf) or mime-type:(text/x-inf)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "name:\"Thumbs.db\"",
+              "tags": [
+                "Trivial|System|Thumbs.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1058434184-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "name:\"Thumbs.db\"",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:sh",
+              "tags": [
+                "Redundant|Dangerous|sh"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2832304101-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:sh",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+              "tags": [
+                "Redundant|FileExtension|csv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3272162342-1653612887977",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:csv or mime-type:(application/vnd.nuix-load-file or text/ms-o365-scc-log or text/csv)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+              "tags": [
+                "Redundant|FileExtension|IT"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3808784970-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(iso or json or ad1 or sql or e01 or vhd or dd or xry or dvs or dvssp or dvscc or jks or p7b) or mime-type:(application/vnd.guidance-encase or application/json or application/vnd.symantec-vault-stream-data or application/vnd.slack-channel-list or application/vnd.slack-channel or application/x-java-keystore or application/vnd.symantec-vault or application/vnd.slack-message-list or application/vnd.ms-virtual-harddisk or application/vnd.accessdata-ftk-imager or application/vnd.slack-user or application/vnd.google-hangouts+json or application/vnd.msab-xry or application/vnd.slack-export or application/x-iso-image or application/vnd.slack-user-list or application/vnd.slack-message or application/x-pkcs7-certificates)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+              "tags": [
+                "Redundant|FileExtension|log"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2567965655-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(log) or mime-type:(application/vnd.logstash-log or application/vnd.ms-iis-log or text/x-nuix-log or application/vnd.ms-windows-setup-api-win7-win8-log-section-entry or application/vnd.squid-access-log or application/vnd.twitter-logstash-log or application/vnd.apache-error-log or application/vnd.linux-syslog or application/vnd.git-logstash-log or application/vnd.ms-windows-setup-api-xp-log or application/vnd.ms-windows-setup-api-win7-win8-log-boot-entry or application/vnd.ms-windows-setup-api-win7-win8-log or text/x-common-log)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+              "tags": [
+                "Redundant|FileExtension|tsv"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3102254313-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(tsv) or mime-type:(text/tab-separated-values)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:text/x-ini",
+              "tags": [
+                "Redundant|FileExtension|x-ini"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2204671929-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:text/x-ini",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+              "tags": [
+                "Redundant|FileExtension|xml"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-4013861273-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(xml) or mime-type:(application/vnd.ms-outlook-mac-email or application/vnd.ms-excel+xml or application/vnd.edrm-xml-load-file or application/xml or application/vnd.cellebrite-xml-report or application/vnd.oxygen-export-file or application/vnd.ms-sxs-manifest+xml or application/vnd.lotus-domino-xml-mail-document or application/vnd.openxmlformats-officedocument.drawingml.chart+xml or application/vnd.lotus-domino-xml-appointment-document or application/vnd.lotus-domino-xml-other-document or application/vnd.lotus-domino-xml-person-document or application/vnd.lotus-domino-xml-task-document or application/vnd.bloomberg-xml-dump or application/vnd.ms-word+xml or application/vnd.bloomberg-im-xml-dump)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+              "tags": [
+                "Trivial|FileExtension|txt"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-8265300081-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(txt) or mime-type:(application/vnd.reuters-messenger or application/vnd.ms-cortana.settings+json or text/plain or application/vnd.bloomberg-text-dump or application/x-bitlocker-recovery-key)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "tag:( \"OCR|PDF Avg Words Per Page*\" NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+              "tags": [
+                "Trivial|LowText|PDF"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1321074745-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:( \"OCR|PDF Avg Words Per Page*\" NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/pdf AND -content:* and flag:encrypted",
+              "tags": [
+                "Trivial|NoText|PDF"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2017819825-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/pdf AND -content:* and flag:encrypted",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/vnd.apple-safari-cache",
+              "tags": [
+                "Trivial|System|Cache.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3610588193-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/vnd.apple-safari-cache",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+              "tags": [
+                "Trivial|System|plist"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2619908101-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "file-extension:(plist) or mime-type:(application/vnd.apple-safari-history-plist-node or application/x-plist or application/vnd.apple-safari-bookmarks-plist or application/vnd.apple-safari-history-plist)",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "mime-type:application/x-thumbs-db",
+              "tags": [
+                "Trivial|System|Thumbs.db"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3503896645-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "mime-type:application/x-thumbs-db",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            },
+            {
+              "query": "kind:image and integer-properties:Width:[1 TO 64}",
+              "tags": [
+                "Trivial|Size|Tiny"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-5370467351-1653612887978",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "kind:image and integer-properties:Width:[1 TO 64}",
+                  "validationStatus": "SUCCESS",
+                  "errors": [
+
+                  ],
+                  "isValid": true
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "bulkSearcherOptions": {
+            "includeFamilies": false,
+            "deduplicateFamilies": false,
+            "omitExcludedItems": true,
+            "omitImmaterialFamilyItems": true,
+            "tagUniqueItems": false,
+            "countResponsiveItems": false,
+            "tagResponsiveItemsEnabled": false,
+            "matchingItemsAction": "addTags",
+            "createUnusedTags": false,
+            "removeEmptyTags": false,
+            "showTagColumns": true,
+            "allowDuplicateTags": true,
+            "allowDuplicateQueries": true,
+            "missingTagsAction": "fillWithQuery",
+            "expandTags": false,
+            "tagExpansions": null,
+            "scopingQuery": null,
+            "tagResponsiveItemsTag": "",
+            "searchFields": null
+          },
+          "uiMetadata": {
+            "entryType": "csv"
+          },
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "requests",
+          "userId",
+          "bulkSearcherOptions",
+          "canUseRemoteWorkers",
+          "nuixLicenceType",
+          "class",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Search And Tag",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Remove Empty Folders3"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 3600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_TagEmptyDirectories.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "56e7a97d-27bb-4213-a13c-d5710aaacf75",
+              "uiMetadata": {
+                "paneId": "pane-1597759103-1652235213226"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Remove Empty Folders3",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Summary Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 3800,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkSearchAndTag",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "tag:Redundant*",
+              "tags": [
+                "Redundant"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-8298189501-1652230458262",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:Redundant*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            },
+            {
+              "query": "tag:Obsolete*",
+              "tags": [
+                "Obsolete"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3569803184-1652230494453",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:Obsolete*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            },
+            {
+              "query": "tag:Trivial*",
+              "tags": [
+                "Trivial"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-1424645028-1652230509575",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:Trivial*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            },
+            {
+              "query": "-tag:*",
+              "tags": [
+                "Sane"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2053532893-1652230805085",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "-tag:*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "bulkSearcherOptions": {
+            "includeFamilies": false,
+            "deduplicateFamilies": false,
+            "omitExcludedItems": false,
+            "omitImmaterialFamilyItems": false,
+            "tagUniqueItems": false,
+            "countResponsiveItems": false,
+            "tagResponsiveItemsEnabled": false,
+            "matchingItemsAction": "none",
+            "createUnusedTags": false,
+            "removeEmptyTags": false,
+            "showTagColumns": true,
+            "allowDuplicateTags": true,
+            "allowDuplicateQueries": true,
+            "missingTagsAction": "fillWithQuery",
+            "expandTags": false,
+            "tagExpansions": null,
+            "scopingQuery": null,
+            "tagResponsiveItemsTag": null,
+            "searchFields": null
+          },
+          "uiMetadata": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "requests",
+          "userId",
+          "bulkSearcherOptions",
+          "canUseRemoteWorkers",
+          "nuixLicenceType",
+          "class",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Summary Report",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Full Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 4000,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Export_View.rb",
+              "async": true,
+              "customArguments": {
+                "name": "ROT_Report",
+                "metadataProfileName": "ROT_Info",
+                "extension": "xlsx",
+                "query": "tag:*"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "373c0f11-d730-4e10-9250-91795fb3c424",
+              "uiMetadata": {
+                "paneId": "pane-1740335250-1652231815952"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Full Report",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Bulk Exclude all ROT"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 4400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkExclusion",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "tag:*",
+              "deduplicate": null,
+              "relationType": null,
+              "includeFamily": false,
+              "familyQuery": null,
+              "includeDuplicates": false,
+              "duplicatesQuery": null,
+              "includeNearDuplicates": false,
+              "nearDuplicatesQuery": null,
+              "nearDuplicatesThreshold": 0.0,
+              "threadsQuery": null,
+              "reason": "ROT",
+              "excludeDescendants": false,
+              "restClusterSettings": null,
+              "uiMetadata": {
+                "paneId": "pane-2514038231-1653360022158",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "tag:*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkExclusionContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Exclude all ROT",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 4600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    }
+  ],
+  "id": 493,
+  "createdOn": 1658892176812,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

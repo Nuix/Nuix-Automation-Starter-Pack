@@ -1,0 +1,146 @@
+require 'base64'
+require 'json'
+require 'net/http'
+java_import org.joda.time.format.DateTimeFormat
+
+class Discover
+
+	def initialize(apiKey)
+		@apiKey=apiKey
+		@discoverUri=JSON.parse(Base64.decode64(apiKey.split('.')[1]) )['apiUrl']
+	end
+	
+	def assignUsersToCase(caseId,userIds,userCategory)
+		doCall('mutation MyMutation($userId: [Int]!, $caseId: Int!, $caseUserCategory: CaseUserCategoryEnumType!) {
+		  userCaseAssign(input: {userId: $userId, caseId: $caseId, caseUserCategory: $caseUserCategory}) {
+			successCount
+			errorCount
+			notChangedCount
+			totalCount
+		  }
+		}
+		',{
+		  "userId"=>userIds,
+		  "caseId"=>caseId,
+		  "caseUserCategory"=>userCategory
+		})['userCaseAssign']
+	end
+	
+	def checkRpfStatus(orgId,clonedCaseId,rpfJobId)
+		doCall('query QueryCase($newCaseId: Int!, $orgId: [Int], $rpfJobId: Int!) {
+		  cases(id: $newCaseId, organizationId: $orgId) {
+			id
+			name
+			organization {
+			  id
+			  name
+			}
+			rpfJobId
+		  }
+		  rpf {
+			jobs(id: $rpfJobId) {
+			  status
+			  name
+			  id
+			  duration
+			  dateStarted
+			  dateFinished
+			  categoryName
+			  stages {
+				status
+				name
+				duration
+				dateStarted
+				dateFinished
+			  }
+			}
+		  }
+		}
+		',{
+		  "newCaseId"=> clonedCaseId,
+		  "orgId"=>orgId,
+		  "rpfJobId"=>rpfJobId
+		})['rpf']['jobs'][0]
+	end
+	
+	def cloneCase(newCaseName,description,orgId,sourceCaseId)
+		doCall('mutation MyMutation($newCaseName: String!, $orgId: Int, $sourceCaseId: Int, $description: String) {
+		  caseClone(input: {caseName: $newCaseName, sourceCaseId: $sourceCaseId, organizationId: $orgId, description: $description}) {
+			case {
+			  id
+			  name
+			  rpfJobId
+			}
+		  }
+		}
+		
+		',{
+		  "newCaseName"=>newCaseName, #ERROR: 'caseName' produced an invalid database name. 'caseName' must contain at least one alphanumeric character and the first alphanumeric must not be numeric.
+		  "description"=>description, #description = case name because the actual case name for discover can't be over 30 characters (minus the prefix so it's about 17 character limit).
+		  "orgId"=>orgId,
+		  "sourceCaseId"=>sourceCaseId
+		})['caseClone']['case']
+	end
+	
+	def convertUserListToIds(usernamesOrIds,orgName) #supports full name and userName, should also ensure the user belongs to the right organisation!! very important.
+		userDump=doCall('query MyQuery ($orgName:String!){
+			  users(deleted: false, disabled: false, organizationName: $orgName) {
+				id
+				fullName
+				userName
+				organizations {
+				  id
+				}
+			  }
+			}
+
+			',{
+		  "orgName"=>orgName
+		})
+		userIds=userDump["users"].select{|userObj|((usernamesOrIds.include? userObj['fullName'])||(usernamesOrIds.include? userObj['userName']))}.map{|userObj|userObj['id']}
+	end
+		
+	def doCall(query,variables)
+		uri = URI.parse(@discoverUri)
+		Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+			headers={'Authorization'=> 'Bearer ' + @apiKey, 'Content-Type' =>'application/json','Accept'=>'application/json'}
+			request = Net::HTTP::Post.new(uri.request_uri,headers)
+			request.body = {
+							variables: variables, #variables is a hashmap
+							query: query #query is a string
+						}.to_json
+			result=JSON.parse(http.request(request).body)
+			if(result.has_key? "errors")
+				raise Exception.new "DISCOVER:" + result['errors'][0]['message'] + "\n" + variables.to_json()
+			else
+				return result['data']
+			end
+		end
+	end
+	
+	def getCasesByNameInOrg(caseName,orgName)
+		doCall('query default($caseName: String, $orgName: String) {
+		  cases(name: $caseName, organizationName: $orgName) {
+			id
+			name
+			organization {
+			  id
+			  name
+			}
+		  }
+		}',{
+		  "caseName"=>caseName,
+		  "orgName"=>orgName
+		})["cases"].select{|caze|caze['name']==caseName}[0]
+	end
+	
+	def getMyId()
+		doCall('query MyQuery {
+		  me {
+			id
+		  }
+		}
+		',{})["me"]['id']
+	end
+	
+end

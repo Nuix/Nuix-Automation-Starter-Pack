@@ -1,0 +1,464 @@
+require 'benchmark'
+require 'date'
+require 'java'
+require 'json'
+require 'net/http'
+require 'pathname'
+require 'securerandom'
+require 'time'
+require 'uri'
+
+
+
+class Logger
+	def initialize(includeInConsole)
+		@includeInConsole=includeInConsole
+		@logger=Java::OrgApacheLog4j::Logger.getRootLogger()
+	end
+
+	def method_missing(*args)
+		if(@includeInConsole || args[0].to_s=="info")
+			if(["debug","info","trace","warn"].include? args[0].to_s)
+				puts args[0].to_s.upcase + "\t" + args[1]
+			end
+		end
+		return @logger.send(*args)
+	end
+end
+$showInConsole=false #set to false if you don't want to see the console pipe
+$logger=Logger.new($showInConsole) 
+
+$nlpClient=nil
+
+class NLP
+	
+	def initialize(cfg)
+		@available=false
+		@cfg=cfg
+		if(!(@cfg.has_key? 'apply_named_entities'))
+			@cfg['apply_named_entities']=true
+		end
+		if(!(@cfg.has_key? 'apply_results_to_custom_metadata'))
+			@cfg['apply_results_to_custom_metadata']=true
+		end
+		if(!(@cfg.has_key? 'apply_results_to_properties'))
+			@cfg['apply_results_to_properties']=true
+		end
+		if(!(@cfg.has_key? 'apply_tags'))
+			@cfg['apply_tags']=true
+		end
+		
+		retryAttempt=-1
+		totalAttempts=10
+		while((!(@available) && (retryAttempt < totalAttempts))) #10 tries to connect... 
+			begin
+				retryAttempt=retryAttempt + 1
+				$logger.info("Attempting Connection:#{retryAttempt} of #{totalAttempts} attempts")
+				gracie_uri = URI::parse(@cfg["feed_service"])
+				token = getToken("#{gracie_uri.scheme}://#{gracie_uri.host}")
+				access_token = token["access_token"]
+				@cfg["gracie_access_token"] = access_token
+				token_type = token["token_type"]
+				refresh_token = token["refresh_token"]
+				expires_in = token["expires_in"]
+				scope = token["scope"]
+				$logger.info("Acquired Gracie token [access_token=#{access_token},token_type=#{token_type},refresh_token=#{refresh_token},expires_in=#{expires_in},scope=#{scope}]")
+				@cfg["headers"] = {"Content-Type" => "plain/text;charset=UTF-8", "authorization" => "Bearer #{access_token}"}
+				$logger.debug("Configuration:\n" + @cfg.to_json)
+				info = post("#{@cfg["dictionary_service"]}/info/retrieve", @cfg["headers"], "")
+				status = info["status"]
+				message = info["message"]
+				code = info["code"]
+				response = info["response"]
+				server = response["server"]
+				systeminfo = response["system"]
+				search = response["search"]
+
+				$logger.info("Gracie Server Info: #{server}")
+				$logger.info("Gracie System Info: #{systeminfo}")
+				$logger.info("Gracie Search Info: #{search}")
+
+				project = post("#{@cfg["feed_service"]}/projects/add?name=nuix-#{SecureRandom.uuid}", @cfg["headers"], "")
+			
+				$logger.debug("Project Creation Response: #{project}")
+				project_id = project["response"]["id"]
+				project_name = project["response"]["name"]
+				es_index = project["response"]["elasticsearchIndexName"]
+
+				$logger.info("Gracie Project #{project_name} (ID:#{project_id}) created.")
+				@cfg["gracie_project_name"] = project_name
+				@cfg["gracie_project_id"] = project_id
+				
+				@available=true
+				
+				$logger.info("Gracie is Contactable")
+				
+				if(isRunning())
+					$logger.info("Gracie is Busy, delaying job until available.")
+					watchStats().join()
+				end
+				
+				$logger.info("Gracie is Available")
+				statConfirmation=post("#{@cfg["feed_service"]}/bulkProcessing/deletePerformanceStats", @cfg["headers"], "")
+				$logger.warn("Purged Stats:#{statConfirmation['status']}")
+			rescue => ex
+				$logger.warn(ex.message)
+				$logger.warn(ex.backtrace.to_s)
+				$logger.warn(@cfg.to_json)
+				sleep 5 #wait 5 seconds for a retry
+			end
+		end
+	end
+	
+	def cleanUp()
+		return post("#{@cfg["feed_service"]}/projects/delete?id=#{@cfg["gracie_project_id"]}", @cfg["headers"], "")
+	end
+	
+	def getToken(base_url) # this should probably have a retry until a token is gained?
+		uri = URI.parse("#{base_url}/sso/oauth/token")
+		https = Net::HTTP.new(uri.host, uri.port)
+		https.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		https.use_ssl=true
+		headers = {"Content-Type" => "Content-Type: multipart/form-data", "Authorization" => "Basic #{@cfg["authorization"]}"}
+		begin
+			request = Net::HTTP::Post.new(uri.request_uri, headers)
+			request.set_form_data("grant_type" => "#{@cfg["grant_type"]}","Gracie_id" => "#{@cfg["Gracie_id"]}","Gracie_secret" => "#{@cfg["Gracie_secret"]}","username" => "#{@cfg["username"]}","password" => "#{@cfg["password"]}")
+			response = https.request(request)
+			$logger.trace("Call to #{uri} returned #{response.code}.")
+			if response.body != nil
+				begin
+					return JSON.parse(response.body)
+				rescue
+					$logger.warn("Unable to parse response from translation service or it's blank.")
+				end
+			end
+		rescue => ex
+			$logger.warn(ex.message)
+			$logger.warn(ex.backtrace.to_s)
+		end
+	end
+	
+	def isAvailable()
+		return @available
+	end
+	
+	def isRunning()
+		stats=post("#{@cfg["feed_service"]}/bulkProcessing/stats", @cfg["headers"], "")
+		return stats['response']['totalNumTasks'] > 0
+	end
+	
+	def post(url, headers, body)
+		uri = URI.parse(url)
+		$logger.trace("Preparing to post to url:\n#{uri}\nHeaders:\n#{headers.to_json}\nBody:\n#{body}")
+		https = Net::HTTP.new(uri.host, uri.port)
+		https.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		https.use_ssl=true
+		begin
+			request = Net::HTTP::Post.new(uri.request_uri, headers)
+			request.body = body
+			response = https.request(request)
+			$logger.trace("Call to #{url} returned #{response.code}.")
+			if response.body != nil
+				begin
+					return JSON.parse(response.body)
+				rescue
+					$logger.warn("Unable to parse response from translation service or it's blank.")
+				end
+			end
+		rescue => ex
+			$logger.warn(ex.message)
+			$logger.warn(ex.backtrace.to_s)
+		end
+	end
+	
+	def getComms(currentItem)
+		comms=currentItem.getCommunication()
+		from=[]
+		recipients=[]
+		if !comms.nil?
+			from=comms.getFrom().map{|obj| obj.toString()}.uniq
+			recipients=(comms.getTo().map{|obj| obj.toString()} + 
+			comms.getCc().map{|obj| obj.toString()} + 
+			comms.getBcc().map{|obj| obj.toString()})
+			.uniq
+		end
+		return from,recipients
+	end
+	
+	def uploadText(text,fileName=nil,userMetadata=nil,privacyMode=nil,languageId=nil,mimeType=nil)
+		$logger.debug("TEXT:\n#{text}\nFILENAME:\n#{fileName}\nMETADATA:\n#{JSON.pretty_generate(userMetadata)}")
+		
+		
+		queryFields={
+			"fileName"=>fileName,
+			"projectId"=>@cfg["gracie_project_id"],
+			"languageId"=>languageId,
+			"mimeType"=>mimeType,
+			"privacyMode"=>privacyMode
+		}
+		url="#{@cfg["feed_service"]}/bulkProcessing/uploadText?"
+		
+		queryFields.each do | queryField,value|
+			if(!(value.nil?)) # don't send nil values
+				if(!(value.to_s.strip().empty?)) # don't send empty values
+					url=url + queryField + "=" + URI.encode_www_form_component(value.to_s.strip()) + "&"
+				end
+			end
+		end
+		if(url.length > 2000)
+			raise StandardError.new "Can't upload text because metadata is too large and can't be reduced any further. Possible cause is fileName being too long"
+		end
+		
+		#url must be less than 2048 characters... (leaving 2000 to be safe)
+		# reducing them by removing the largest value in the metadata first.
+		# a sacrifice had to be made.. kill that tall poppy 
+		#### ============================================ ##########
+		newUrl=url + "userMetadata=" + URI.encode_www_form_component(JSON.pretty_generate(userMetadata, :indent => "\t"))
+		maxURLSize=2000
+		if(newUrl.length > maxURLSize)
+			$logger.warn("Reducing url, data has been lost")
+		end
+		while(newUrl.length > maxURLSize)
+			keyWithLargestValue=userMetadata.max_by{|k,v| v.to_s.length}
+			$logger.warn("\tKey that was removed:#{keyWithLargestValue.to_s}")
+			userMetadata.delete(keyWithLargestValue[0])
+			newUrl=url + "userMetadata=" + URI.encode_www_form_component(JSON.pretty_generate(userMetadata, :indent => "\t"))
+		end
+		
+		#### ============================================ ##########
+		$logger.debug("URL with meta:#{newUrl}")
+		result=post(newUrl, @cfg["headers"], text)
+		if(result.nil?)
+			raise StandardError.new "Bad request to NLP... Debug required, no response came back..."
+		end
+		return result
+	end
+	
+	def getMetadataForItem(currentItem,docId,additionalMetada)
+		props={}
+		begin
+			$logger.trace("meta init")
+			from,recipients=getComms(currentItem)
+			$logger.trace("meta comms loaded")
+			itemDate=nil
+			if(!(currentItem.getDate().nil?))
+				itemDate=currentItem.getDate().toString()
+			end
+			props={
+				"commsSender"=>from,
+				"commsRecipients"=>recipients,
+				"reportId"=>docId,
+				"itemDate"=>itemDate,
+				"itemGuid"=>currentItem.getGuid(),
+				"caseId"=>$currentCase.getGuid(),
+				"itemName"=>currentItem.getLocalisedName(),
+				"md5Digest"=>currentItem.getDigests().getMd5(),
+				"itemKind"=>currentItem.getKind(),
+				"jobId"=>@cfg['productionSetName'],
+				"itemPath"=>"/" + currentItem.getLocalisedPathNames().join("/"),
+				"itemTopLevelGuid"=>currentItem.getTopLevelItem.getGuid(),
+				"caseName"=>$currentCase.getName()
+			}
+			$logger.trace("meta additional")
+			additionalMetada.each do | meta|
+				props[meta.getLocalisedName()]=meta.evaluate(currentItem).to_s
+			end
+			$logger.trace("meta entities")
+			$currentCase.getAllEntityTypes().each do | entityType |
+				entityValues=currentItem.getEntities(entityType)
+				if(entityValues.size > 0)
+					props["entities#{entityType.split('-').map{|part|part.capitalize()}.join('')}"]=entityValues.to_a
+				end
+			end
+			
+			$logger.trace("meta gained")
+			#clean up blanks, save a bit of bandwidth hopefully + cleaner to debug.
+			props.keys.each do | propKey|
+				value=props[propKey]
+				cleaned=[]
+				if(value.kind_of?(Array))
+					if(props[propKey].size() == 0)
+						props.delete(propKey)
+					else
+						cleaned=value.map{|v|v.to_s.strip().encode('UTF-8', :undef => :replace, :invalid => :replace, :replace => " ")} #added to prevent .to_json bugging out.
+					end
+				else
+					if(props[propKey].nil?)
+						props.delete(propKey)
+					else
+						#probably should convert some things to base64 if they are clearly not text but... not for today.
+						cleaned=props[propKey].to_s.strip().encode('UTF-8', :undef => :replace, :invalid => :replace, :replace => " ") #added to prevent .to_json bugging out.
+					end
+				end
+				if(cleaned.length > 0 )
+					props[propKey]=cleaned
+				end
+			end
+			$logger.trace("returning metadata")
+		rescue Exception => ex
+			$logger.error(ex.message + "\n" + ex.backtrace.join("\n"))
+		ensure
+			return props
+		end
+	end
+	
+	def getItemText(item)
+		item_text="" # default is empty text
+		if(item.getTextObject().isAvailable())
+			item_text = item.getTextObject().toString().strip()
+		else
+			$logger.warn("Source Item Text is not available:#{item.getGuid()}")
+		end
+		return item_text
+	end
+	
+	def watchStats()
+		$logger.info("A Stat watcher has been started... waiting for first stat interval")
+		statWatcher=Thread.new() { #stat watcher will only finish when there are no more items to be queued and the state is not IDLE (i.e it has work to do!)
+			currentStatus="INITIALISING"
+			lastStat=nil
+			stillRunning=true
+			while((stillRunning) ||(currentStatus != "IDLE"))
+				statResponses=getStats()
+				statResponse=statResponses.last()
+				if(statResponse.nil?)
+					$logger.info("Latest status:#{currentStatus}")
+				else
+					currentStatus=statResponse["reportType"]
+					if(lastStat.nil?)
+						if(statResponses.size > 1)
+							lastStat=statResponses.last(2).first() #second last
+						else
+							lastStat=statResponse
+						end
+					end
+					duration=-1
+					begin
+						duration=statResponse['numSeconds'] - lastStat['numSeconds']
+						docsProcessed=statResponse['docsProcessed'] - lastStat['docsProcessed']
+					rescue Exception => ex
+						puts ex.message
+						puts statResponse.to_json
+						puts lastStat.to_json
+					end
+					if(duration > 0)
+						$logger.debug("Latest status:#{currentStatus}")
+						speedPerMinute=(docsProcessed * 60.to_f / duration).round(2)
+						$logger.info("Docs per minute: #{speedPerMinute}\tIn the last #{duration} seconds #{docsProcessed} Documents were processed")
+					else #missing a performanceStat interval... suggesting that completion or at least no change.
+						if(isRunning()) #performanceStats do not always finish with an idle state... having to check 
+							currentStatus="RUNNING"
+						else
+							currentStatus="IDLE"
+						end
+					end
+					
+					lastStat=statResponse
+					$logger.trace(statResponse.to_json)
+				end
+				if(stillRunning)
+					@cfg['iteratorMutex'].synchronize {
+						if($iterator.nil?)
+							stillRunning=false
+						else
+							if($iterator.has_next())
+								stillRunning=true
+							else
+								stillRunning=false
+							end
+						end
+					}
+				end
+				if(stillRunning || (currentStatus != "IDLE"))
+					sleep 60  # TODO: Ask John if that's too frequent.
+				end
+			end
+		}
+		return statWatcher
+	end
+	
+	def getStats()
+		statResponse=post("#{@cfg["feed_service"]}/bulkProcessing/performanceStats", @cfg["headers"], "")["response"]
+		return statResponse
+	end
+	
+	def getNextItem()
+		nextItem=nil
+		@cfg['iteratorMutex'].synchronize {
+			if(@cfg['iterator'].has_next())
+				nextItem=@cfg['iterator'].next()
+				@cfg['processed']=@cfg['processed'] + 1
+				#if(@cfg['processed'] % 1000 == 0)
+				#	$logger.info("\t\t#{@cfg['processed'].to_s} of #{$total.to_s} queued")
+				#end
+			end
+			if(!(@cfg['iterator'].has_next()))
+				if(!@cfg['alreadySaidFinished'])
+					@cfg['alreadySaidFinished']=true
+					$logger.info("\t\t#{@cfg['processed'].to_s} of #{$total.to_s} queued")
+				end
+			end
+		}
+		return nextItem
+	end
+	
+	
+	def batchNLP(productionSet,metadataProfile,uploadThreads)
+		$startingTime = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+		@cfg['extraMeta']=metadataProfile.getMetadata()
+		@cfg['items']=productionSet.getProductionSetItems()
+		@cfg['iteratorMutex'] = Mutex.new
+		@cfg['alreadySaidFinished']=false
+		@cfg['processed']=0
+		@cfg['iterator']=@cfg['items'].iterator
+		$total=@cfg['items'].size()
+		$logger.info("#{$total} items selected for NLP")
+		statWatcher=$nlpClient.watchStats()
+		$logger.info("Stat watcher is ready")
+		threads = [statWatcher]
+		$logger.info("Spinning up #{uploadThreads} upload threads")
+		uploadThreads.times.each do | threadIndex |
+			threads << Thread.new(threadIndex) { |  thisThreadIndex |
+				$logger.warn("Thread:#{thisThreadIndex}\tSTARTED")
+				productionSetItem=getNextItem()
+				while(!(productionSetItem.nil?))
+					nextItem=productionSetItem.getItem()
+					begin
+						$logger.debug("Operating on Item #{nextItem.getName()} (guid:#{nextItem.getGuid()})")
+						item_text=$nlpClient.getItemText(nextItem)
+						$logger.trace("meta collection started")
+						item_metadata=$nlpClient.getMetadataForItem(nextItem,productionSetItem.getDocumentNumber(),@cfg['extraMeta'])
+						#do work here
+						$logger.debug("Asking NLP about this #{nextItem.getKind().getName()} named '#{nextItem.getName()}'. GUID: #{nextItem.getGuid()}")
+						#uploadConfirmation = $nlpClient.uploadText(item_text,nextItem.getGuid(),item_metadata) ## double check: I should replace nextItem.getGuid() with productionSetItem.getDocumentNumber()  ??
+						uploadConfirmation = $nlpClient.uploadText(item_text,productionSetItem.getDocumentNumber(),item_metadata) ## double check: I should replace nextItem.getGuid() with productionSetItem.getDocumentNumber()  ??
+						#sometimes I get back nil for upload Confirmation... I'm tagging those items as NLP|ERROR
+						nextItem.getCustomMetadata().putText("NLP-document-id", uploadConfirmation['response']['documentId'])
+						#work done
+						
+					rescue => ex
+						nextItem.addTag("NLP|ERROR")
+						$logger.warn(ex.message)
+						nextItem.addTag("NLP|ERROR|#{ex.message}")
+						$logger.warn(ex.backtrace.to_s)
+						nextItem.getCustomMetadata().putText("NLP-error-message", ex.message)
+						nextItem.getCustomMetadata().putText("NLP-error-backtrace", ex.backtrace)
+					end
+					productionSetItem=getNextItem()
+				end
+				$logger.warn("Thread:#{thisThreadIndex}\tFINISHED")
+			}
+		end
+
+
+		threads.each(&:join)
+
+		
+		$endingTime = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+		elapsedSeconds = $endingTime - $startingTime
+		hours=(elapsedSeconds / 60 / 60).floor
+		minutes=((elapsedSeconds-(hours*60*60)) / 60).round(0)
+		$logger.info("Elapsed:#{hours} hours and #{minutes} minutes")
+	end
+	
+end

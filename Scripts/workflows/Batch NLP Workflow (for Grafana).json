@@ -1,0 +1,249 @@
+{
+  "templateMetadata": {
+    "id": "74690283-3764385788-1658876799310",
+    "name": "Batch NLP Workflow (for Grafana)",
+    "description": "",
+    "lastEditedOn": 1658892531105,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": null,
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "Existing Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Bulk Production Set"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkProductionSet",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "flag:top_level",
+              "deduplicate": null,
+              "relationType": null,
+              "includeFamily": false,
+              "familyQuery": null,
+              "includeDuplicates": false,
+              "duplicatesQuery": null,
+              "includeNearDuplicates": false,
+              "nearDuplicatesQuery": null,
+              "nearDuplicatesThreshold": 0.0,
+              "threadsQuery": null,
+              "productionProfileName": "Simple Numbering",
+              "imagingProfileName": "Default",
+              "skipNativesSlipsheetedItems": false,
+              "description": "",
+              "name": "My Production Set",
+              "restClusterSettings": null,
+              "uiMetadata": {
+                "paneType": "new",
+                "paneId": "pane-1813701419-1658877458662",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:top_level",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              },
+              "existingProductionSet": "",
+              "freezeProductionSet": false,
+              "generatePrintPreviews": false
+            }
+          ],
+          "scopeToBatch": false,
+          "parallelProcessingSettings": null,
+          "usesWorkers": true,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": true,
+          "umsSession": null
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkProductionSetContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "requests",
+          "userId",
+          "canUseRemoteWorkers",
+          "parallelProcessingSettings",
+          "nuixLicenceType",
+          "class",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Production Set",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Batch Upload NLP Information"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case",
+        "ingestionStepId": null
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_BatchNLP.rb",
+              "async": true,
+              "customArguments": {
+                "productionSetName": "My Production Set",
+                "metadataProfile": "Default",
+                "investigate_url": "http://nuix-demo-inves.nuixdemo.local:8999/INVESTIGATE"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "b073b5b7-5e33-4bf1-81bf-12bedc4764db",
+              "uiMetadata": {
+                "paneId": "pane-2893276239-1658876849801"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Batch Upload NLP Information",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    }
+  ],
+  "id": 496,
+  "createdOn": 1658892531105,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

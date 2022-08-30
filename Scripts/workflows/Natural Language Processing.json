@@ -1,0 +1,334 @@
+{
+  "templateMetadata": {
+    "id": "44002756-4404036681-1651707219866",
+    "name": "Natural Language Processing",
+    "description": "",
+    "lastEditedOn": 1652064556036,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "Existing Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Create NLP Profile"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_CreateNLPProfile.rb",
+              "async": true,
+              "customArguments": {
+                "apply_results_to_custom_metadata": "true",
+                "apply_named_entities": "true",
+                "apply_results_to_properties": "true",
+                "apply_tags": "true"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "af0ec14c-96b9-430a-8434-1bfc6c13f99c",
+              "uiMetadata": {
+                "paneId": "pane-3959644058-1651707234873"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Create NLP Profile",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Reprocess"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "reprocess",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "processorSettings": {
+            "processText": null,
+            "processLooseFileContents": null,
+            "processForensicImages": null,
+            "analysisLanguage": null,
+            "stopWords": null,
+            "stemming": null,
+            "enableExactQueries": null,
+            "extractNamedEntities": null,
+            "extractNamedEntitiesFromText": null,
+            "extractNamedEntitiesFromProperties": null,
+            "extractNamedEntitiesFromTextStripped": null,
+            "extractNamedEntitiesFromTextCommunications": null,
+            "extractShingles": null,
+            "processTextSummaries": null,
+            "calculateSSDeepFuzzyHash": null,
+            "calculatePhotoDNARobustHash": null,
+            "detectFaces": null,
+            "classifyImagesWithDeepLearning": null,
+            "imageClassificationModelUrl": null,
+            "extractFromSlackSpace": null,
+            "carveFileSystemUnallocatedSpace": null,
+            "carveUnidentifiedData": null,
+            "carvingBlockSize": null,
+            "recoverDeletedFiles": null,
+            "extractEndOfFileSlackSpace": null,
+            "smartProcessRegistry": null,
+            "identifyPhysicalFiles": null,
+            "createThumbnails": null,
+            "skinToneAnalysis": null,
+            "calculateAuditedSize": null,
+            "storeBinary": null,
+            "maxStoredBinarySize": null,
+            "maxDigestSize": null,
+            "digests": [
+
+            ],
+            "addBccToEmailDigests": null,
+            "addCommunicationDateToEmailDigests": null,
+            "reuseEvidenceStores": null,
+            "processFamilyFields": null,
+            "hideEmbeddedImmaterialData": null,
+            "reportProcessingStatus": null,
+            "enableCustomProcessing": [
+
+            ],
+            "performOcr": null,
+            "ocrProfileName": null,
+            "createPrintedImage": null,
+            "imagingProfileName": null,
+            "exportMetadata": null,
+            "metadataExportProfileName": null,
+            "workerItemCallback": null,
+            "workerItemCallbacks": null,
+            "traversalScope": null,
+            "namedEntities": null
+          },
+          "mimeTypeProcessorSettings": [
+
+          ],
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "keystoreKeyParameters": [
+
+          ],
+          "rescanEvidenceRepositories": false,
+          "rescanEvidenceRepositoriesSettings": {
+            "depth": null
+          },
+          "configurationProfile": null,
+          "processingProfile": "Nuix Natural Language Processing",
+          "query": "flag:audited content:*",
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "numberOfWorkers": 2,
+          "umsSession": null,
+          "userId": null,
+          "uiMetadata": {
+            "queryMetadata": {
+              "type": "Custom Nql Query",
+              "value": "flag:audited content:*",
+              "validationStatus": "INITIAL",
+              "errors": [
+
+              ],
+              "isValid": false
+            }
+          },
+          "canUseRemoteWorkers": false,
+          "usesWorkers": true,
+          "selectableLicenceType": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "processorSettings",
+          "usesWorkers",
+          "selectableLicenceType",
+          "keystoreKeyParameters",
+          "processingProfile",
+          "query",
+          "rescanEvidenceRepositories",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "userId",
+          "canUseRemoteWorkers",
+          "parallelProcessingSettings",
+          "rescanEvidenceRepositoriesSettings",
+          "configurationProfile",
+          "restClusterSettings",
+          "nuixLicenceType",
+          "class",
+          "mimeTypeProcessorSettings",
+          "umsSession"
+        ]
+      },
+      "id": "Reprocess",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    }
+  ],
+  "id": 461,
+  "createdOn": 1652064556036,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "templateMetadata": {
+    "id": "71678066-2317024080-1651109894274",
+    "name": "Remote PII  Remediation",
+    "description": "Apply remediation for a filtered list of computers",
+    "lastEditedOn": 1651124961079,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local:9200",
+              "nuix-demo-es.nuixdemo.local:9202",
+              "nuix-demo-es.nuixdemo.local:9203",
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "Request",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Report"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Export_View.rb",
+              "async": true,
+              "customArguments": {
+                "name": "locations",
+                "metadataProfileName": "File Path",
+                "extension": "csv",
+                "exportFolderName": "Remediation",
+                "query": "named-entities:* and flag:loose_file and -exclusion:*"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "ff7e0d5d-27b3-49a0-9808-034ea160a365",
+              "uiMetadata": {
+                "paneId": "pane-2176992860-1649914746320"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Report",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Act"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Request"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": -0.6798334121704102
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "ECC_Collection_By_Computer_With_Configuration.rb",
+              "async": true,
+              "customArguments": {
+                "case.name": "Automation",
+                "computer.name": "/^AUSYD-W-INO-.*$/",
+                "configuration.name": "Replace with placeholder"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "ad12bfbf-1ad4-46ef-a91f-ffe21be19b46",
+              "uiMetadata": {
+                "paneId": "pane-1321225419-1650415369596"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Act",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Notify"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Request"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "GENERIC_SendMail.rb",
+              "async": true,
+              "customArguments": {
+                "subject": "${$currentCase.getName} has finished",
+                "to": "cameron.stiller@nuix.com",
+                "body": "Remediation has been completed.\n\n\nDetected ${$currentCase.count(\"named-entities:*\")} items with credit cards across ${$currentCase.getRootItems().size()} computers."
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "7172d9ab-74a7-43ba-9d40-b691c5d3a8c2",
+              "uiMetadata": {
+                "paneId": "pane-2438298199-1648510560710"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Notify",
+      "runtimeConfigurable": true,
+      "continueOnFailure": true,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Request"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    }
+  ],
+  "id": 456,
+  "createdOn": 1651124961079,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

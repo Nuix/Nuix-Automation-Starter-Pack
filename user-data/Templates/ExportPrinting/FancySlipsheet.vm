@@ -1,0 +1,293 @@
+##
+## Velocity template for converting a slip-sheet to HTML. Changes to this template require a restart of Nuix
+## to take effect. For further instructions on how to alter this template refer to the Apache Velocity template
+## documentation.
+##
+## NOTE: if you alter this template then you must keep a backup of the new version of your template.
+## When you reinstall or upgrade Nuix any modifications you make to this template will be lost.
+## The same applies if you add or alter any of the associated resources in the slip-sheet-assets folder.
+##
+## The following fields are available as template variables:
+##
+## $reason - it will have one of these values:
+##   SOURCE_DATA_NOT_FOUND
+##   ERROR_EXPORTING_NATIVE
+##   DOCUMENT_IS_ENCRYPTED
+##   DOCUMENT_HAS_NO_TEXT
+##   DOCUMENT_STAMPING_FAILED
+##   DOCUMENT_MARKUP_FAILED
+##   PAGE_FAILED_TO_TEXT_STRIP
+##   DOCUMENT_IS_UNPRINTABLE
+##   DOCUMENT_TOO_LARGE
+##   PAGE_FAILED_TO_TIFF
+##   CONTAINER_ITEM_INTENTIONALLY_EXCLUDED
+##   NO_BINARY_DATA
+##   DOCUMENT_REDACTED
+##   SLIP_SHEET_BY_USER
+##
+## $heading - a localised (translated) pretty printed text version of $reason that is easier to read.
+##
+## $metadata - a map of metadata field names to values. The metadata profile that was set for slip-sheets in
+## Imaging (in Global Options) defines the fields populated into this map, or a default map is used if no
+## metadata profile was set. In addition to displaying the fields in the metadata table itself, you can also
+## use this as a way to make decisions, e.g. if you add tags to the metadata profile then you can use them to
+## create conditional sections like #if ( $metadata.get('Tags').contains('some tag') ) and then insert some custom HTML.
+##
+## $mime-type - it will be the MIME type of the item, e.g. 'text/csv'
+##
+## $mime-kind - it will be the kind (or category) of the item's MIME type, e.g. 'spreadsheet'
+##
+##
+## If you want to include an HTML asset, e.g. replace the warning graphic, then put it in the slip-sheets-assets
+## folder and refer to it in your HTML (you don't need to include 'slip-sheet-assets' in the refering path).
+##
+## If you want to include another velocity template, e.g. conditionally include an extra template for
+## spreadsheet items only, then:
+## 1. Create that template in the same directory as this file, e.g. myFragment.vm
+## 2. Use #parse ( "/ExportPrinting/myFragment.vm" ) to include it in this file.
+##
+
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+    <style type='text/css'>
+      /* many rules in here are repeated to try and override any styles in htmlStyles for the same elements */
+      * {
+        page: AllOnePage !important; /* Word likes to insert arbitrary chapter breaks, so we disable that. */
+        word-wrap: break-word !important;
+      }
+
+      #set($pt = "pt")
+
+      #if ( $useCustomVerticalAlignment == true )
+      .nx--container {
+        position: absolute;
+        #if ($customVerticalAlignment == "top")
+          top: 0%;
+        #elseif ($customVerticalAlignment == "middle")
+          top: 50%;
+          -ms-transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        #else
+          bottom: 0%;
+        #end
+      }
+      #else
+      .nx--top-padding {
+        height: 108pt;
+      }
+      #end
+
+      .nx--heading {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 72pt;
+      }
+      .nx--heading span {
+        text-align: center;
+        #if ( $customTextFontFamilyName )
+          font-family: '$customTextFontFamilyName', sans-serif !important;
+        #else
+          font-family: 'Arial Unicode MS', sans-serif !important;
+        #end
+        #if ( $customTextFontSize )
+          font-size: $customTextFontSize$pt;
+        #else
+          font-size: 24pt;
+        #end
+        #if ( $customTextBold )
+          font-weight: bold;
+        #else
+          font-weight: normal;
+        #end
+      }
+      .nx--heading img {
+        vertical-align: middle;
+        max-width: 108pt;
+        max-height: 108pt;
+        width: auto;
+        height: auto;
+      }
+
+      .nx--introduction, .nx--metadata, .nx--metadata-th, .nx--metadata-td {
+        #if ( $contentsFontFamilyName )
+          font-family: '$contentsFontFamilyName', sans-serif !important;
+        #else
+          font-family: 'Arial Unicode MS', sans-serif !important;
+        #end
+
+        #if ($contentsFontSize)
+          font-size: $contentsFontSize$pt;
+        #else
+          font-size: 14pt;
+        #end
+
+        #if ($lineSpacing)
+          line-height: $lineSpacing;
+        #end
+      }
+
+      .nx--metadata {
+        max-width: 90%;
+        #if ( !$leftAlignmentSize && !$leftAlignmentUnit )
+        margin-left: auto;
+        margin-right: auto;
+        #end
+        border-collapse: collapse;
+      }
+      .nx--metadata-tr {
+        border: none;
+        vertical-align: top;
+      }
+      .nx--metadata-th, .nx--metadata-td {
+        padding: 0 0 0.5em 0;
+      }
+      .nx--metadata-th {
+        font-weight: bold;
+        text-align: left;
+        padding-right: 1em;
+        white-space: nowrap;
+      }
+
+      #if ( $leftAlignmentSize && $leftAlignmentUnit )
+      .nx--introduction, .nx--metadata {
+        margin-left: $leftAlignmentSize$leftAlignmentUnit;
+      }
+      #end
+	  
+	  body {
+		background-color: #050E28;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url(user-background.svg);
+	}
+	
+	#loginDialogContainer {
+		width: 500px;
+		min-height:600px;
+		max-height: 800px;
+		position: absolute;
+		left: calc(50% - 250px);
+		background-color: rgb(255,255,255);
+		border-radius: 5px;
+		top: calc(50% - 400px);
+	}
+	
+	.loginContent {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	.footerButtons {
+		box-sizing: border-box;
+		margin: 0px;
+		padding: 0px;
+		font-family: sharedFontRegular;
+		font-size: 12px;
+		font-weight: normal;
+		cursor: inherit;
+		border: none;
+		color: rgb(0,0,0);
+		text-decoration: none;
+		outline: none;
+		border-spacing: 0px;
+		border-collapse: collapse;
+		text-align: left;
+		user-select: none;
+		background: #F7F8FA;
+		height: 80px;
+		width: 100%;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		border-top: 1px solid ##C5CCD6;
+		padding-top: 28px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+
+	.logo {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		width: 60px;
+		height: 60px;
+		display: block;
+	}
+	h1 {
+		display:block;
+		width:100%;
+		text-align:center;
+	}
+    </style>
+#if( $htmlStyles )
+    $htmlStyles
+#end
+  </head>
+  <body>
+	#if( ! $useNoImage ) <!-- this handles two condition: useNoImage is null or useNoImage is false -->
+	  <td><img class="logo" src="#if($customImage && $customImageExtension)
+					  #if($customImageExtension == 'svg')
+					  data:image/$customImageExtension+xml;base64,$customImage
+					  #else
+					  data:image/$customImageExtension;base64,$customImage
+					  #end
+					#else Warning.svg
+					#end" alt="Warning image"/></td> <!-- image size is set in CSS above -->
+	#end
+  
+	<div id="loginDialogContainer" class="">
+		<div class="loginContent">
+			<h1>#if ( $heading ) $heading #end</h1>
+			
+			  #if( $metadata )
+				<table class="nx--metadata">
+				  #foreach( $key in $metadata.keySet() )
+					#set ( $value = $metadata.get($key) )
+
+					#if( $includeMetadataProfile == true ) ## include metadata profile
+					  #if( $value != "") ## if value is not empty
+						<tr class="nx--metadata-tr">
+						  #if ($doNotDisplayFieldName == false)
+							<td class="nx--metadata-th">$key:</td>
+						  #end
+						  <td class="nx--metadata-td">$value</td>
+						</tr>
+					  #else ## if value is null/empty
+						#if( $doNotDisplayBlankValue == false)
+						  <tr class="nx--metadata-tr">
+							#if ($inlcudeMetadataFieldName == true)
+							  <td class="nx--metadata-th">$key:</td>
+							#end
+							<td class="nx--metadata-td"></td>
+						  </tr>
+						#end
+					  #end
+					#else ## no metadata profile, normal table population
+					  <tr class="nx--metadata-tr">
+						<td class="nx--metadata-th">$key:</td>
+						<td class="nx--metadata-td">$value</td>
+					  </tr>
+					#end
+				  #end
+				</table>
+			  #end
+		</div>
+		<div class="footerButtons">
+			 #foreach( $p in $customIntroduction )
+				<p class="nx--introduction">$p</p>
+			  #end
+		</div>
+	</div>
+	
+	
+	
+    </div>
+  </body>
+</html>

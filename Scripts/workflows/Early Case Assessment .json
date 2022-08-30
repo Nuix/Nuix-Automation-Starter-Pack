@@ -1,0 +1,664 @@
+{
+  "templateMetadata": {
+    "id": "19424495-1219708212-1646964212812",
+    "name": "Early Case Assessment ",
+    "description": "custodians, cull, dedup, exclude,ocr,search and tag",
+    "lastEditedOn": 1649657273628,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local:9200",
+              "nuix-demo-es.nuixdemo.local:9202",
+              "nuix-demo-es.nuixdemo.local:9203",
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "New Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Assign Custodians"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Determine_Custodians.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "758e45ad-2dcd-4f45-9c43-fe19b46a5b00",
+              "uiMetadata": {
+                "paneId": "pane-1804827471-1645149178751"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Assign Custodians",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Bulk Item Set"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "name",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkItemSet",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "flag:top_level",
+              "deduplicate": "",
+              "relationType": null,
+              "batchName": "batch1",
+              "restClusterSettings": null,
+              "name": "All families",
+              "deduplication": "MD5 Per Custodian",
+              "description": "",
+              "deduplicateBy": "Family",
+              "custodianRanking": null,
+              "uiMetadata": {
+                "paneId": "pane-3328098572-1645148642519",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "flag:top_level",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              },
+              "existingItemSet": false
+            }
+          ],
+          "scopeToBatch": false,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkItemSetContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Item Set",
+      "runtimeConfigurable": false,
+      "continueOnFailure": true,
+      "nextSteps": [
+        "Bulk Exclusion"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": null
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "scopeToBatch",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkExclusion",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "NOT top-level-item-date:*",
+              "deduplicate": null,
+              "relationType": null,
+              "includeFamily": false,
+              "familyQuery": null,
+              "includeDuplicates": false,
+              "duplicatesQuery": null,
+              "includeNearDuplicates": false,
+              "nearDuplicatesQuery": null,
+              "nearDuplicatesThreshold": 0.0,
+              "threadsQuery": null,
+              "reason": "Items Above Top Level",
+              "excludeDescendants": false,
+              "restClusterSettings": null,
+              "uiMetadata": {
+                "paneId": "pane-1878551549-1645147676956",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "NOT top-level-item-date:*",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            },
+            {
+              "query": "item-set-duplicates:\"All families\"",
+              "deduplicate": null,
+              "relationType": null,
+              "includeFamily": true,
+              "familyQuery": null,
+              "includeDuplicates": false,
+              "duplicatesQuery": null,
+              "includeNearDuplicates": false,
+              "nearDuplicatesQuery": null,
+              "nearDuplicatesThreshold": 0.0,
+              "threadsQuery": null,
+              "reason": "Duplicates",
+              "excludeDescendants": false,
+              "restClusterSettings": null,
+              "uiMetadata": {
+                "paneId": "pane-2294303977-1645148802481",
+                "queryMetadata": {
+                  "type": "Custom Nql Query",
+                  "value": "item-set-duplicates:\"All families\"",
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            }
+          ],
+          "reportDisplayName": "ECA",
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkExclusionContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Exclusion",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Optical Character Recognition"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 600,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
+        "reportDisplayName",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ocr",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "query": "tag:( OCR* NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+          "ocrOptions": null,
+          "ocrImagingOptions": null,
+          "ocrProfile": "Default",
+          "imagingProfile": "Default",
+          "tags": null,
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "numberOfWorkers": 2,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "umsSession": null,
+          "userId": null,
+          "uiMetadata": {
+            "queryMetadata": {
+              "type": "Custom Nql Query",
+              "value": "tag:( OCR* NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+              "validationStatus": "INITIAL",
+              "errors": [
+
+              ],
+              "isValid": false
+            }
+          },
+          "remoteWorkerAgents": [
+
+          ],
+          "localWorkerCount": 0,
+          "exportProcessingJob": null,
+          "scopeToBatch": false,
+          "usesWorkers": true,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.OcrContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "ocrImagingOptions",
+          "query",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "exportProcessingJob",
+          "imagingProfile",
+          "userId",
+          "tags",
+          "canUseRemoteWorkers",
+          "ocrOptions",
+          "localWorkerCount",
+          "parallelProcessingSettings",
+          "ocrProfile",
+          "remoteWorkerAgents",
+          "restClusterSettings",
+          "nuixLicenceType",
+          "class",
+          "umsSession"
+        ]
+      },
+      "id": "Optical Character Recognition",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Bulk Search And Tag"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case",
+        "ingestionStepId": null
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 800,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "ocrImagingOptions",
+        "query",
+        "scopeToBatch",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "uiMetadata",
+        "exportProcessingJob",
+        "imagingProfile",
+        "userId",
+        "tags",
+        "canUseRemoteWorkers",
+        "ocrOptions",
+        "localWorkerCount",
+        "parallelProcessingSettings",
+        "ocrProfile",
+        "remoteWorkerAgents",
+        "restClusterSettings",
+        "nuixLicenceType",
+        "class",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkSearchAndTag",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "query": "(word-list:explosives)",
+              "tags": [
+                "explosives"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-2303124298-1645154834788",
+                "queryMetadata": {
+                  "type": "Word List Query",
+                  "value": [
+                    "explosives"
+                  ],
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            },
+            {
+              "query": "(word-list:countrylist)",
+              "tags": [
+                "countires"
+              ],
+              "uiMetadata": {
+                "paneId": "pane-3174563467-1646299366336",
+                "queryMetadata": {
+                  "type": "Word List Query",
+                  "value": [
+                    "countrylist"
+                  ],
+                  "validationStatus": "INITIAL",
+                  "errors": [
+
+                  ],
+                  "isValid": false
+                }
+              }
+            }
+          ],
+          "reportDisplayName": null,
+          "bulkSearcherOptions": {
+            "includeFamilies": false,
+            "deduplicateFamilies": false,
+            "omitExcludedItems": true,
+            "omitImmaterialFamilyItems": true,
+            "tagUniqueItems": false,
+            "countResponsiveItems": false,
+            "tagResponsiveItemsEnabled": false,
+            "matchingItemsAction": "addTags",
+            "createUnusedTags": false,
+            "removeEmptyTags": false,
+            "showTagColumns": true,
+            "allowDuplicateTags": true,
+            "allowDuplicateQueries": true,
+            "missingTagsAction": "fillWithQuery",
+            "expandTags": false,
+            "tagExpansions": null,
+            "scopingQuery": null,
+            "tagResponsiveItemsTag": null,
+            "searchFields": null
+          },
+          "uiMetadata": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "requests",
+          "userId",
+          "bulkSearcherOptions",
+          "canUseRemoteWorkers",
+          "nuixLicenceType",
+          "class",
+          "reportDisplayName",
+          "umsSession"
+        ]
+      },
+      "id": "Bulk Search And Tag",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "New Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 1000,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "uiMetadata",
+        "requests",
+        "userId",
+        "bulkSearcherOptions",
+        "canUseRemoteWorkers",
+        "nuixLicenceType",
+        "class",
+        "reportDisplayName",
+        "umsSession"
+      ]
+    }
+  ],
+  "id": 355,
+  "createdOn": 1649657273628,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

@@ -1,0 +1,138 @@
+require 'json'
+require 'net/http'
+require 'securerandom'
+
+
+class Automation
+
+	def initialize(server,username,password)
+		@apiKey=nil
+		@server=server
+		@X_XSRF_TOKEN=SecureRandom.uuid
+		@token=login(username,password)
+		puts "Ready for work"
+	end
+
+	def login(username,password)
+		data={
+			"username"=>username,
+			"password"=>password
+		}
+		loginResponse=doCall('/login',data)
+		return loginResponse['token']
+	end
+
+	def getCases()
+		return doCall('/cases',nil)
+	end
+
+	def getWorkflows()
+		return doCall('/workflowTemplates?includeDrafts=false',nil)
+	end
+	
+	def uploadWorkflow(workflowContents)
+		return doCall("/workflowTemplates",workflowContents)
+	end
+	
+	def getProfileTypes()
+		return ["imagingProfiles","ocrProfiles","processingProfiles","productionProfiles"]
+	end
+	
+	def getProfiles(type)
+		if(getProfileTypes().include? type)
+			profiles={}
+			profileNames=doCall("/" + type)
+			profileNames.each do | profileName |
+				profiles[profileName]=doCall("/" + type + "/" +  URI.encode(profileName))
+			end
+			return profiles
+		else
+			raise Exception.new "#{type} is not a valid type: #{getProfileTypes().join(',')}"
+		end
+	end
+	
+	def uploadProfile(type,openedFile)
+		return doCall("/" + type,openedFile,true)
+	end
+
+	def scheduleJob(caze,workflow,notifyEmail,migrate)
+		stepContext={}
+		workflow['workflowDefinition'].map{ | definition |
+			thisStepContext=definition['activity']['activityContext']
+			if(thisStepContext.has_key? "caseId")
+				thisStepContext['caseId']=caze['guid']
+			end
+			if(definition['activity']['activityType']=='caseCreation')
+				thisStepContext['name']=caze['name']
+				thisStepContext['description']=caze['description']
+			end
+			if(thisStepContext.has_key? 'migrate')
+				thisStepContext['migrate']=migrate
+			end
+			stepContext[definition['id']]=thisStepContext
+		}
+		data={
+			"jobLabels"=> [],
+			"workflowTemplateId"=> workflow['templateMetadata']['id'],
+			"workflowExecutionContext"=> {
+				"notificationContext"=> {
+					"recipients"=> [notifyEmail]
+				},
+				"sharedContext"=> {},
+				"skipStepIds"=> [],
+				"stepContext"=> stepContext,
+				"schedulingContext"=> {}
+			},
+		}
+		return doCall("/jobs",data)
+	end
+		
+	def doCall(path,content=nil,form=false) #content assumes post, form will post a file already opened with File.Open
+		uri=URI.parse(@server + path)
+		headers={'Content-Type' =>'application/json','Accept'=>'application/json'}
+		if(!(@token.nil?))
+			headers['Cookie']="XSRF-TOKEN=#{@X_XSRF_TOKEN}; AUTHENTICATION=#{@token}"
+			headers['X-XSRF-TOKEN']=@X_XSRF_TOKEN
+		end
+		Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+			request=nil
+			if(content.nil?)
+				request = Net::HTTP::Get.new(uri.request_uri, headers)
+			else
+				if(form==true)
+					headers['Accept']='*/*'
+				end
+				request = Net::HTTP::Post.new(uri.request_uri, headers)
+				if(form==true)
+					request.set_form([['profile', content]], 'multipart/form-data')
+				else
+					request.body=content.to_json
+				end
+			end
+			response=http.request(request)
+			responseContent=response.body
+			if(responseContent.start_with? "<?xml")
+				return responseContent #xml
+			end
+			begin
+				if(responseContent.to_s.length == 0)
+					return response.code.to_s
+				end
+				details=JSON.parse(responseContent)
+				if(details.kind_of?(Array))
+					return details
+				end
+				if(details.has_key? 'error')
+					raise Exception.new details['error'] + '.' + details['message']
+				end
+				if(details.has_key? 'errorCode')
+					raise Exception.new details['errorCode'] + '.' + details['developerMessage']
+				end
+				return details
+			rescue Exception => ex
+				raise Exception.new ex.message + "\nBacktrace:\n " + ex.backtrace.join("\n ") + "\nResponse:\n     " + responseContent + "\nContent Received:\n           " + content.to_s
+			end
+		end
+	end
+	
+end

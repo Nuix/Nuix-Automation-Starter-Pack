@@ -1,0 +1,475 @@
+{
+  "templateMetadata": {
+    "id": "95915491-1333207295-1646964988147",
+    "name": "Hydrating Data",
+    "description": "OCR + Third party integrations",
+    "lastEditedOn": 1649657343584,
+    "lastEditedBy": "demo",
+    "productVersion": null
+  },
+  "workflowDefinition": [
+    {
+      "activity": {
+        "activityType": "caseCreation",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "compound": false,
+          "location": null,
+          "name": null,
+          "description": null,
+          "investigator": null,
+          "elasticSearchSettings": {
+            "additionalSettings": null,
+            "cluster.name": "demo-cluster",
+            "index.number_of_shards": 3,
+            "index.number_of_replicas": 1,
+            "index.refresh_interval": "60s",
+            "nuix.index.auto_close": false,
+            "nuix.transport.hosts": [
+              "nuix-demo-es.nuixdemo.local:9200",
+              "nuix-demo-es.nuixdemo.local:9202",
+              "nuix-demo-es.nuixdemo.local:9203",
+              "nuix-demo-es.nuixdemo.local"
+            ],
+            "nuix.http.hosts": [
+
+            ],
+            "xpack.security.user": null,
+            "xpack.security.password": null,
+            "xpack.security.transport.ssl.enabled": false,
+            "xpack.ssl.key": null,
+            "xpack.ssl.certificate": null,
+            "xpack.ssl.certificate_authorities": null,
+            "nuix.auth.username": null,
+            "nuix.auth.password": null,
+            "searchguard.ssl.transport.keystore_filepath": null,
+            "searchguard.ssl.transport.keystore_password": null,
+            "searchguard.ssl.transport.truststore_filepath": null,
+            "searchguard.ssl.transport.truststore_password": null
+          },
+          "binaryStoreLocation": null,
+          "caseId": null,
+          "migrate": false,
+          "userId": null,
+          "requireNewNuixLicence": true,
+          "umsSession": null,
+          "umsUrl": null,
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
+        "lockableProperties": [
+          "nuixLicenceType",
+          "elasticSearchSettings"
+        ]
+      },
+      "id": "Existing Case",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Transcribe Candidates",
+        "Determine OCR Candidates",
+        "Translate"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": null,
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Translate_With_Systran.rb",
+              "async": true,
+              "customArguments": {
+                "query": "-lang:eng content:*"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "8ce1c8c1-883c-40b6-8072-733d4ba837ff",
+              "uiMetadata": {
+                "paneId": "pane-3771557030-1646300626811"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Translate",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Determine_OCR_Candidates.rb",
+              "async": true,
+              "customArguments": {
+
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "ae0c3ae7-2ae5-40cc-b5cb-bfd30c683818",
+              "uiMetadata": {
+                "paneId": "pane-1117806357-1645147912705"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Determine OCR Candidates",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Optical Character Recognition OCR"
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 100
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "name",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "ocr",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "restClusterSettings": null,
+          "query": "tag:( OCR* NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+          "ocrOptions": null,
+          "ocrImagingOptions": null,
+          "ocrProfile": "Default",
+          "imagingProfile": "Default",
+          "tags": null,
+          "parallelProcessingSettings": {
+            "workerCount": 2,
+            "workerMemory": 2048,
+            "workerTemp": null,
+            "brokerMemory": null,
+            "workerBrokerAddress": null,
+            "useRemoteWorkers": false,
+            "embedBroker": true
+          },
+          "numberOfWorkers": 2,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "umsSession": null,
+          "userId": null,
+          "uiMetadata": {
+            "queryMetadata": {
+              "type": "Custom Nql Query",
+              "value": "tag:( OCR* NOT \"OCR|PDF Avg Words Per Page|101 or Greater\" )",
+              "validationStatus": "INITIAL",
+              "errors": [
+
+              ],
+              "isValid": false
+            }
+          },
+          "remoteWorkerAgents": [
+
+          ],
+          "localWorkerCount": 0,
+          "exportProcessingJob": null,
+          "scopeToBatch": false,
+          "usesWorkers": true,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": true
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.OcrContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "ocrImagingOptions",
+          "query",
+          "scopeToBatch",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "uiMetadata",
+          "exportProcessingJob",
+          "imagingProfile",
+          "userId",
+          "tags",
+          "canUseRemoteWorkers",
+          "ocrOptions",
+          "localWorkerCount",
+          "parallelProcessingSettings",
+          "ocrProfile",
+          "remoteWorkerAgents",
+          "restClusterSettings",
+          "nuixLicenceType",
+          "class",
+          "umsSession"
+        ]
+      },
+      "id": "Optical Character Recognition OCR",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case",
+        "ingestionStepId": null
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
+          "y": 100
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "ocrImagingOptions",
+        "query",
+        "scopeToBatch",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "uiMetadata",
+        "exportProcessingJob",
+        "imagingProfile",
+        "userId",
+        "tags",
+        "canUseRemoteWorkers",
+        "ocrOptions",
+        "localWorkerCount",
+        "parallelProcessingSettings",
+        "ocrProfile",
+        "remoteWorkerAgents",
+        "restClusterSettings",
+        "nuixLicenceType",
+        "class",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_Transcribe_With_Speechmatics.rb",
+              "async": true,
+              "customArguments": {
+                "query": "kind:multimedia"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "d33dba38-39b9-4ef5-a051-3afaab4e32aa",
+              "uiMetadata": {
+                "paneId": "pane-2937848720-1645574256130"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "selectableLicenceType": true,
+          "canUseRemoteWorkers": false,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Transcribe Candidates",
+      "runtimeConfigurable": false,
+      "continueOnFailure": false,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+
+      },
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Existing Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 200,
+          "y": 200
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "name",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
+        "umsSession"
+      ]
+    }
+  ],
+  "id": 365,
+  "createdOn": 1649657343584,
+  "archived": false,
+  "nonBlockingStepIds": [
+
+  ],
+  "draft": false,
+  "immutable": false,
+  "keylinesData": null,
+  "applications": [
+    "IMS"
+  ]
+}

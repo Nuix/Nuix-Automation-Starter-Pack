@@ -1,0 +1,130 @@
+require 'json'
+
+$creds={}
+
+class Config
+	attr_accessor :customArguments
+	def initialize(configMap,customArguments,requiredArguments,requiredClasses)
+		@configMap=configMap
+		@mutex=Mutex.new #this will not prevent another application, but rather prevent multi-threaded inside this application...
+		begin
+			requiredArguments.each do | argument |
+				if(!(customArguments.has_key? argument))
+					puts "'#{argument}' is an expected key for this function"
+					raise Exception.new "'#{argument}' is an expected key for this function,supplied with: #{customArguments.keys.join(';')}"
+				end
+				if(!(customArguments[argument].to_s.strip().length > 0))
+					puts "'#{argument}' is an expected key for this function"
+					raise Exception.new "'#{argument}' is an expected key for this function,supplied with: #{customArguments.keys.join(';')}"
+				end
+			end
+			credsPath=""		
+			configMap={}
+			File.readlines(Dir.pwd + "/settings/application.properties").select{|line|(!(line.start_with? "#"))}.reject{|line|line.strip().length == 0}.each do |line|
+				key,value=line.split('=',2)
+				configMap[key]=value
+			end
+			userScriptsLocation=('"' + configMap['userScriptsLocation'] + '"').undump.strip()
+			credsPath=userScriptsLocation + "/shared/credentials.json"
+			$creds=JSON.parse(File.read(credsPath))
+			requiredClasses.each do | requiredClass |
+				filename=userScriptsLocation + "/shared/" + requiredClass + ".rb_"
+				if(File.file?(filename))
+					load filename
+				else
+					raise Exception.new("The required file was not found:#{filename}")
+				end
+			end
+			@customArguments=evalArguments(customArguments)
+		rescue Exception => ex
+			raise Exception.new(ex.message.to_s + ".     Full Back trace #{ex.backtrace.to_a.join(" ")}")
+		end
+	end
+	
+	def generateFilePathFromKey(key)
+		return $currentCase.getLocation().to_s + "/config_" + key + ".json"
+	end
+	
+	def getConfigKey(key)
+		return ('"' + @configMap[key] + '"').undump.strip()
+	end
+		
+	def get(key)
+		if(!(has_key? key))
+			possibleKeys=[]
+			Dir[$currentCase.getLocation().to_s + "/config_*.json"].each do |json_file|
+				possibleKeys.push(File.basename(json_file,".json").split('_').last())
+			end
+			raise Exception.new "'#{key}' was not found? #{possibleKeys.join(',')}"
+		end
+		@mutex.synchronize do
+			return JSON.parse(File.read(generateFilePathFromKey(key)))
+		end
+	end
+		
+	def has_key?(key)
+		@mutex.synchronize do
+			possibleKeys=[]
+			Dir[$currentCase.getLocation().to_s + "/config_*.json"].each do |json_file|
+				possibleKeys.push(File.basename(json_file,".json").split('_').last())
+			end
+			return possibleKeys.include? key
+		end
+	end
+
+	def set(key,value)
+		@mutex.synchronize do
+			output=nil
+			begin
+				output=JSON.pretty_generate(value)
+			rescue Exception => ex
+				puts "failed to convert the following to json:#{output.to_s}"
+				output=value.to_s
+			end
+			File.open(generateFilePathFromKey(key), 'w') { |file| file.write(output) }
+			return true
+		end
+	end
+	
+		
+	def evalArguments(customArguments)
+		customArguments.each do | key,value|
+			if(value.start_with? "config.")
+				value=value.delete_prefix('config.')
+			end
+			customArguments[key]=evaluate(value) #replaces ${code} with the evaluated result
+		end
+		return customArguments
+	end
+
+	## Allow for code execution
+	## e.g. ${$currentCase.getName()} will be evaluated to the Current Case Name
+	def evaluate(someString)
+		codeParts=someString.scan(/(?<=\$\{).+?(?=\})/)
+		codeParts.uniq.each do | codePart|
+			evalResult="--Unable to evaluate--"
+			begin
+				evalResult=eval(codePart).to_s
+			rescue Exception => ex
+				evalResult="--Unable to evaluate (#{ex.message})--"
+			end
+			someString=someString.gsub("${" + codePart + "}",evalResult)
+		end
+		return someString
+	end
+	
+end
+
+
+
+## Utilities for code execution.
+require 'date'
+
+#result=getGroupMembers("CN=Sydney Office,OU=O365 Groups,OU=Office,DC=nuix,DC=com","email",",")
+#result=getGroupMembers("CN=Domain Users,CN=Users,DC=NuixDemo,DC=local","email",",")
+def getGroupMembers(groupCN,field,delim) #runs an LDAP query
+	puts "LDAP called!"
+	output = `dsquery group "#{groupCN}" |dsget group -members | dsget user -#{field}`
+	result=output.lines[2..-2].map{|line|line.strip()}.reject{|line|line.length == 0}.sort()
+	return result.join(delim)
+end

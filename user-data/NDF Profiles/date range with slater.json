@@ -1,0 +1,402 @@
+{
+	"nonResponsiveTag": "NDF|Non-Responsive",
+	"responsiveTag": "NDF|Responsive",
+	"responsiveFamilyTag": "NDF|Responsive|Responsive-Family-Item",
+	"personNameNamedEntity": "person",
+	"responsiveCriteria": [
+		{
+			"condition": "AND",
+			"rules": [
+				{
+					"id": "query",
+					"field": "query",
+					"operator": "matches",
+					"value": "from:slater"
+				},
+				{
+					"id": "itemDate",
+					"field": "itemDate",
+					"operator": "less_or_equal",
+					"value": "27/09/2009"
+				},
+				{
+					"id": "itemDate",
+					"field": "itemDate",
+					"operator": "greater_or_equal",
+					"value": "25/09/2009"
+				}
+			]
+		}
+	],
+	"responsiveReturn": "RESPONSIVE_ITEM_FAMILY",
+	"responsiveContent": "TEXT_ONLY",
+	"encryptedItemsResponsive": false,
+	"personNameExtraction": true,
+	"identifyEntities": true,
+	"ocrItems": false,
+	"ocrProfile": "Default",
+	"entityExtractionScope": "PROPERTIES_AND_TEXT",
+	"entities": [
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Israel National ID\" pattern=\"\\b\\d{9}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Israel National ID",
+			"description": "Nine digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496723696572,
+			"readOnly": true,
+			"group": "DLP|Regional|Israel"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Chile Identity Card Number\" pattern=\"\\b\\d{1,2}\\.\\d{3}\\.\\d{3}-[\\dA-Za-z]{1}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Chile Identity Card",
+			"description": "7-8 digits plus delimiters a check digit or letter",
+			"createdBy": "Nuix",
+			"createdOn": 1496721592777,
+			"readOnly": true,
+			"group": "DLP|Regional|Chile"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"EU Debit Card Number\" pattern=\"\\b\\d{16}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "EU Debit Card Number",
+			"description": "16 digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496722290946,
+			"readOnly": true,
+			"group": "DLP|Regional|EU"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Finland National ID\" pattern=\"\\b\\d{6}[-+a]{1}\\d{3}[\\dA-Za-z]{1}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Finland National ID",
+			"description": "Six digits plus a character indicating a century plus three digits plus a check digit",
+			"createdBy": "Nuix",
+			"createdOn": 1496722384538,
+			"readOnly": true,
+			"group": "DLP|Regional|Finland"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"France Social Security Number (INSEE)\" pattern=\"\\b(\\d{13}\\s\\d{2})|(\\d{15})\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "France INSEE",
+			"description": "15 digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496722598678,
+			"readOnly": true,
+			"group": "DLP|Regional|France"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RegularExpression name=\"Australian TFN\" pattern=\"(\\b)(?!0{3}(\\s|-)?0{3}(\\s|-)?0{3}(\\s|-)?)\\d{3}(\\s|-)?\\d{3}(\\s|-)?\\d{3}(\\b)\" validationOperator=\"or\">\n<Validator context=\"100\" name=\"Australian TFN Validator\" type=\"jruby\">ZGVmIG9uTG9hZCgpCiAjIEVudGVyIExvZ2ljIHRvIHBlcmZvcm0gb24gbG9hZGluZyB0aGUgc2NyaXB0CmVuZAojIGh0dHA6Ly93d3cubWF0aGdlbi5jaC9jb2Rlcy90Zm4uaHRtbApkZWYgdmFsaWRfdGZuKHBvdGVudGlhbF90Zm4pCiB3ZWlnaHRzID0gWzEsNCwzLDcsNSw4LDYsOSwxMF0KIHN1bSA9IDAKICgwLi5wb3RlbnRpYWxfdGZuLnNpemUtMSkuZWFjaCBkbyB8cG9zfAogaWYgKHBvcyA+PSB3ZWlnaHRzLnNpemUpCiAJcmV0dXJuIGZhbHNlCiBlbmQKIHN1bSArPSBwb3RlbnRpYWxfdGZuW3Bvc10udG9faSAqIHdlaWdodHNbcG9zXQogZW5kCiByZXR1cm4gc3VtICE9IDAgJiYgc3VtICUgMTEgPT0gMAplbmQKZGVmIHZhbGlkYXRlKHJlZ2V4TWF0Y2gpCiByZXR1cm4gdmFsaWRfdGZuKHJlZ2V4TWF0Y2guZ2V0TWF0Y2guZ3N1YigiICIsIiIpLmdzdWIoIi0iLCIiKS5zdHJpcCkKZW5kCiMgQ2FsbGVkIHdoZW4gdGhlIHNjcmlwdCBpcyBjbG9zZWQKZGVmIG9uQ2xvc2UoKQogIyBFbnRlciBMb2dpYyB0byBwZXJmb3JtIG9uIGNsb3NpbmcgdGhlIHNjcmlwdAplbmQ=</Validator>\n</RegularExpression>",
+			"name": "Australian TFN",
+			"description": "The Australian TFN is a 9 digit number that has a checksum digit.",
+			"createdBy": "Nuix",
+			"createdOn": 1481078407866,
+			"readOnly": true,
+			"group": "DLP|Regional|Australia"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"France Driver's License Number\" pattern=\"\\b\\d{12}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "France Driver's Lic",
+			"description": "12 digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496722450957,
+			"readOnly": true,
+			"group": "DLP|Regional|France"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"TC032-non-mac-address-expanded\" pattern=\"\\b(\\d{1,6}[ab]?)(\\s+([A-Z][a-zA-Z]*){1,2})(\\s+([aA]venue|[Cc]ourt|[Cc]t|[Dd]rive|[Dd]r|[Ll]ane|[Ll]n|[Pp]lace|[Rr]oad|[Rr]d|[Ss]treet|[Ss]t)\\.?)(((\\s+)?,?\\s+)([A-Z][a-zA-Z]*){1,2})(((\\s+)?,?\\s+)((TAS|Tasmania|TASMANIA)|(VIC|Victoria|VICTORIA)|(NSW|New South Wales|NEW SOUTH WALES)|(QLD|Queensland|QUEENSLAND)|(SA|South Australia|SOUTH AUSTRALIA)|(NT|Northern Territory|NORTHERN TERRITORY)|(WA|Western Australia|WESTERN AUSTRALIA)))?(((\\s+)?,?\\s+)(\\d{4}))?\\b\" validationOperator=\"or\">\r\n<Validator context=\"10\" name=\"TC032-address-validator-expanded\" type=\"jruby\">IyBDYWxsZWQgdGhlIGZpcnN0IHRpbWUgdGhlIHNjcmlwdCBpcyBsb2FkZWQKJG1hY3F1YXJpZV9yZWdleGVzID0gWy9cYjUwIG1hcnRpbiBwbC8sIC9cYjEgbWFydGluIHBsLywgL1xiMSBzaGVsbGV5IHN0L10KZGVmIG9uTG9hZCgpCgplbmQKIyBEZWZhdWx0IFZhbGlkYXRpb24gU2NyaXB0CmRlZiB2YWxpZGF0ZShyZWdleE1hdGNoKQoJc3RyZWV0X21hdGNoID0gIiN7cmVnZXhNYXRjaC5nZXRNYXRjaCgpfSIuZG93bmNhc2UKCgkkbWFjcXVhcmllX3JlZ2V4ZXMuZWFjaCBkbyB8cmVnZXh8CgkJcmV0dXJuIGZhbHNlIGlmIHN0cmVldF9tYXRjaCA9fiByZWdleAoJZW5kCglyZXR1cm4gdHJ1ZQplbmQKIyBDYWxsZWQgd2hlbiB0aGUgc2NyaXB0IGlzIGNsb3NlZApkZWYgb25DbG9zZSgpCmVuZAoKCg==</Validator>\r\n</RegularExpression>\r\n",
+			"name": "TC032-non-mac-addr",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1490069029738,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"French CNI\" pattern=\"(^|s)(d{12})($|s|.s)\" validationOperator=\"or\"/>\r\n",
+			"name": "French CNI",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496642100639,
+			"readOnly": true,
+			"group": "DLP|Regional|France"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Italy Drivers License Number\" pattern=\"(^|s)(D{1}[^b-uw-zB-UW-Z])((w{7})(D))($|s|.s)\" validationOperator=\"or\"/>\r\n",
+			"name": "Italy Driver's Lic",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496642372311,
+			"readOnly": true,
+			"group": "DLP|Regional|Italy"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"ABA Routing Number\" pattern=\"\\b[123678]\\d{3}-{0,1}\\d{4}-{0,1}\\d\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "ABA Routing Number",
+			"description": "9 digits which may be in a formatted or unformatted pattern",
+			"createdBy": "Nuix",
+			"createdOn": 1496720117952,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Israel Bank Account Number\" pattern=\"(^|s)(d{2}-d{3}-d{8}|d{13})($|s|.s)\" validationOperator=\"or\"/>\r\n",
+			"name": "Israel Bank Account",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496642402058,
+			"readOnly": true,
+			"group": "DLP|Regional|Israel"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Australian Telephone Number\" pattern=\"(^|(?&lt;=\\W))(\\+61|\\(?0)(\\s|-)?([2..8])\\)?(\\s|-)?(\\d{4})(\\s|-)?(\\d{4})|(0|\\+61(\\s|-)?)4\\d{2}(\\s|-)?\\d{3}(\\s|-)?\\d{3}($|(?=\\W))\" validationOperator=\"or\"/>\r\n",
+			"name": "Australian Telephone",
+			"description": "Australian Telephone Number Format.",
+			"createdBy": "Nuix",
+			"createdOn": 1480383995881,
+			"readOnly": true,
+			"group": "DLP|Regional|Australia"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Finland Passport Number\" pattern=\"\\b[A-Za-z]{2}\\d{7}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Finland Passport",
+			"description": "Combination of nine letters and digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496722422678,
+			"readOnly": true,
+			"group": "DLP|Regional|Finland"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Email Addresses\" pattern=\"[\\+a-zA-Z0-9_.-]{1,64}@[a-zA-Z0-9-]{1,256}\\.[a-zA-Z0-9-.]{1,256}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Email Addresses",
+			"description": "A complete regular expression is extremely complex and time consuming to run as documented here: http://ex-parrot.com/~pdw/Mail-RFC822-Address.html so the one provided here is fast to run while handling most of the common ones",
+			"createdBy": "Nuix",
+			"createdOn": 1462397322807,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"United Kingdom ID Number\" pattern=\"\\b(?!000)([0-6]\\d{2}|7([0-6]\\d|7[012]))([ -]?)(?!00)\\d\\d\\3(?!0000)\\d{4}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "UK ID Number",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496641317736,
+			"readOnly": true,
+			"group": "DLP|Regional|United Kingdom"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Greece National ID Card\" pattern=\"\\b(\\D-\\d{6})|(\\w{2}-\\d{6})\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Greece National ID",
+			"description": "Combination of 7-8 letters and numbers plus a dash",
+			"createdBy": "Nuix",
+			"createdOn": 1496723016061,
+			"readOnly": true,
+			"group": "DLP|Regional|Greece"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Money\" pattern=\"[A-Z]{0,3}[$\\u00A3\\u20ac](?:0|[1-9]\\d{0,2}(?:[.,]?\\d{3}){0,10})[,.]?\\d{0,2}(\\b|_)\" validationOperator=\"or\"/>\r\n",
+			"name": "Money",
+			"description": "File containing regular expressions for money. Matches US and European formats with a leading dollar, pound or euro sign.",
+			"createdBy": "Nuix",
+			"createdOn": 1462397385632,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Brazil National ID Card (RG)\" pattern=\"\\b(\\d{2}\\.\\d{3}\\.\\d{3}-\\d)|(\\d{10}-\\d)\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Brazil ID (RG)",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496721164687,
+			"readOnly": true,
+			"group": "DLP|Regional|Brazil"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"United Kingdom Licence Plate\" pattern=\"\\b([A-Z]{3}\\s?(\\d{3}|\\d{2}|d{1})\\s?[A-Z])|([A-Z]\\s?(\\d{3}|\\d{2}|\\d{1})\\s?[A-Z]{3})|(([A-HK-PRSVWY][A-HJ-PR-Y])\\s?([0][2-9]|[1-9][0-9])\\s?[A-HJ-PR-Z]{3})\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "UK Licence Plate",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496641430350,
+			"readOnly": true,
+			"group": "DLP|Regional|United Kingdom"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Hong Kong Identity Card (HKID) Number\" pattern=\"\\b[A-Za-z]{1,2}\\d{6}[\\dA]{1}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Hong Kong HKID",
+			"description": "Combination of 8-9 letters and numbers plus optional parentheses around the final character",
+			"createdBy": "MWestwoodHill01",
+			"createdOn": 1496723074207,
+			"readOnly": true,
+			"group": "DLP|Regional|Hong Kong"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Canada Passport Number\" pattern=\"\\b[A-Z]{2}\\d{6}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Canada Passport",
+			"description": "Two uppercase letters followed by six digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496721369466,
+			"readOnly": true,
+			"group": "DLP|Regional|Canada"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"France Passport Number\" pattern=\"\\b\\d{2}[A-Za-z]{2}\\d{5}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "France Passport",
+			"description": "Nine digits and letters",
+			"createdBy": "Nuix",
+			"createdOn": 1496722510087,
+			"readOnly": true,
+			"group": "DLP|Regional|France"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"URL\" pattern=\"(http|https|ftp)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\\\+&amp;amp;%\\$#\\=~])*[^\\.\\,\\)\\(\\s]\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "URL",
+			"description": "File containing regular expressions to match URLs.  Again, this regexp is a trade-off of obtaining most URLs in an efficient manner rather than being 100% complete.",
+			"createdBy": "Nuix",
+			"createdOn": 1462397420055,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"United Kingdom National INS Code\" pattern=\"\\b[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-DFM]{0,1}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "UK National INS Code",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496641382330,
+			"readOnly": true,
+			"group": "DLP|Regional|United Kingdom"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"India Permanent Account Number\" pattern=\"\\b[A-Za-z]{5}\\d{4}\\w{1}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "India Permanent Acc",
+			"description": "10 letters or digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496723138097,
+			"readOnly": true,
+			"group": "DLP|Regional|India"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"India Unique Identification (Aadhaar) Number\" pattern=\"\\b\\d{4}\\s{0,1}\\d{4}\\s{0,1}\\d\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "India Aadhaar",
+			"description": "12 digits containing optional spaces or dashes",
+			"createdBy": "Nuix",
+			"createdOn": 1496723197307,
+			"readOnly": true,
+			"group": "DLP|Regional|India"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RegularExpression name=\"Credit Card Numbers [Bounded and Validated]\" pattern=\"(?=\\b|_)(?=\\d)((?:[456]\\d{3}([\\ \\-]?)\\d{4}\\2\\d{4}\\2\\d{4}\\2\\d{3})|(?:[456]\\d{3}([\\ \\-]?)\\d{4}\\3\\d{4}\\3\\d{4}\\3\\d{2})|(?:[3456]\\d{3}([\\ \\-]?)\\d{4}\\4\\d{4}\\4\\d{4})|(?:[3456]\\d{3}([\\ \\-]?)\\d{4}\\5\\d{4}\\5\\d{2})|(?:3[47]\\d{2}([\\ \\-]?)\\d{6}\\6\\d{5})|(?:4\\d{3}([\\ \\-]?)\\d{3}\\7\\d{3}\\7\\d{3})|(?:3[0689]\\d{2}([\\ \\-]?)\\d{6}\\8\\d{4})|(?:2131([\\ \\-]?)\\d{4}\\9\\d{4}\\9\\d{3})|(?:1354([\\ \\-]?)\\d{4}\\10\\d{4}\\10\\d{3})|(?:2131([\\ \\-]?)\\d{6}\\11\\d{5})|(?:1800([\\ \\-]?)\\d{6}\\12\\d{5})|(?:1800([\\ \\-]?)\\d{4}\\13\\d{4}\\13\\d{3}))(?=\\b|_)\" validationOperator=\"and\">\n<Validator type=\"luhn\"/>\n</RegularExpression>\n",
+			"name": "Credit Card (Valid)",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1504747020993,
+			"readOnly": false,
+			"group": "Un-Grouped"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RegularExpression name=\"Person Name\" pattern=\"(\\p{javaUpperCase}[\\p{javaLowerCase}']{1,25}\\.?)((([\\ \\-])([aeou][dlr]-|ibn |bin )?(\\p{javaUpperCase}.?'?\\p{javaUpperCase}?[\\p{javaLowerCase}']{0,25})){0,12})(?=\\b|_)\" validationOperator=\"or\">\r\n<Validator type=\"personName\"/>\r\n</RegularExpression>\r\n",
+			"name": "Person Name",
+			"description": "Located Person Names.",
+			"createdBy": "Nuix",
+			"createdOn": 1479267748936,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Australia Passport Number\" pattern=\"\\b[A-Za-z]\\d{7}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Australia Passport",
+			"description": "A letter followed by seven digits",
+			"createdBy": "Nuix",
+			"createdOn": 1496720422165,
+			"readOnly": true,
+			"group": "DLP|Regional|Australia"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"German Identity Card Number\" pattern=\"\\b([A-Za-z]{1}\\d{8})|(\\d{10})\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "German Identity Card",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496722726430,
+			"readOnly": true,
+			"group": "DLP|Regional|Germany"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"United Kingdom Bank Sort Code\" pattern=\"\\b[0-9]{2}[-][0-9]{2}[-][0-9]{2}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "UK Bank Sort Code",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1496641409464,
+			"readOnly": true,
+			"group": "DLP|Regional|United Kingdom"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RegularExpression name=\"Personal ID [Validated]\" pattern=\"(?!9|666|000)\\d{3}([-| ]?)(?!00)\\d{2}\\1(?!0000)\\d{4}(?=\\b|_)\" validationOperator=\"or\">\r\n<Validator type=\"ssn\"/>\r\n</RegularExpression>\r\n",
+			"name": "Valid Personal ID",
+			"description": "",
+			"createdBy": "Nuix",
+			"createdOn": 1504747021094,
+			"readOnly": false,
+			"group": "Un-Grouped"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Czech National Identity Card Number\" pattern=\"\\b\\d{6}/\\d{4}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Czech Identity Card",
+			"description": "10 digits containing a forward slash",
+			"createdBy": "Nuix",
+			"createdOn": 1496722041919,
+			"readOnly": true,
+			"group": "DLP|Regional|Czech"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Belgium National Number\" pattern=\"\\b\\d{2}\\.\\d{2}\\.\\d{2}-([13579]{3}|[02468]{3})\\.\\d{2} \" validationOperator=\"or\"/>\r\n",
+			"name": "Belgium National No",
+			"description": "11 digits plus delimiters",
+			"createdBy": "Nuix",
+			"createdOn": 1496720922615,
+			"readOnly": true,
+			"group": "DLP|Regional|Belgium"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Post Code &amp; State (Australia)\" pattern=\"(([nN][sS][wW]\\s{1,5}([12][0-5][0-9][0-9]|[2][6-8][2-9][0-9]|[2][9][2-9][1-9]))|(([12][0-5][0-9][0-9]|[2][6-8][2-9][0-9]|[2][9][2-9][1-9]))\\s{1,5}[nN][sS][wW])|(([vV][iI][cC]\\s{1,5}([3][0-9][0-9][0-9]|[8][0-9][0-9][0-9]))|([3][0-9][0-9][0-9]|[8][0-9][0-9][0-9])\\s{1,5}[vV][iI][cC])|(([qQ][lL][dD]\\s{1,5}([4][0-9][0-9][0-9]|[9][0-9][0-9][0-9]))|([4][0-9][0-9][0-9]|[9][0-9][0-9][0-9])\\s{1,5}[qQ][lL][dD])|(([sS][aA]\\s{1,5}([5][0-9][0-9][0-9]))|([5][0-9][0-9][0-9])\\s{1,5}[sS][aA])|(([wW][aA]\\s{1,5}([6][0-9][0-9][0-9]))|([6][0-9][0-9][0-9])\\s{1,5}[wW][aA])|(([tT][aA][sS]\\s{1,5}([7][0-9][0-9][0-9]))|([7][0-9][0-9][0-9])\\s{1,5}[tT][aA][sS])|(([nN][tT]\\s{1,5}([0][0-9][0-9][0-9]))|([0][0-9][0-9][0-9])\\s{1,5}[nN][tT])|(([aA][cC][tT]\\s{1,5}([0][2][0-9][0-9]|[2][6][0-1][0-9]|[2][9][0-2][0]))|(([0][2][0-9][0-9]|[2][6][0-1][0-9]|[2][9][0-2][0]))\\s{1,5}[aA][cC][tT])\" validationOperator=\"or\"/>\r\n",
+			"name": "Post Code-State (AU)",
+			"description": "This will identify PostCode and State (Abbreviations) which occure within 5 spaces of each other, with the state abbreviations either proceeding or preceeding the post code.\n\nPost codes are only valid if they conform to the value range for the given state.",
+			"createdBy": "Nuix",
+			"createdOn": 1480383552885,
+			"readOnly": true,
+			"group": "DLP|Regional|Australia"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Brazil CPF Number\" pattern=\"\\b\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Brazil CPF",
+			"description": "11 digits that include a check digit and can be formatted or unformatted",
+			"createdBy": "Nuix",
+			"createdOn": 1496721075172,
+			"readOnly": true,
+			"group": "DLP|Regional|Brazil"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Countries\" pattern=\"(?=[a-zA-ZåÅ])([sS](?:o(?:uth (?:[gG]eorgia and the [sS]outh [sS]andwich [iI]slands|[aA]frica|[sS]udan)|lomon [iI]slands|malia)|a(?:int (?:[vV]incent and the [gG]renadines|[pP]ierre and [mM]iquelon|[kK]itts and [nN]evis|[bB]arthélemy|[hH]elena|[mM]artin|[lL]ucia)|o [tT]ome and [pP]rincipe|udi [aA]rabia|n [mM]arino|moa)|valbard and [jJ]an [mM]ayen|yrian [aA]rab [rR]epublic|i(?:erra [lL]eone|n(?:t [mM]aarten|gapore))|w(?:itzerland|aziland|eden)|e(?:ychelles|negal|rbia)|ri [lL]anka|lov(?:akia|enia)|u(?:riname|dan)|pain)|[uU](?:nited (?:[sS]tates(?: [mM]inor [oO]utlying [iI]slands|)|[aA]rab [eE]mirates|[kK]ingdom)|zbekistan|kraine|ruguay|ganda)|[hH](?:eard [iI]sland and [mM]cdonald [iI]slands|o(?:n(?:g [kK]ong|duras)|ly [sS]ee)|ungary|aiti)|[dD](?:e(?:mocratic [rR]epublic of the [cC]ongo|nmark)|ominica(?:n [rR]epublic|)|jibouti)|[lL](?:a(?:o [pP]eople's [dD]emocratic [rR]epublic|tvia)|i(?:b(?:yan [aA]rab [jJ]amahiriya|eria)|echtenstein|thuania)|uxembourg|e(?:banon|sotho))|[bB](?:r(?:itish [iI]ndian [oO]cean [tT]erritory|unei [dD]arussalam|azil)|o(?:snia(?: and [hH]erzegovina|)|uvet [iI]sland|tswana|livia|naire)|u(?:r(?:kina [fF]aso|undi)|lgaria)|a(?:ngladesh|rbados|h(?:amas|rain))|e(?:l(?:arus|gium|ize)|rmuda|nin)|hutan)|[fF](?:r(?:ench (?:[sS]outhern [tT]erritories|[pP]olynesia|[gG]uiana)|ance)|a(?:lkland [iI]slands|roe [iI]slands)|i(?:nland|ji))|[cC](?:entral [aA]frican [rR]epublic|o(?:cos (?:\\([kK]eeling\\) [iI]slands|[iI]slands)|ok [iI]slands|sta [rR]ica|lombia|moros|ngo)|h(?:ristmas [iI]sland|i(?:le|na)|ad)|a(?:yman [iI]slands|pe [vV]erde|m(?:bodia|eroon)|nada)|zech [rR]epublic|ôte [dD]'[iI]voire|roatia|u(?:raçao|ba)|yprus)|[nN](?:or(?:thern [mM]ariana [iI]slands|folk [iI]sland|way)|e(?:w (?:[cC]aledonia|[zZ]ealand)|therlands|pal)|i(?:caragua|ger(?:ia|)|ue)|a(?:mibia|uru))|[tT](?:u(?:rk(?:s and [cC]aicos [iI]slands|menistan|ey)|nisia|valu)|rinidad and [tT]obago|imor\\-[lL]este|a(?:jikistan|nzania|iwan)|hailand|o(?:kelau|nga|go))|[pP](?:a(?:l(?:estin(?:ian [tT]erritories|e)|au)|pua [nN]ew [gG]uinea|kistan|raguay|nama)|hilippines|uerto [rR]ico|itcairn|o(?:rtugal|land)|eru)|[aA](?:n(?:t(?:igua and [bB]arbuda|arctica)|g(?:uilla|ola)|dorra)|merican [sS]amoa|fghanistan|zerbaijan|r(?:gentina|menia|uba)|ustr(?:alia|ia)|l(?:bania|geria))|[rR](?:ussian [fF]ederation|omania|éunion|wanda)|[eE](?:quatorial [gG]uinea|l [sS]alvador|thiopia|cuador|ritrea|stonia|gypt)|[wW](?:allis and [fF]utuna|estern [sS]ahara)|[mM](?:a(?:r(?:shall [iI]slands|tinique)|dagascar|urit(?:ania|ius)|c(?:edonia|ao)|l(?:a(?:ysia|wi)|dives|vinas|ta|i)|yotte)|icronesia|o(?:n(?:t(?:enegro|serrat)|golia|aco)|zambique|ldova|rocco)|yanmar|exico)|[kK](?:e(?:eling [iI]slands|nya)|azakhstan|yrgyzstan|iribati|uwait|orea)|[vV](?:i(?:rgin [iI]slands|etnam)|enezuela|anuatu)|[gG](?:u(?:inea(?:\\-[bB]issau|)|a(?:deloupe|temala|m)|ernsey|yana)|ibraltar|re(?:e(?:nland|ce)|nada)|e(?:orgia|rmany)|a(?:mbia|bon)|hana)|[åÅ]land [iI]slands|[iI](?:s(?:le Of [mM]an|rael)|nd(?:onesia|ia)|celand|r(?:eland|a(?:n|q))|taly)|[zZ](?:imbabwe|ambia)|[jJ](?:a(?:maica|pan)|ersey|ordan)|[qQ]atar|[yY]emen|[oO]man)\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Countries",
+			"description": "Matches proper-cased country names roughly matching ISO 3166-1",
+			"createdBy": "Nuix",
+			"createdOn": 1462397237741,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"IP Addresses\" pattern=\"(?=\\d)(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "IP Addresses",
+			"description": "File containing regular expressions to match IP addresses.  At the moment, this only locates IPv4 addresses.",
+			"createdBy": "Nuix",
+			"createdOn": 1462397350137,
+			"readOnly": true,
+			"group": "General"
+		},
+		{
+			"instruction": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<RegularExpression name=\"Company Names\" pattern=\"(((\\p{javaUpperCase}[a-zA-Z]{2,25}|&amp;|and)[\\ \\-]){1,12}(?i)(?:p(?:roprietary limited|t(?:y(?: l(?:imited|td)|\\. ltd)|e ltd)|vt(?:\\. ltd\\.| ltd)|lc)|c(?:redit union|o(?:rp(?:oration|)|mpany|\\.))|inc(?:orporated|)|\\(pty\\) ltd|l(?:imited|\\.l\\.(?:c|p)|l(?:c|p)|td)|bank|P/L))\\b\" validationOperator=\"or\"/>\r\n",
+			"name": "Company Names",
+			"description": "Matches proper-cased company names that end in common business suffixes, such as Pty Ltd, LLP, Inc. e.t.c.",
+			"createdBy": "Nuix",
+			"createdOn": 1462397176968,
+			"readOnly": true,
+			"group": "General"
+		}
+	],
+	"processNonResponsive": false
+}

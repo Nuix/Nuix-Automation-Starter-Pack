@@ -1,0 +1,162 @@
+## based from the original found here:
+## https://github.com/Nuix/Systran-Language-Translation
+
+require 'uri'
+require 'net/https'
+require 'json'
+
+class Systran
+	attr_accessor :version, :profiles, :languages, :formats
+	def initialize(url,key)
+		@url=url
+		@key=key
+		@batches={}
+		@version=doCall('/translation/apiVersion')["version"]
+		if(@version!="2.5.0")
+			puts("WARN:Version of api differs from the 2.5.0 that this script was tested with. Oddities may occur")
+		end
+		puts("Running Systran test for version:#{@version}")
+		#@profiles=doCall('/translation/profiles')["profiles"]
+		@languages=doCall('/translation/supportedLanguages')["languagePairs"].map{|language|
+			languageDetails={
+				"source"=>language['source'],
+				"target"=>language['target'],
+			}
+			javaLocale=java.util.Locale.new(languageDetails['source'].split('-')[0])
+			languageDetails['source3Letter']=javaLocale.getISO3Language() #used for intelligent lookups from nuix's language detection.
+			languageDetails
+		}
+		#@formats=doCall('/translation/supportedFormats')["formats"]
+	end
+
+	#do not call outside this class...
+	def doCall(path,type='get',content=nil)
+		begin
+			uri = URI.parse(@url + path)
+			http = Net::HTTP.new(uri.host, uri.port)
+			http.read_timeout=500
+			if(uri.scheme=="https")
+				http.use_ssl = true
+			end
+			req=nil
+			response=""
+			case
+				when type=='get'
+					req = Net::HTTP::Get.new(uri)
+					req["Authorization"]="Key " + @key
+					res = http.request(req)
+					response=res.body()
+				when type=='post'
+					req = Net::HTTP::Post.new(uri)
+					req["Authorization"]="Key " + @key
+					req.set_form(content, 'multipart/form-data')
+					res=http.request(req)
+					response=res.body
+				else
+					puts "type is unknown!!"
+			end
+			
+			if(response.include? '<!DOCTYPE html>')
+				status,message=response.match(/(?<=<title>).*?(?=<\/title>)/)[0].split("|")[1].split(":").map{|a|a.strip()}
+				return {"error"=>{"status"=>status,"message"=>message}}
+			end
+			begin
+				return JSON.parse(response)
+			rescue Exception=> ex
+				#not json
+			end
+			parts=response.split(/#{response.lines[0].strip()}-*/).map{|a|a.strip()}.select{|a|a.length > 0}
+			content={}
+			parts.each do | part|
+				if(!part.lines[0].split(':')[1].nil?)
+					name=part.lines[0].split(':')[1].strip()
+					value=part.lines.drop(2).join("\n")
+					if(name=='output')
+						content[name]=value
+					else
+						content[name]=JSON.parse(value)
+					end
+				else
+					puts response # whats up with this content?
+				end
+			end
+			return content
+		rescue Exception => ex
+			puts ex
+			puts ex.backtrace
+			return {"error"=>{"status"=>-1,"message"=>ex.message}}
+		end
+	end
+	
+	def withBatch()
+		result=doCall('/translation/file/batch/create','post',{})
+		batchId=result["batchId"]
+		@batches[batchId]={}
+		begin
+			yield batchId
+		rescue Exception => ex
+			puts ex
+			puts ex.backtrace
+		end
+		if(@batches.has_key? batchId)
+			closeBatch(batchId)
+		end
+		@batches.delete(batchId)
+	end
+	
+	def closeBatch(batchId)
+		#when finished close batch
+		doCall('/translation/file/batch/close','post',{'batchId'=>batchId})
+	end
+	
+	def withBatchResults(batchId)
+		#poll the batch every second until it's finished
+		finishedAt=nil
+		while(finishedAt.nil?)
+			sleep(1)
+			result=doCall('/translation/file/batch/status?batchId=' + batchId)
+			if(result["cancelled"] || result["expireAt"] || result["finishedAt"])
+				finishedAt=result["finishedAt"]
+			end
+			finishedRequests=result["requests"].select{|request|["finished","error"].include? request["status"].downcase}
+											   .select{|request|@batches[batchId].has_key? request["id"]["$oid"]}
+			finishedRequests.each do | finishedRequest |
+				requestId=finishedRequest["id"]["$oid"]
+				if(finishedRequest["status"]=="finished")
+					translationResult=doCall('/translation/file/result?requestId=' + requestId)
+				else
+					statusResult=doCall('/translation/file/status?requestId=' + requestId)
+					translationResult={
+					
+						"error"=>{
+							"status"=>statusResult["status"],
+							"message"=>statusResult["description"],
+							"additional"=>statusResult
+						}
+					}
+				end
+				begin
+					sourceLanguage,item=@batches[batchId][requestId]
+					yield sourceLanguage,item,translationResult,requestId
+				rescue Exception => ex
+					puts ex
+					puts ex.backtrace
+				end
+				@batches[batchId].delete(requestId)
+			end
+		end
+		
+	end
+
+
+	def translate(sourceLanguage,targetLanguage,batchId,item)
+		text=item.getTextObject().toString()
+		textlines=text.gsub(/\s*[\n\r\t\u00a0]+\s*/,"\n")
+		if(textlines.length > 1000000)
+			textlines=textlines[0, 1000000]
+			puts "Warning:#{item.getGuid()} has more than 1 Million characters, only sending 1 Million"
+		end
+		requestId=doCall('/translation/file/translate','post',{"input"=>textlines,"source"=>sourceLanguage,"target"=>targetLanguage,"withInfo"=>"true","async"=>"true","batchId"=>batchId})["requestId"]
+		@batches[batchId][requestId]=[sourceLanguage,item]
+	end
+end

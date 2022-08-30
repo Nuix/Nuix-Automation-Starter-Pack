@@ -1,0 +1,260 @@
+require 'net/http'
+require 'json'
+
+class ECC
+	def initialize(username,password,server)
+		@server=server
+		@username=username
+		@password=password
+		if(username.nil?)
+			raise Exception.new "initialize() was passed a nil value for username"
+		end
+		if(password.nil?)
+			raise Exception.new "initialize() was passed a nil value for password"
+		end
+		if(server.nil?)
+			raise Exception.new "initialize() was passed a nil value for server"
+		end
+	end
+	
+	def addECCResultsToNuixCase(jobs)
+		if(jobs.nil?)
+			raise Exception.new "addECCResultsToNuixCase() was passed a nil value for jobs"
+		end
+		myProcessor = $currentCase.createProcessor()
+		myProcessor.setProcessingSettings({
+			"identifyPhysicalFiles" => true,
+			"traversalScope" => "loose_files",
+			})
+
+		jobs.each do | job |
+			if(job.has_key? 'destination') #ensure at least the destination key was found
+				if(job['destination'].to_s.strip() != '') #additional precautions just in case there is an empty destination or a nil
+					flattened={}
+					job.each do | key,value|
+						flattened[key.to_s]=value.to_s
+					end
+					if(job['status']=='Finished')
+						myEvidenceContainer = myProcessor.newEvidenceContainer(job['computerName'].to_s + '(' + job['id'].to_s + ')' , {
+							"customMetadata" => flattened,
+							"description" => job['collectionName'],
+							"timeZone" => "Australia/Sydney" #must be  a valid timezone!
+						})
+						myEvidenceContainer.addFile(job['destination'])
+						myEvidenceContainer.save
+					end
+				end
+			end
+		end
+		myProcessor.process()
+
+		addedJobs=$currentCase.count('mime-type:application/vnd.microforensics-filesafe')
+		if(addedJobs ==0)
+			puts "No Jobs were found to add to the Case"
+		end
+		return "#{addedJobs} jobs added to the case ready for a reload to populate"
+	end
+	
+	def doCall(path,content=nil) #content assumes post
+		uri=URI.parse(@server + '/api/ecc' + path)
+		Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+			request=nil
+			if(content.nil?)
+				request = Net::HTTP::Get.new(uri.request_uri)
+			else
+				request = Net::HTTP::Post.new(uri.request_uri, 'Content-Type' => 'application/json')
+				request.body=content.to_json
+			end
+			request.basic_auth(@username, @password)
+			responseContent=http.request(request).body
+			begin
+				return JSON.parse(responseContent)
+			rescue Exception => ex
+				puts responseContent
+				raise Exception.new ex.message + "\nBacktrace:\n " + ex.backtrace.join("\n ") + "\nResponse:\n     " + responseContent + "\nContent Received:\n           " + content.to_s
+			end
+		end
+	end
+	
+	def getCaseIdFromName(caseName)
+		if(caseName.nil?)
+			raise Exception.new "getCaseIdFromName() was passed a nil value"
+		end
+		cases=doCall('/v2/cases')['cases']
+		cases=cases.select{|caze|caze['name'].downcase()==caseName.downcase()}
+		if(cases.length == 0)
+			puts "Case was not found: #{caseName}"
+			raise Exception.new "Case was not found: #{caseName}"
+		end 
+		if(cases[0]["status"]!="Open")
+			puts "Case was #{cases[0]["status"]}: #{caseName}"
+			raise Exception.new "Case was #{cases[0]["status"]}: #{caseName}"
+		end
+		return cases[0]["id"]
+	end
+	
+	def getConfigurationIdFromName(configurationName)
+		if(configurationName.nil?)
+			raise Exception.new "getConfigurationIdFromName() was passed a nil value for configurationName"
+		end
+		configurations=doCall('/v2/configurations')['configurations']
+		configurations=configurations.select{|configuration|configuration['name'].downcase()==configurationName.downcase()}
+		if(configurations.length == 0)
+			raise Exception.new  "Configuration was not found: #{configurationName}"
+		end
+		return configurations[0]["id"]
+	end
+	
+	$computers=nil
+	def getComputerUUIdsFromNames(computerNamesOrRegex)
+		if(computerNamesOrRegex.nil?)
+			raise Exception.new "getComputerUUIdFromName() was passed a nil value for computer.name"
+		end
+		
+		if($computers.nil?) #this list could be really big... don't query more than once if we can help it.
+			data={ #this is case sensitive so we will search for computerNamesOrRegex after we pull all computers.
+			  "limit"=> -1,
+			  "sortBy"=> "Name",
+			  "filters"=> [
+				 {
+					  "name"=>"PairingState",
+					  "value"=>"Paired"
+				  },
+				  {
+					  "name"=>"Purpose",
+					  "type"=>"Client"
+				  }
+
+			  ]
+			}
+		
+			$computers=doCall('/v2/computers?offset=0&countOnly=false',data)['computers']
+		end
+		selectedComputers=[]
+		
+		if(computerNamesOrRegex.start_with? "/")
+			#regex
+			filter=Regexp.new(computerNamesOrRegex.downcase()[1..-2])
+			selectedComputers=$computers.select{|computer|computer['name'].downcase().match(filter)}
+			if(selectedComputers.length == 0)
+				raise Exception.new  "Computer did not match regex: #{computerNamesOrRegex}"
+			end 
+		else
+			#; deliminated fixed names
+			providedNames=computerNamesOrRegex.split(";").map{|name|name.downcase()}
+			selectedComputers=$computers.select{|computer|providedNames.include? computer['name'].downcase()}
+			if(selectedComputers.length == 0)
+				raise Exception.new  "Computer was not found: #{computerNamesOrRegex}"
+			end 
+		end
+		
+		return selectedComputers.map{|computerDetails|computerDetails["UUID"]}
+	end
+	
+	def getTargetIdFromName(targetName)
+		if(targetName.nil?)
+			raise Exception.new "getTargetIdFromName() was passed a nil value for targetName"
+		end
+		targets=doCall('/v2/targets')['targets']
+		targets=targets.select{|target|target['name'].downcase()==targetName.downcase()}
+		if(targets.length == 0)
+			raise Exception.new  "Target was not found: #{targetName}"
+		end 
+		return targets[0]["id"]
+	end
+	
+	def runCollectionByComputer(collectionName,caseId,configurationId,computerUUID)
+		if(collectionName.nil?)
+			raise Exception.new "runCollectionByComputer() was passed a nil value for collectionName"
+		end
+		if(caseId.nil?)
+			raise Exception.new "runCollectionByComputer() was passed a nil value for caseId"
+		end
+		if(configurationId.nil?)
+			raise Exception.new "runCollectionByComputer() was passed a nil value for configurationId"
+		end
+		if(computerUUID.nil?)
+			raise Exception.new "runCollectionByComputer() was passed a nil value for computerUUID"
+		end
+		data={
+			"caseId"=> caseId,
+			"name"=> "#{collectionName}-#{Time.new().to_i}",
+			"computerId"=>computerUUID,
+			"configurationId"=>configurationId,
+			"location"=>""
+		}
+		collectionResponse=doCall('/v2/collectionsByConfiguration',data)
+		if(!(collectionResponse.has_key? 'collectionId'))
+			raise Exception.new ("COLLECTIONID not found:" + collectionResponse.to_s)
+		end
+		return collectionResponse['collectionId']
+	end
+	
+	def runCollectionByTarget(collectionName,caseId,configurationId,targetId)
+		if(collectionName.nil?)
+			raise Exception.new "runCollectionByTarget() was passed a nil value for collectionName"
+		end
+		if(caseId.nil?)
+			raise Exception.new "runCollectionByTarget() was passed a nil value for caseId"
+		end
+		if(configurationId.nil?)
+			raise Exception.new "runCollectionByTarget() was passed a nil value for configurationId"
+		end
+		if(targetId.nil?)
+			raise Exception.new "runCollectionByTarget() was passed a nil value for targetId"
+		end
+		data={
+			"caseId"=>caseId,
+			"name"=>"#{collectionName}-#{Time.new().to_i}",
+			"configurationId"=>configurationId, 
+			"location"=> "",
+			"targetId"=>targetId
+		}
+		collectionResponse=doCall('/v2/collectionsByTarget',data)
+		if(!(collectionResponse.has_key? 'collectionId'))
+			raise Exception.new ("COLLECTIONID not found:" + collectionResponse.to_s)
+		end
+		return collectionResponse['collectionId']
+	end
+	
+	
+	def waitForCollection(collectionId)
+		if(collectionId.nil?)
+			raise Exception.new "waitForCollection() was passed a nil value for collectionId"
+		end
+		data={
+		  "limit"=> -1,
+		  "filters"=> [
+			{
+			  "name"=> "CollectionID",
+			  "value"=> collectionId
+			}
+		  ]
+		}
+
+
+		pendingJobs=[nil]
+		results={}
+		while(pendingJobs.length > 0)
+			jobResponse=doCall('/v2/jobs',data)['jobs']
+			pendingJobs=[]
+			jobResponse.each do | job|
+				if((job["endTime"]=="") || (job["endTime"]==nil))
+					pendingJobs.push(job['id'])
+				else
+					if(!(results.has_key? job['id']))
+						results[job['id']]=job
+						puts "Job (#{job['id']}) has completed for #{job['computerName']} with status #{job['status']}\n\tLocation:#{job['destination']}"
+					end
+				end
+			end
+			if(pendingJobs.length > 0)
+				puts "... waiting for #{pendingJobs.length} jobs"
+				sleep 5 #wait 5 seconds between checks
+			end
+		end
+		puts "finished #{results.length} jobs"
+		return jobResponse
+	end
+	
+end

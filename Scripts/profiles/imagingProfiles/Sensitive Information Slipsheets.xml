@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imaging-profile xmlns="http://schemas.nuix.com/2016/imaging-profile" version="1" created-by="9.6.5.283">
+  <id>e7ffb259-d5a6-4f33-9e15-c9151df1a62f</id>
+  <imaging-config version="1.0">
+    <excel-settings>
+      <setting name="exportEngine" value="INTERNAL" default="true" />
+      <setting name="fitToPagesTall" value="null" default="true" />
+      <setting name="fitToPagesWide" value="null" default="true" />
+      <setting name="pageNumberLimit" value="null" default="true" />
+      <setting name="pageOrientation" value="null" default="true" />
+      <setting name="pageZoom" value="null" default="true" />
+      <setting name="paperSize" value="null" default="true" />
+      <setting name="printComments" value="null" default="true" />
+      <setting name="printGridlines" value="true" default="true" />
+      <setting name="printHeadings" value="true" default="true" />
+      <setting name="printHiddenColumns" value="null" default="true" />
+      <setting name="printHiddenRows" value="null" default="true" />
+      <setting name="printHiddenWorksheets" value="SHEET_VERY_HIDDEN" default="true" />
+      <setting name="printNotes" value="null" default="true" />
+      <setting name="worksheetPrintArea" value="" default="true" />
+    </excel-settings>
+    <powerpoint-settings>
+      <setting name="exportEngine" value="INTERNAL" default="true" />
+      <setting name="hideSlidesDateAndTime" value="null" default="true" />
+      <setting name="hideSlidesFooter" value="null" default="true" />
+      <setting name="hideSlidesSlideNumber" value="null" default="true" />
+      <setting name="printHandoutOrder" value="null" default="true" />
+      <setting name="printHiddenSlides" value="true" default="true" />
+      <setting name="printOutputType" value="PRINT_OUTPUT_SLIDES" default="true" />
+    </powerpoint-settings>
+    <word-settings>
+      <setting name="exportEngine" value="INTERNAL" default="true" />
+      <setting name="FIELD_CODE_REF" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_XE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_FOOTNOTEREF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_SET" value="CODE" default="true" />
+      <setting name="FIELD_CODE_IF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_INDEX" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_TC" value="CODE" default="true" />
+      <setting name="FIELD_CODE_STYLEREF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_RD" value="CODE" default="true" />
+      <setting name="FIELD_CODE_SEQ" value="CODE" default="true" />
+      <setting name="FIELD_CODE_TOC" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_INFO" value="CODE" default="true" />
+      <setting name="FIELD_CODE_TITLE" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_SUBJECT" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_AUTHOR" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_KEYWORDS" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_COMMENTS" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_LASTSAVEDBY" value="CODE" default="true" />
+      <setting name="FIELD_CODE_CREATEDATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_SAVEDATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_PRINTDATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_REVNUM" value="CODE" default="true" />
+      <setting name="FIELD_CODE_EDITTIME" value="CODE" default="true" />
+      <setting name="FIELD_CODE_NUMPAGES" value="AS_IS" default="true" />
+      <setting name="FIELD_CODE_NUMWORDS" value="CODE" default="true" />
+      <setting name="FIELD_CODE_NUMCHARS" value="CODE" default="true" />
+      <setting name="FIELD_CODE_FILENAME" value="CODE" default="true" />
+      <setting name="FIELD_CODE_TEMPLATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_TIME" value="CODE" default="true" />
+      <setting name="FIELD_CODE_PAGE" value="AS_IS" default="true" />
+      <setting name="FIELD_CODE_FORMULA" value="CODE" default="true" />
+      <setting name="FIELD_CODE_QUOTE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_INCLUDE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_PAGEREF" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_ASK" value="CODE" default="true" />
+      <setting name="FIELD_CODE_FILLIN" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DATA" value="CODE" default="true" />
+      <setting name="FIELD_CODE_NEXT" value="CODE" default="true" />
+      <setting name="FIELD_CODE_NEXTIF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_SKIPIF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_MERGEREC" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DDE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DDEAUTO" value="CODE" default="true" />
+      <setting name="FIELD_CODE_GLOSSARY" value="CODE" default="true" />
+      <setting name="FIELD_CODE_PRINT" value="CODE" default="true" />
+      <setting name="FIELD_CODE_EQ" value="CODE" default="true" />
+      <setting name="FIELD_CODE_GOTOBUTTON" value="CODE" default="true" />
+      <setting name="FIELD_CODE_MACROBUTTON" value="CODE" default="true" />
+      <setting name="FIELD_CODE_AUTONUMOUT" value="CODE" default="true" />
+      <setting name="FIELD_CODE_AUTONUMLGL" value="CODE" default="true" />
+      <setting name="FIELD_CODE_AUTONUM" value="CODE" default="true" />
+      <setting name="FIELD_CODE_IMPORT" value="CODE" default="true" />
+      <setting name="FIELD_CODE_LINK" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_SYMBOL" value="CODE" default="true" />
+      <setting name="FIELD_CODE_EMBED" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_MERGEFIELD" value="CODE" default="true" />
+      <setting name="FIELD_CODE_USERNAME" value="CODE" default="true" />
+      <setting name="FIELD_CODE_USERINITIALS" value="CODE" default="true" />
+      <setting name="FIELD_CODE_USERADDRESS" value="CODE" default="true" />
+      <setting name="FIELD_CODE_BARCODE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DOCVARIABLE" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_SECTION" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_SECTIONPAGES" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_INCLUDEPICTURE" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_INCLUDETEXT" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_FILESIZE" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_FORMTEXT" value="CODE" default="true" />
+      <setting name="FIELD_CODE_FORMCHECKBOX" value="CODE" default="true" />
+      <setting name="FIELD_CODE_NOTEREF" value="CODE" default="true" />
+      <setting name="FIELD_CODE_TOA" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_TA" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_MERGESEQ" value="CODE" default="true" />
+      <setting name="FIELD_CODE_PRIVATE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DATABASE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_AUTOTEXT" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_COMPARE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_ADDIN" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_SUBSCRIBER" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DROPDOWN" value="CODE" default="true" />
+      <setting name="FIELD_CODE_ADVANCE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_DOCPROPERTY" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_OCX" value="CODE" default="true" />
+      <setting name="FIELD_CODE_HYPERLINK" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_AUTOTEXTLIST" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_LISTNUM" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_HTMLACTIVEX" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_BIDIOUTLINE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_ADDRESSBLOCK" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_GREETINGLINE" value="CODE" default="true" />
+      <setting name="FIELD_CODE_SHAPE" value="EMBEDDED" default="true" />
+      <setting name="FIELD_CODE_CITATION" value="CODE" default="true" />
+      <setting name="FIELD_CODE_BIBLIOGRAPHY" value="EMBEDDED" default="true" />
+      <setting name="removeFooter" value="null" default="true" />
+      <setting name="removeHeader" value="null" default="true" />
+      <setting name="showComments" value="null" default="true" />
+      <setting name="showHiddenText" value="null" default="true" />
+      <setting name="showInsertAndDeletions" value="null" default="true" />
+      <setting name="showMarkup" value="null" default="true" />
+    </word-settings>
+  </imaging-config>
+  <slipsheet-templates>
+    <slipsheet-template fallback="true">
+      <id>9692a1a3-7216-41cf-9382-68cbfa6a3a6c</id>
+      <name>Sensitive Information</name>
+      <description>Anything I like</description>
+      <use-custom-text>true</use-custom-text>
+      <custom-text>Quarantined</custom-text>
+      <use-custom-font-for-custom-text>false</use-custom-font-for-custom-text>
+      <custom-text-font-family-name>Arial</custom-text-font-family-name>
+      <custom-text-font-size>20</custom-text-font-size>
+      <custom-text-bold>false</custom-text-bold>
+      <use-custom-image>true</use-custom-image>
+      <custom-image>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</custom-image>
+      <custom-image-extension>png</custom-image-extension>
+      <use-no-image>false</use-no-image>
+      <include-custom-introduction>true</include-custom-introduction>
+      <custom-introduction>This document has been detected to contain confidential or sensitive information. The original file has been replaced with this slip sheet and the original has been quarantined. If you need the original restored, please contact IT on x1234.</custom-introduction>
+      <include-metadata-profile>true</include-metadata-profile>
+      <metadata-profile-path>
+        <metadata-profile-path-element>Sensitive Data Information</metadata-profile-path-element>
+      </metadata-profile-path>
+      <do-not-display-field-name>false</do-not-display-field-name>
+      <do-not-display-blank-values>true</do-not-display-blank-values>
+      <use-custom-font-for-contents>true</use-custom-font-for-contents>
+      <contents-font-family-name>Arial</contents-font-family-name>
+      <contents-font-size>8</contents-font-size>
+      <contents-bold>false</contents-bold>
+      <use-left-alignment-for-contents>false</use-left-alignment-for-contents>
+      <left-alignment-size>0.0</left-alignment-size>
+      <left-alignment-unit>CM</left-alignment-unit>
+      <use-line-spacing-for-contents>false</use-line-spacing-for-contents>
+      <line-spacing>SINGLE</line-spacing>
+      <use-custom-slipsheet-template>true</use-custom-slipsheet-template>
+      <custom-slipsheet-template>FancySlipsheet.vm</custom-slipsheet-template>
+      <use-custom-vertical-alignment>false</use-custom-vertical-alignment>
+      <custom-vertical-alignment>TOP</custom-vertical-alignment>
+    </slipsheet-template>
+  </slipsheet-templates>
+  <profile-rules>
+    <profile-rule>
+      <item-condition>
+        <conjunction>ANY</conjunction>
+      </item-condition>
+      <situation-condition>ALWAYS</situation-condition>
+      <imaging-content>REPLACE_WITH_SLIPSHEET</imaging-content>
+      <slipsheet-template-id>9692a1a3-7216-41cf-9382-68cbfa6a3a6c</slipsheet-template-id>
+    </profile-rule>
+  </profile-rules>
+</imaging-profile>
