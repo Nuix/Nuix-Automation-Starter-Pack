@@ -1,0 +1,4124 @@
+[
+  {
+    "name": "web-core.BreakoutVisualization.perspective.investigation",
+    "breakoutQueries": [
+      {
+        "name": "web-core.BreakoutVisualization.json.officeDocs",
+        "icon": "breakout-office.svg",
+        "query": "(kind:document OR kind:spreadsheet OR kind:presentation)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.communications",
+        "icon": "breakout-address-book.svg",
+        "query": "(kind:email OR kind:calendar OR kind:contact OR mime-type:( application/vnd.rim-blackberry-sms OR application/x-chat-message OR application/vnd.apple-ios-message OR application/vnd.oxygen-sms-message OR application/vnd.skype-chat-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.google-android-sms-message OR application/vnd.aos-sms-message ) OR mime-type:( application/vnd.skype-chat-sync OR application/vnd.google-android-sms-thread OR application/vnd.oxygen-skype-sms-thread OR application/x-chat-conversation OR application/vnd.skype-chat-log OR application/vnd.skype-chat-conversation OR application/vnd.aos-sms-message-thread OR application/vnd.apple-ios-message-conversation ) OR ( ( from-domain:PHONE;* OR to-domain:PHONE;* OR cc-domain:PHONE;* OR bcc-domain:PHONE;* ) AND mime-type:( application/vnd.rim-blackberry-sms OR application/x-chat-message OR application/vnd.apple-ios-message OR application/vnd.oxygen-sms-message OR application/vnd.skype-chat-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.google-android-sms-message OR application/vnd.aos-sms-message ) AND mime-type:( application/vnd.skype-chat-sync OR application/vnd.google-android-sms-thread OR application/vnd.oxygen-skype-sms-thread OR application/x-chat-conversation OR application/vnd.skype-chat-log OR application/vnd.skype-chat-conversation OR application/vnd.aos-sms-message-thread OR application/vnd.apple-ios-message-conversation ) ) OR ( from-domain:INSTANT_MESSAGE;skype OR to-domain:INSTANT_MESSAGE;skype OR cc-domain:INSTANT_MESSAGE;skype OR bcc-domain:INSTANT_MESSAGE;skype ) OR ( from-domain:INSTANT_MESSAGE;twitter OR to-domain:INSTANT_MESSAGE;twitter OR cc-domain:INSTANT_MESSAGE;twitter OR bcc-domain:INSTANT_MESSAGE;twitter ) OR ( from-domain:INSTANT_MESSAGE;* OR to-domain:INSTANT_MESSAGE;* OR cc-domain:INSTANT_MESSAGE;* OR bcc-domain:INSTANT_MESSAGE;* ) OR mime-type:application/x-user-status-update OR mime-type:application/x-call-record OR mime-type:application/vnd.skype-call)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.images",
+        "icon": "breakout-image.svg",
+        "query": "kind:image",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.multimedia",
+        "icon": "breakout-film.svg",
+        "query": "kind:multimedia",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.internet",
+        "icon": "breakout-earth.svg",
+        "query": "( mime-type:( application/vnd.google-chrome-history-entry OR application/vnd.google-chrome-history-index-entry OR application/x-browser-history-entry OR application/vnd.ms-ie-cache-entry OR application/vnd.mozilla-firefox-history-entry ) OR mime-type:( application/vnd.mozilla-browser-cache-entry OR application/vnd.apple-safari-cache-entry OR application/vnd.ms-ie-cache-entry ) OR mime-type:application/x-browser-bookmark OR mime-type:application/x-browser-search OR mime-type:application/x-browser-cookie OR NOT *:* ) OR mime-type:application/x-bittorrent OR mime-type:( application/vnd.google-drive-presentation OR application/vnd.google-drive-snapshot-database OR application/vnd.google-drive-snapshot-database-entry OR application/vnd.google-drive-drawing OR application/vnd.google-drive-spreadsheet OR application/vnd.google-drive-document )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.mobile",
+        "icon": "breakout-mobile.svg",
+        "query": "mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-call-record ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:email ) ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-application ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:( application/vnd.oxygen-skype-account OR application/x-user-account ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-network ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-location ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:image AND properties:exif ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND ( kind:image AND properties:( ( \"Latitude\" OR \"Longitude\" ) OR \"Exif SubIFD: Aperture Value\" OR \"Exif SubIFD: Focal\" OR \"Exif SubIFD: Flash\" OR \"Exif IFD0: Make\" OR \"Exif IFD0: Model\" ) ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:image AND properties:( \"Latitude\" OR \"Longitude\" ) ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:contact ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:( application/vnd.evernote-note OR application/vnd.ms-outlook-mac-note OR application/vnd.ms-outlook-stickynote OR application/x-note OR application/vnd.ms-stickynote OR application/vnd.ms-note-it OR application/vnd.ms-entourage-note ) ) OR mime-type:( application/vnd.google-android-adb-backup OR application/vnd.rim-blackberry-ipd )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.items-with-gps",
+        "icon": "breakout-items-with-gps.svg",
+        "query": "(NOT (kind:image OR kind:drawing OR kind:multimedia)) AND ((float-properties:\"Latitude\":[-90 TO 90] AND float-properties:\"Longitude\":[-180 TO 180]) OR (float-custom-metadata:\"Latitude\":[-90 TO 90] AND float-custom-metadata:\"Longitude\":[-180 TO 180]))",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.images-with-gps",
+        "icon": "breakout-images-with-gps.svg",
+        "query": "(kind:image OR kind:drawing OR kind:multimedia) AND ((float-properties:\"Latitude\":[-90 TO 90] AND float-properties:\"Longitude\":[-180 TO 180]) OR (float-custom-metadata:\"Latitude\":[-90 TO 90] AND float-custom-metadata:\"Longitude\":[-180 TO 180]))",
+        "metadataProfile": "",
+        "view": "gallery"
+      }
+    ]
+  },
+  {
+    "name": "web-core.BreakoutVisualization.perspective.mobileDevices",
+    "breakoutQueries": [
+      {
+        "name": "web-core.BreakoutVisualization.json.callLogs",
+        "icon": "breakout-phone.svg",
+        "query": "(mime-type:application/x-call-record)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.smsMms",
+        "icon": "breakout-mobile.svg",
+        "query": "( from-domain:PHONE;* OR to-domain:PHONE;* OR cc-domain:PHONE;* OR bcc-domain:PHONE;* ) AND mime-type:( ( application/x-chat-message OR application/vnd.google-android-sms-message OR application/vnd.oxygen-sms-message OR application/vnd.apple-ios-message OR application/vnd.rim-blackberry-sms OR application/vnd.aos-sms-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.skype-chat-message ) OR ( application/vnd.skype-chat-sync OR application/vnd.oxygen-skype-sms-thread OR application/vnd.google-android-sms-thread OR application/vnd.apple-ios-message-conversation OR application/vnd.skype-chat-log OR application/vnd.aos-sms-message-thread OR application/x-chat-conversation OR application/vnd.skype-chat-conversation ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.chat",
+        "icon": "breakout-bubbles.svg",
+        "query": "(from-domain:INSTANT_MESSAGE;* OR to-domain:INSTANT_MESSAGE;* OR cc-domain:INSTANT_MESSAGE;* OR bcc-domain:INSTANT_MESSAGE;*)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.contacts",
+        "icon": "breakout-address-book.svg",
+        "query": "kind:contact",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.images",
+        "icon": "breakout-image.svg",
+        "query": "kind:image",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.multimedia",
+        "icon": "breakout-film.svg",
+        "query": "kind:multimedia",
+        "metadataProfile": "",
+        "view": "gallery"
+      }
+    ]
+  },
+  {
+    "name": "web-core.BreakoutVisualization.perspective.informationGovernance",
+    "breakoutQueries": [
+      {
+        "name": "web-core.BreakoutVisualization.json.officeContent",
+        "icon": "breakout-windows8.svg",
+        "query": "kind:(document OR presentation OR spreadsheet) NOT file-extension:(htm OR mht OR html)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.emailContactCalendar",
+        "icon": "breakout-book.svg",
+        "query": "kind:(email OR calendar OR contact) OR file-extension:pst",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.drawings",
+        "icon": "breakout-pencil.svg",
+        "query": "kind:drawing",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.databases",
+        "icon": "breakout-database.svg",
+        "query": "kind:database",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.applicationAndSystemFiles",
+        "icon": "breakout-file-empty.svg",
+        "query": "kind:system",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.multimedia",
+        "icon": "breakout-film.svg",
+        "query": "kind:multimedia",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.plainText",
+        "icon": "breakout-file-text.svg",
+        "query": "file-extension:txt",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.containers",
+        "icon": "breakout-file-zip.svg",
+        "query": "kind:container NOT file-extension:pst",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.images",
+        "icon": "breakout-camera.svg",
+        "query": "kind:image",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.BreakoutVisualization.json.other",
+        "icon": "breakout-question.svg",
+        "query": "(kind:unrecognised OR kind:other-document) NOT (file-extension:txt)",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Business Operations",
+    "breakoutQueries": [
+      {
+        "name": "Building Sign-In Sign-Out",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Building Sign-In Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Business Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment Sign Out Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equipment Sign Out Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equity Research Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility Study",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Feasibility Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation for Bid",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Invitation for Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Online Advertising Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Project Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Referral Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Quotation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement of Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Statement of Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Status Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Supplemental Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Business Organization",
+    "breakoutQueries": [
+      {
+        "name": "Business Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Business Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission Statement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Mission Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "General Partnership Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Communications",
+    "breakoutQueries": [
+      {
+        "name": "Business Introduction Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Business Introduction Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Invitation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Itinerary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Itinerary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Agenda",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Minutes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "RSVP",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.RSVP.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Introduction-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Business-Introduction-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting-Agenda",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Meeting-Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting-Minutes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Meeting-Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Financial",
+    "breakoutQueries": [
+      {
+        "name": "401k or 403b Enrollment Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.401k or 403b Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Purchase Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Purchase Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Credit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Debenture Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reimbursement Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Employee Reimbursement Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Expense Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Forbearance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Guarantee",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial Balance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Trial Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "401k-or-403b-Enrollment-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.401k-or-403b-Enrollment-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond-Purchase-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Bond-Purchase-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Credit-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Debenture-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reimbursement-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Employee-Reimbursement-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Expense-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Forbearance-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal-Guarantee",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Personal-Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal-Loan-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Personal-Loan-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial-Balance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Trial-Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Market Summary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Healthcare",
+    "breakoutQueries": [
+      {
+        "name": "Doctors Note",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Doctors Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health Benefits Enrollment Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Health Benefits Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA Release Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.HIPAA Release Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical Clearance Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Medical Clearance Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New Patient Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.New Patient Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient Consent Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Patient Consent Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Doctors-Note",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Doctors-Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health-Benefits-Enrollment-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Health-Benefits-Enrollment-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA-Release-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.HIPAA-Release-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical-Clearance-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Medical-Clearance-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New-Patient-Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.New-Patient-Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient-Consent-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Patient-Consent-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/HR",
+    "breakoutQueries": [
+      {
+        "name": "Accident Incident Investigation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Investigation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident Incident Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate Evaluation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Candidate Evaluation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Compensation Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination Complaint",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Discrimination Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Bonus Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Verification Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Verification Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Contract",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Offer Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Offer Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Termination Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Termination Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit Interview Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Exit Interview Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Job Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Leave Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter of Reprimand",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Letter of Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel Change Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Personnel Change Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Severance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers Compensation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Workers Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident-Incident-Investigation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Accident-Incident-Investigation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident-Incident-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Accident-Incident-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate-Evaluation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Candidate-Evaluation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation-Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Compensation-Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination-Complaint",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Discrimination-Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Bonus-Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Bonus-Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reference-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Reference-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reference-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Reference-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Verification-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Verification-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Contract",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Offer-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Offer-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Termination-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Termination-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit-Interview-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Exit-Interview-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job-Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Job-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave-Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Leave-Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter-of-Reprimand",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Letter-of-Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel-Change-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Personnel-Change-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Severance-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers-Compensation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Workers-Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Insurance",
+    "breakoutQueries": [
+      {
+        "name": "Dental Claim Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Dental Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Complaint Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Complaint Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Proposal Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Proposal Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability Claim Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Liability Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Dental-Claim-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Dental-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance-Complaint-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Insurance-Complaint-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance-Proposal-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Insurance-Proposal-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability-Claim-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Liability-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/IT",
+    "breakoutQueries": [
+      {
+        "name": "Online Terms & Conditions",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Online Terms & Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless Customer Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Wireless Customer Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online-Terms-&-Conditions",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---IT.skill.Online-Terms-&-Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless-Customer-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---IT.skill.Wireless-Customer-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Legal",
+    "breakoutQueries": [
+      {
+        "name": "Affidavit of Marriage",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest Log",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Arrest Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary Designation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Beneficiary Designation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract Amendment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Contract Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce Settlement Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Divorce Settlement Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold Harmless Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Hold Harmless Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Joinder Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Joinder Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Briefs",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Legal Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Motion",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Motion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution of Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Substitution of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter Registration Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Voter Registration Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit-of-Marriage",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Affidavit-of-Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest-Log",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Arrest-Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary-Designation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Beneficiary-Designation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease-and-Desist-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Cease-and-Desist-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease-and-Desist-Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Cease-and-Desist-Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract-Amendment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Contract-Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce-Settlement-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Divorce-Settlement-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold-Harmless-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Hold-Harmless-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Joinder-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Joinder-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal-Briefs",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Legal-Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution-of-Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Substitution-of-Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter-Registration-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Voter-Registration-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit of Heirship",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Miscellaneous",
+    "breakoutQueries": [
+      {
+        "name": "Absentee Ballot Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Absentee Ballot Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Donor List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Absentee-Ballot-Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Absentee-Ballot-Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor-List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Donor-List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product-Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Product-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Sales",
+    "breakoutQueries": [
+      {
+        "name": "Bill of Sale",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Bill of Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Card Authorization",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Credit Card Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invoice",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Invoice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Purchase Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Receipt.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bill-of-Sale",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Bill-of-Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit-Card-Authorization",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Credit-Card-Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase-Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Purchase-Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/defaultModel",
+    "breakoutQueries": [
+      {
+        "name": "Building & Construction",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Career Planning & Employment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Direct PII",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Economics & Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government & Politics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Indirect PII",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Science",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Building-&-Construction",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building-&-Construction.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Career-Planning-&-Employment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career-Planning-&-Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Direct-PII",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Economics-&-Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government-&-Politics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Indirect-PII",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect-PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crime & Law Enforcement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Education",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "News & Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Tourism & Travel",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Building & Construction",
+    "breakoutQueries": [
+      {
+        "name": "Electrical",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Electrical.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Surfacing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Surfacing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Windows & Doors",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Windows & Doors.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Plumbing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Plumbing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business",
+    "breakoutQueries": [
+      {
+        "name": "Business Management",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Management.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employees",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Employees.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Human Resources",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Human Resources.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Management",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business-Management.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Human-Resources",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Human-Resources.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Law & Crimes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Law & Crimes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Career Planning & Employment",
+    "breakoutQueries": [
+      {
+        "name": "Employee Benefits",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Employee Benefits.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Application Process",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Job Application Process.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Retirement & Termination",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Retirement & Termination.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Direct PII",
+    "breakoutQueries": [
+      {
+        "name": "Contact Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Contact Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financial Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Financial Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Home Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Home Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Individual Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Individual Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Information Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Information Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Economics & Finance",
+    "breakoutQueries": [
+      {
+        "name": "Accounting",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Accounting.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Banking",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Banking.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cryptocurrency",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Cryptocurrency.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Insurance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Investment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Investment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Loans.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stocks",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Stocks.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Government & Politics",
+    "breakoutQueries": [
+      {
+        "name": "Campaign Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Campaign Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Courts & Judiciary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Courts & Judiciary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Elections",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Elections.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Government Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Infrastructure",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Infrastructure.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Services",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Social Services.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Indirect PII",
+    "breakoutQueries": [
+      {
+        "name": "Time",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect PII.topic.Time.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Science",
+    "breakoutQueries": [
+      {
+        "name": "Astronomy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Astronomy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Oceanography",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Oceanography.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Physics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Physics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Chemistry",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Chemistry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Earth Science",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Earth Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business Operations",
+    "breakoutQueries": [
+      {
+        "name": "Building Sign-In Sign-Out",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Building Sign-In Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Business Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment Sign Out Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equipment Sign Out Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equity Research Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility Study",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Feasibility Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation for Bid",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Invitation for Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Online Advertising Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Project Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Referral Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Quotation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement of Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Statement of Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Status Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Supplemental Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business Organization",
+    "breakoutQueries": [
+      {
+        "name": "Business Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Business Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission Statement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Mission Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "General Partnership Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Communications",
+    "breakoutQueries": [
+      {
+        "name": "Business Introduction Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Business Introduction Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Invitation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Itinerary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Itinerary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Agenda",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Minutes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "RSVP",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.RSVP.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Introduction-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Business-Introduction-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting-Agenda",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Meeting-Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting-Minutes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Communications.skill.Meeting-Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Financial",
+    "breakoutQueries": [
+      {
+        "name": "401k or 403b Enrollment Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.401k or 403b Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Purchase Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Purchase Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Credit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Debenture Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reimbursement Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Employee Reimbursement Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Expense Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Forbearance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Guarantee",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial Balance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Trial Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "401k-or-403b-Enrollment-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.401k-or-403b-Enrollment-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond-Purchase-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Bond-Purchase-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Credit-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Debenture-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reimbursement-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Employee-Reimbursement-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Expense-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Forbearance-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal-Guarantee",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Personal-Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal-Loan-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Personal-Loan-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial-Balance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Financial.skill.Trial-Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Market Summary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Healthcare",
+    "breakoutQueries": [
+      {
+        "name": "Doctors Note",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Doctors Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health Benefits Enrollment Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Health Benefits Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA Release Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.HIPAA Release Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical Clearance Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Medical Clearance Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New Patient Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.New Patient Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient Consent Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Patient Consent Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Doctors-Note",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Doctors-Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health-Benefits-Enrollment-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Health-Benefits-Enrollment-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA-Release-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.HIPAA-Release-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical-Clearance-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Medical-Clearance-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New-Patient-Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.New-Patient-Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient-Consent-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Healthcare.skill.Patient-Consent-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/HR",
+    "breakoutQueries": [
+      {
+        "name": "Accident Incident Investigation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Investigation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident Incident Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate Evaluation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Candidate Evaluation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Compensation Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination Complaint",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Discrimination Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Bonus Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Verification Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Verification Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Contract",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Offer Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Offer Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Termination Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Termination Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit Interview Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Exit Interview Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Job Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Leave Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter of Reprimand",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Letter of Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel Change Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Personnel Change Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Severance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers Compensation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Workers Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident-Incident-Investigation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Accident-Incident-Investigation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident-Incident-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Accident-Incident-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate-Evaluation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Candidate-Evaluation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation-Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Compensation-Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination-Complaint",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Discrimination-Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Bonus-Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Bonus-Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reference-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Reference-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Reference-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Reference-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee-Verification-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employee-Verification-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Contract",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Offer-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Offer-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment-Termination-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Employment-Termination-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit-Interview-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Exit-Interview-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job-Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Job-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave-Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Leave-Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter-of-Reprimand",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Letter-of-Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel-Change-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Personnel-Change-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Severance-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers-Compensation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Workers-Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Insurance",
+    "breakoutQueries": [
+      {
+        "name": "Dental Claim Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Dental Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Complaint Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Complaint Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Proposal Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Proposal Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability Claim Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Liability Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Dental-Claim-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Dental-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance-Complaint-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Insurance-Complaint-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance-Proposal-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Insurance-Proposal-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability-Claim-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Liability-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/IT",
+    "breakoutQueries": [
+      {
+        "name": "Online Terms & Conditions",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Online Terms & Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless Customer Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Wireless Customer Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online-Terms-&-Conditions",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---IT.skill.Online-Terms-&-Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless-Customer-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---IT.skill.Wireless-Customer-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Legal",
+    "breakoutQueries": [
+      {
+        "name": "Affidavit of Marriage",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest Log",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Arrest Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary Designation Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Beneficiary Designation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract Amendment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Contract Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce Settlement Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Divorce Settlement Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold Harmless Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Hold Harmless Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Joinder Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Joinder Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Briefs",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Legal Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Motion",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Motion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution of Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Substitution of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter Registration Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Voter Registration Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit-of-Marriage",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Affidavit-of-Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest-Log",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Arrest-Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary-Designation-Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Beneficiary-Designation-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease-and-Desist-Letter",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Cease-and-Desist-Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease-and-Desist-Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Cease-and-Desist-Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract-Amendment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Contract-Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce-Settlement-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Divorce-Settlement-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold-Harmless-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Hold-Harmless-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Joinder-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Joinder-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal-Briefs",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Legal-Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution-of-Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Substitution-of-Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter-Registration-Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Legal.skill.Voter-Registration-Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit of Heirship",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Miscellaneous",
+    "breakoutQueries": [
+      {
+        "name": "Absentee Ballot Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Absentee Ballot Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Donor List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Absentee-Ballot-Request",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Absentee-Ballot-Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor-List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Donor-List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product-Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Product-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Sales",
+    "breakoutQueries": [
+      {
+        "name": "Bill of Sale",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Bill of Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Card Authorization",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Credit Card Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invoice",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Invoice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Purchase Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Receipt.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bill-of-Sale",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Bill-of-Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit-Card-Authorization",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Credit-Card-Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase-Order",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Sales.skill.Purchase-Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk Type",
+    "breakoutQueries": [
+      {
+        "name": "Business Management",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Business Management.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employees",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Employees.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Loans.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Compensation Policy.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Receipt.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Management",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Business-Management.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation-Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Compensation-Policy.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AverageRisk",
+    "breakoutQueries": [
+      {
+        "name": "High AverageRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AverageRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AverageRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AvgClassifierRisk",
+    "breakoutQueries": [
+      {
+        "name": "High AvgClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AvgClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AvgClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AvgEntityRisk",
+    "breakoutQueries": [
+      {
+        "name": "High AvgEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AvgEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AvgEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Date Information",
+    "breakoutQueries": [
+      {
+        "name": "High Date Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Date Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Date Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/DictionaryRisk",
+    "breakoutQueries": [
+      {
+        "name": "High DictionaryRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium DictionaryRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low DictionaryRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/DoctypeRisk",
+    "breakoutQueries": [
+      {
+        "name": "High DoctypeRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium DoctypeRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low DoctypeRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxClassifierRisk",
+    "breakoutQueries": [
+      {
+        "name": "High MaxClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxEntityRisk",
+    "breakoutQueries": [
+      {
+        "name": "High MaxEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxRisk",
+    "breakoutQueries": [
+      {
+        "name": "High MaxRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalClassifierRisk",
+    "breakoutQueries": [
+      {
+        "name": "High TotalClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalClassifierRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalEntityRisk",
+    "breakoutQueries": [
+      {
+        "name": "High TotalEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalEntityRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "breakoutQueries": [
+      {
+        "icon": "Nuix_Icon_41.png",
+        "metadataProfile": "",
+        "name": "Low Risk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0 TO 0.25}",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_40.png",
+        "metadataProfile": "",
+        "name": "Medium Risk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.25 TO 0.75}",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_39.png",
+        "metadataProfile": "",
+        "name": "High  Risk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.75 TO *]",
+        "view": "grid"
+      }
+    ],
+    "name": "NLP Total Risk"
+  },
+  {
+    "breakoutQueries": [
+      {
+        "icon": "Nuix_Icon_33.png",
+        "metadataProfile": "",
+        "name": "Australian Telephone Number",
+        "query": "named-entities:\"australian-telephone-number;*\"",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_34.png",
+        "metadataProfile": "",
+        "name": "Australian Tfn",
+        "query": "named-entities:\"australian-tfn;*\"",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_177.png",
+        "metadataProfile": "",
+        "name": "Generic Card Number",
+        "query": "named-entities:\"generic-card-number;*\"",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_177.png",
+        "metadataProfile": "",
+        "name": "Generic Licence Number",
+        "query": "named-entities:\"generic-licence-number;*\"",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_287.png",
+        "metadataProfile": "",
+        "name": "Money",
+        "query": "named-entities:\"money;*\"",
+        "view": "grid"
+      },
+      {
+        "icon": "Nuix_Icon_36.png",
+        "metadataProfile": "",
+        "name": "Person Name",
+        "query": "named-entities:\"person-name;*\"",
+        "view": "grid"
+      }
+    ],
+    "name": "Entities/Default"
+  },
+  {
+    "name": "Entities/Contextual",
+    "breakoutQueries": [
+      {
+        "name": "Cardinal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_cardinal;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Date",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_date;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Event",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_event;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expiration Date",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_expiration-date;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Facility",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_facility;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Geo Political Entity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_geo_political_entity;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Group",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_group;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Language",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_language;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Law",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_law;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Location",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_location;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Money",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_money;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Ordinal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_ordinal;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Organization",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_organization;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Percent",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_percent;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Person",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_person;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_product;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Quantity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_quantity;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Street Address",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_street-address;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Time",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_time;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Work Of Art",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_work_of_art;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Date Of Birth",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_date-of-birth;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalRisk",
+    "breakoutQueries": [
+      {
+        "name": "High TotalRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalRisk",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Operations",
+    "breakoutQueries": [
+      {
+        "name": "Building-Sign-In-Sign-Out",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Building-Sign-In-Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Requirements-Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Business-Requirements-Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment-Sign-Out-Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Equipment-Sign-Out-Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity-Research-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Equity-Research-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility-Study",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Feasibility-Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation-for-Bid",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Invitation-for-Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online-Advertising-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Online-Advertising-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project-Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Project-Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Referral-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request-for-Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Request-for-Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request-for-Quotation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Request-for-Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement-of-Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Statement-of-Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Status-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Supplemental-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term-Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Term-Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Organization",
+    "breakoutQueries": [
+      {
+        "name": "Business-Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Organization.skill.Business-Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission-Statement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Organization.skill.Mission-Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Construction",
+    "breakoutQueries": [
+      {
+        "name": "Electrical",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building-&-Construction.topic.Electrical.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Surfacing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building-&-Construction.topic.Surfacing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Windows-&-Doors",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building-&-Construction.topic.Windows-&-Doors.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Employment",
+    "breakoutQueries": [
+      {
+        "name": "Employee-Benefits",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career-Planning-&-Employment.topic.Employee-Benefits.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job-Application-Process",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career-Planning-&-Employment.topic.Job-Application-Process.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Retirement-&-Termination",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career-Planning-&-Employment.topic.Retirement-&-Termination.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/PII",
+    "breakoutQueries": [
+      {
+        "name": "Contact-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.topic.Contact-Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financial-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.topic.Financial-Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Home-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.topic.Home-Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Individual-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.topic.Individual-Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Information-Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct-PII.topic.Information-Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Time",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect-PII.topic.Time.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Finance",
+    "breakoutQueries": [
+      {
+        "name": "Accounting",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Accounting.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Banking",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Banking.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cryptocurrency",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Cryptocurrency.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Insurance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Investment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Investment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Loans.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stocks",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics-&-Finance.topic.Stocks.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Politics",
+    "breakoutQueries": [
+      {
+        "name": "Campaign-Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.topic.Campaign-Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Courts-&-Judiciary",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.topic.Courts-&-Judiciary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Elections",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.topic.Elections.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government-Finance",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.topic.Government-Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Infrastructure",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government-&-Politics.topic.Infrastructure.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Operations",
+    "breakoutQueries": [
+      {
+        "name": "Building-Sign-In-Sign-Out",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Building-Sign-In-Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business-Requirements-Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Business-Requirements-Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment-Sign-Out-Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Equipment-Sign-Out-Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity-Research-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Equity-Research-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility-Study",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Feasibility-Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation-for-Bid",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Invitation-for-Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online-Advertising-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Online-Advertising-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project-Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Project-Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Referral-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request-for-Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Request-for-Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request-for-Quotation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Request-for-Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement-of-Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Statement-of-Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status-Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Status-Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental-Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Supplemental-Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term-Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Operations.skill.Term-Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Organization",
+    "breakoutQueries": [
+      {
+        "name": "Business-Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Organization.skill.Business-Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission-Statement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Business-Organization.skill.Mission-Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Date-Information",
+    "breakoutQueries": [
+      {
+        "name": "High Date-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date-Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Date-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date-Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Date-Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date-Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Crime & Law Enforcement",
+    "breakoutQueries": [
+      {
+        "name": "Civil Law",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Civil Law.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crimes & Criminals",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Crimes & Criminals.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Criminal Justice",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Criminal Justice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Practices",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Legal Practices.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Education",
+    "breakoutQueries": [
+      {
+        "name": "Awards & Ceremonies",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.Awards & Ceremonies.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "College & University",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.College & University.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research & Academia",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.Research & Academia.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "School System",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.School System.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/News & Media",
+    "breakoutQueries": [
+      {
+        "name": "Journalism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.Journalism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "News Organizations",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.News Organizations.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Types of Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.Types of Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Tourism & Travel",
+    "breakoutQueries": [
+      {
+        "name": "Air Travel",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Air Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hospitality Industry",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Hospitality Industry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Overland Travel",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Overland Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Traveling",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Traveling.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Personal Information",
+    "breakoutQueries": [
+      {
+        "name": "High Personal Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Personal Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Personal Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Top Types",
+    "breakoutQueries": [
+      {
+        "name": "Voter Registration Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Voter Registration Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Employee Bonus Plan\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "401k or 403b Enrollment Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"401k or 403b Enrollment Form\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Personal Loan Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Compensation Policy\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk Types/Top Types",
+    "breakoutQueries": [
+      {
+        "name": "Date Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Date Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Personal Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Management",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Business Management\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Receipt\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Loans\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  }
+]

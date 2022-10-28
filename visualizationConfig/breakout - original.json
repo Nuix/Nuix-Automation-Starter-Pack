@@ -1,0 +1,186 @@
+[
+   {
+      "name":"web-core.BreakoutVisualization.perspective.investigation",
+      "breakoutQueries":[
+        {
+            "name":"web-core.BreakoutVisualization.json.officeDocs",
+            "icon": "breakout-office.svg",
+            "query":"(kind:document OR kind:spreadsheet OR kind:presentation)",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.communications",
+            "icon": "breakout-address-book.svg",
+            "query":"(kind:email OR kind:calendar OR kind:contact OR mime-type:( application/vnd.rim-blackberry-sms OR application/x-chat-message OR application/vnd.apple-ios-message OR application/vnd.oxygen-sms-message OR application/vnd.skype-chat-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.google-android-sms-message OR application/vnd.aos-sms-message ) OR mime-type:( application/vnd.skype-chat-sync OR application/vnd.google-android-sms-thread OR application/vnd.oxygen-skype-sms-thread OR application/x-chat-conversation OR application/vnd.skype-chat-log OR application/vnd.skype-chat-conversation OR application/vnd.aos-sms-message-thread OR application/vnd.apple-ios-message-conversation ) OR ( ( from-domain:PHONE;* OR to-domain:PHONE;* OR cc-domain:PHONE;* OR bcc-domain:PHONE;* ) AND mime-type:( application/vnd.rim-blackberry-sms OR application/x-chat-message OR application/vnd.apple-ios-message OR application/vnd.oxygen-sms-message OR application/vnd.skype-chat-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.google-android-sms-message OR application/vnd.aos-sms-message ) AND mime-type:( application/vnd.skype-chat-sync OR application/vnd.google-android-sms-thread OR application/vnd.oxygen-skype-sms-thread OR application/x-chat-conversation OR application/vnd.skype-chat-log OR application/vnd.skype-chat-conversation OR application/vnd.aos-sms-message-thread OR application/vnd.apple-ios-message-conversation ) ) OR ( from-domain:INSTANT_MESSAGE;skype OR to-domain:INSTANT_MESSAGE;skype OR cc-domain:INSTANT_MESSAGE;skype OR bcc-domain:INSTANT_MESSAGE;skype ) OR ( from-domain:INSTANT_MESSAGE;twitter OR to-domain:INSTANT_MESSAGE;twitter OR cc-domain:INSTANT_MESSAGE;twitter OR bcc-domain:INSTANT_MESSAGE;twitter ) OR ( from-domain:INSTANT_MESSAGE;* OR to-domain:INSTANT_MESSAGE;* OR cc-domain:INSTANT_MESSAGE;* OR bcc-domain:INSTANT_MESSAGE;* ) OR mime-type:application/x-user-status-update OR mime-type:application/x-call-record OR mime-type:application/vnd.skype-call)",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.images",
+            "icon": "breakout-image.svg",
+            "query":"kind:image",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.multimedia",
+            "icon": "breakout-film.svg",
+            "query":"kind:multimedia",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.internet",
+            "icon": "breakout-earth.svg",
+            "query":"( mime-type:( application/vnd.google-chrome-history-entry OR application/vnd.google-chrome-history-index-entry OR application/x-browser-history-entry OR application/vnd.ms-ie-cache-entry OR application/vnd.mozilla-firefox-history-entry ) OR mime-type:( application/vnd.mozilla-browser-cache-entry OR application/vnd.apple-safari-cache-entry OR application/vnd.ms-ie-cache-entry ) OR mime-type:application/x-browser-bookmark OR mime-type:application/x-browser-search OR mime-type:application/x-browser-cookie OR NOT *:* ) OR mime-type:application/x-bittorrent OR mime-type:( application/vnd.google-drive-presentation OR application/vnd.google-drive-snapshot-database OR application/vnd.google-drive-snapshot-database-entry OR application/vnd.google-drive-drawing OR application/vnd.google-drive-spreadsheet OR application/vnd.google-drive-document )",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.mobile",
+            "icon": "breakout-mobile.svg",
+            "query":"mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-call-record ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:email ) ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-application ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:( application/vnd.oxygen-skype-account OR application/x-user-account ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-network ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:application/x-location ) OR ( ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:image AND properties:exif ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND ( kind:image AND properties:( ( \"Latitude\" OR \"Longitude\" ) OR \"Exif SubIFD: Aperture Value\" OR \"Exif SubIFD: Focal\" OR \"Exif SubIFD: Flash\" OR \"Exif IFD0: Make\" OR \"Exif IFD0: Model\" ) ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:image AND properties:( \"Latitude\" OR \"Longitude\" ) ) ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND kind:contact ) OR ( ( path-mime-type:( application/vnd.msab-xry OR application/vnd.oxygen-export-file OR application/vnd.cellebrite-xml-report ) OR path-mime-type:( application/vnd.rim-blackberry-ipd OR application/vnd.google-android-adb-backup ) OR boolean-custom-metadata:nuix.item.type.mobile-device:true ) AND mime-type:( application/vnd.evernote-note OR application/vnd.ms-outlook-mac-note OR application/vnd.ms-outlook-stickynote OR application/x-note OR application/vnd.ms-stickynote OR application/vnd.ms-note-it OR application/vnd.ms-entourage-note ) ) OR mime-type:( application/vnd.google-android-adb-backup OR application/vnd.rim-blackberry-ipd )",
+            "metadataProfile": "",
+            "view": "grid"
+        },
+        {
+            "name":"web-core.BreakoutVisualization.json.items-with-gps",
+            "icon": "breakout-items-with-gps.svg",
+            "query": "(NOT (kind:image OR kind:drawing OR kind:multimedia)) AND ((float-properties:\"Latitude\":[-90 TO 90] AND float-properties:\"Longitude\":[-180 TO 180]) OR (float-custom-metadata:\"Latitude\":[-90 TO 90] AND float-custom-metadata:\"Longitude\":[-180 TO 180]))",
+            "metadataProfile": "",
+            "view": "grid"
+        },
+        {
+            "name":"web-core.BreakoutVisualization.json.images-with-gps",
+            "icon": "breakout-images-with-gps.svg",
+            "query": "(kind:image OR kind:drawing OR kind:multimedia) AND ((float-properties:\"Latitude\":[-90 TO 90] AND float-properties:\"Longitude\":[-180 TO 180]) OR (float-custom-metadata:\"Latitude\":[-90 TO 90] AND float-custom-metadata:\"Longitude\":[-180 TO 180]))",
+            "metadataProfile": "",
+            "view": "gallery"
+        }
+      ]
+   },
+      {
+      "name":"web-core.BreakoutVisualization.perspective.mobileDevices",
+      "breakoutQueries":[
+        {
+            "name":"web-core.BreakoutVisualization.json.callLogs",
+            "icon": "breakout-phone.svg",
+            "query":"(mime-type:application/x-call-record)",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.smsMms",
+            "icon": "breakout-mobile.svg",
+            "query":"( from-domain:PHONE;* OR to-domain:PHONE;* OR cc-domain:PHONE;* OR bcc-domain:PHONE;* ) AND mime-type:( ( application/x-chat-message OR application/vnd.google-android-sms-message OR application/vnd.oxygen-sms-message OR application/vnd.apple-ios-message OR application/vnd.rim-blackberry-sms OR application/vnd.aos-sms-message OR application/vnd.oxygen-skype-sms-message OR application/vnd.skype-chat-message ) OR ( application/vnd.skype-chat-sync OR application/vnd.oxygen-skype-sms-thread OR application/vnd.google-android-sms-thread OR application/vnd.apple-ios-message-conversation OR application/vnd.skype-chat-log OR application/vnd.aos-sms-message-thread OR application/x-chat-conversation OR application/vnd.skype-chat-conversation ) )",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.chat",
+            "icon": "breakout-bubbles.svg",
+            "query":"(from-domain:INSTANT_MESSAGE;* OR to-domain:INSTANT_MESSAGE;* OR cc-domain:INSTANT_MESSAGE;* OR bcc-domain:INSTANT_MESSAGE;*)",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.contacts",
+            "icon": "breakout-address-book.svg",
+            "query":"kind:contact",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.images",
+            "icon": "breakout-image.svg",
+            "query":"kind:image",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.multimedia",
+            "icon": "breakout-film.svg",
+            "query":"kind:multimedia",
+            "metadataProfile": "",
+            "view": "gallery"
+         }
+
+      ]
+   },
+   {
+      "name":"web-core.BreakoutVisualization.perspective.informationGovernance",
+      "breakoutQueries":[
+         {
+            "name":"web-core.BreakoutVisualization.json.officeContent",
+            "icon": "breakout-windows8.svg",
+            "query":"kind:(document OR presentation OR spreadsheet) NOT file-extension:(htm OR mht OR html)",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.emailContactCalendar",
+            "icon": "breakout-book.svg",
+            "query":"kind:(email OR calendar OR contact) OR file-extension:pst",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.drawings",
+            "icon": "breakout-pencil.svg",
+            "query":"kind:drawing",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.databases",
+            "icon": "breakout-database.svg",
+            "query":"kind:database",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.applicationAndSystemFiles",
+            "icon": "breakout-file-empty.svg",
+            "query":"kind:system",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.multimedia",
+            "icon": "breakout-film.svg",
+            "query":"kind:multimedia",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.plainText",
+            "icon": "breakout-file-text.svg",
+            "query":"file-extension:txt",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.containers",
+            "icon": "breakout-file-zip.svg",
+            "query":"kind:container NOT file-extension:pst",
+            "metadataProfile": "",
+            "view": "grid"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.images",
+            "icon": "breakout-camera.svg",
+            "query":"kind:image",
+            "metadataProfile": "",
+            "view": "gallery"
+         },
+         {
+            "name":"web-core.BreakoutVisualization.json.other",
+            "icon": "breakout-question.svg",
+            "query":"(kind:unrecognised OR kind:other-document) NOT (file-extension:txt)",
+            "metadataProfile": "",
+            "view": "grid"
+         }
+      ]
+   }
+]

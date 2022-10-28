@@ -1,0 +1,2387 @@
+[
+  {
+    "name": "web-core.CaseSummaryVisualization.defaultConfig.highSkinToneImages",
+    "caseSummaryQueries": [
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.highSkinToneImages.severe",
+        "query": "skintone:[0.5 TO 1.01]",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.highSkinToneImages.high",
+        "query": "skintone:[0.2 TO 0.5]",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.highSkinToneImages.medium",
+        "query": "skintone:[0.05 TO 0.2]",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.highSkinToneImages.low",
+        "query": "skintone:[0.0 TO 0.05]",
+        "metadataProfile": "",
+        "view": "gallery"
+      }
+    ]
+  },
+  {
+    "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery",
+    "caseSummaryQueries": [
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.mailstores",
+        "query": "flag:physical_file AND ( mime-type:( application/vnd.lotus-notes OR application/vnd.ms-outlook OR application/vnd.ms-exchange-edb OR application/mbox OR application/vnd.ms-entourage OR application/vnd.ms-outlook-express OR application/vnd.ms-outlook-express-4 OR application/vnd.ms-outlook-mac OR application/vnd.tencent-foxmail-box OR server/imap OR server/pop3 ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.forensicImages",
+        "query": "flag:physical_file AND ( mime-type:( application/vnd.guidance-encase OR application/vnd.accessdata-ftk-imager OR application/vnd.apple-udif OR application/vnd.guidance-encase-evf2 OR application/vnd.guidance-encase-lef2 OR application/vnd.guidance-encase-lvf OR application/vnd.microforensics-filesafe OR application/vnd.msab-xry OR application/vnd.x-ways.filesystem ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.compressedFiles",
+        "query": "flag:physical_file AND ( mime-type:( application/x-rar-compressed OR application/x-zip-compressed OR application/vnd.ms-cab-compressed OR application/x-7z-compressed OR application/x-alzip-compressed OR application/x-egg-compressed OR application/x-alzip-compressed OR application/x-stuffit OR application/x-tar OR application/x-zoo ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.looseFiles",
+        "query": "flag:physical_file AND NOT ( mime-type:( application/x-rar-compressed OR application/x-zip-compressed OR application/vnd.ms-cab-compressed OR  application/x-7z-compressed OR application/x-alzip-compressed OR application/x-egg-compressed OR application/x-alzip-compressed OR application/x-stuffit OR  application/x-tar OR application/x-zoo ) OR mime-type:( application/vnd.guidance-encase OR application/vnd.accessdata-ftk-imager OR application/vnd.apple-udif OR  application/vnd.guidance-encase-evf2 OR application/vnd.guidance-encase-lef2 OR application/vnd.guidance-encase-lvf OR application/vnd.microforensics-filesafe OR  application/vnd.msab-xry OR application/vnd.x-ways.filesystem )  OR mime-type:( application/vnd.lotus-notes OR application/vnd.ms-outlook OR  application/vnd.ms-exchange-edb OR application/mbox OR application/vnd.ms-entourage OR application/vnd.ms-outlook-express OR application/vnd.ms-outlook-express-4 OR  application/vnd.ms-outlook-mac OR application/vnd.tencent-foxmail-box OR server/imap OR server/pop3 ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.emails",
+        "query": "kind:( email OR calendar OR contact ) AND flag:top_level",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.attachments",
+        "query": "path-kind:( email OR calendar OR contact ) AND flag:audited",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.looseDocuments",
+        "query": "kind:( document OR spreadsheet OR presentation ) NOT path-kind:( email OR calendar OR contact )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.ediscovery.otherItems",
+        "query": "NOT ( ( kind:( email OR calendar OR contact ) AND flag:top_level ) OR ( path-kind:( email OR calendar OR contact ) AND flag:audited ) OR ( kind:( document OR spreadsheet OR presentation ) NOT path-kind:( email OR calendar OR contact ) ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation",
+    "caseSummaryQueries": [
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.mailstores",
+        "query": "flag:physical_file AND ( mime-type:( application/vnd.lotus-notes OR application/vnd.ms-outlook OR application/vnd.ms-exchange-edb OR application/mbox OR application/vnd.ms-entourage OR application/vnd.ms-outlook-express OR application/vnd.ms-outlook-express-4 OR application/vnd.ms-outlook-mac OR application/vnd.tencent-foxmail-box OR server/imap OR server/pop3 ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.forensicImages",
+        "query": "flag:physical_file AND ( mime-type:( application/vnd.guidance-encase OR application/vnd.accessdata-ftk-imager OR application/vnd.apple-udif OR application/vnd.guidance-encase-evf2 OR application/vnd.guidance-encase-lef2 OR application/vnd.guidance-encase-lvf OR application/vnd.microforensics-filesafe OR application/vnd.msab-xry OR application/vnd.x-ways.filesystem ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.officeContent",
+        "query": "kind:(document OR presentation OR spreadsheet) NOT file-extension:(htm OR mht OR html)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.compressedFiles",
+        "query": "flag:physical_file AND ( mime-type:( application/x-rar-compressed OR application/x-zip-compressed OR application/vnd.ms-cab-compressed OR application/x-7z-compressed OR application/x-alzip-compressed OR application/x-egg-compressed OR application/x-alzip-compressed OR application/x-stuffit OR application/x-tar OR application/x-zoo ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.looseFiles",
+        "query": "flag:physical_file AND NOT ( mime-type:( application/x-rar-compressed OR application/x-zip-compressed OR application/vnd.ms-cab-compressed OR  application/x-7z-compressed OR application/x-alzip-compressed OR application/x-egg-compressed OR application/x-alzip-compressed OR application/x-stuffit OR  application/x-tar OR application/x-zoo ) OR mime-type:( application/vnd.guidance-encase OR application/vnd.accessdata-ftk-imager OR application/vnd.apple-udif OR  application/vnd.guidance-encase-evf2 OR application/vnd.guidance-encase-lef2 OR application/vnd.guidance-encase-lvf OR application/vnd.microforensics-filesafe OR  application/vnd.msab-xry OR application/vnd.x-ways.filesystem )  OR mime-type:( application/vnd.lotus-notes OR application/vnd.ms-outlook OR  application/vnd.ms-exchange-edb OR application/mbox OR application/vnd.ms-entourage OR application/vnd.ms-outlook-express OR application/vnd.ms-outlook-express-4 OR  application/vnd.ms-outlook-mac OR application/vnd.tencent-foxmail-box OR server/imap OR server/pop3 ) )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.emails",
+        "query": "kind:( email OR calendar OR contact ) AND flag:top_level",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.attachments",
+        "query": "path-kind:( email OR calendar OR contact ) AND flag:audited",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.looseDocuments",
+        "query": "kind:( document OR spreadsheet OR presentation ) NOT path-kind:( email OR calendar OR contact )",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.deletedFilesFullyRecovered",
+        "query": "flag:fully_recovered",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.deletedFilesPartiallyRecovered",
+        "query": "flag:partially_recovered",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.encryptedFiles",
+        "query": "encrypted:1",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.imagesMultimedia",
+        "query": "kind:image OR kind:multimedia",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.investigation.otherItems",
+        "query": "NOT ( ( kind:( email OR calendar OR contact ) AND flag:top_level ) OR ( path-kind:( email OR calendar OR contact ) AND flag:audited ) OR ( kind:( document OR spreadsheet OR presentation OR image OR multimedia) NOT path-kind:( email OR calendar OR contact ) ) ) ",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance",
+    "caseSummaryQueries": [
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.officeContent",
+        "query": "flag:physical_file AND kind:(document OR presentation OR spreadsheet) NOT file-extension:(htm OR mht OR html)",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.emailsContactsAndCalendars",
+        "query": "flag:physical_file AND kind:(email OR calendar OR contact) OR file-extension:pst",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.drawings",
+        "query": "flag:physical_file AND kind:drawing",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.databases",
+        "query": "flag:physical_file AND kind:database",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.applicationsAndSystemFiles",
+        "query": "flag:physical_file AND kind:system",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.multimedia",
+        "query": "flag:physical_file AND kind:multimedia",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.plainText",
+        "query": "flag:physical_file AND file-extension:txt",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.containers",
+        "query": "flag:physical_file AND kind:container NOT file-extension:pst",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.images",
+        "query": "flag:physical_file AND kind:image",
+        "metadataProfile": "",
+        "view": "gallery"
+      },
+      {
+        "name": "web-core.CaseSummaryVisualization.defaultConfig.informationGovernance.other",
+        "query": "(kind:unrecognised OR kind:other-document) NOT (file-extension:txt)",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Business Operations",
+    "caseSummaryQueries": [
+      {
+        "name": "Building Sign-In Sign-Out",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Building Sign-In Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Requirements Document",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Business Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment Sign Out Sheet",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equipment Sign Out Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equity Research Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility Study",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Feasibility Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation for Bid",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Invitation for Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Online Advertising Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project Proposal",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Project Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Referral Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Proposal",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Quotation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement of Work",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Statement of Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Status Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Supplemental Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term Sheet",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Business Organization",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Plan",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Business Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "General Partnership Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission Statement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Mission Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Communications",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Introduction Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Business Introduction Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Invitation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Itinerary",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Itinerary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Agenda",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Minutes",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "RSVP",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.RSVP.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Financial",
+    "caseSummaryQueries": [
+      {
+        "name": "401k or 403b Enrollment Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.401k or 403b Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Purchase Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Purchase Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Credit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Debenture Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reimbursement Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Employee Reimbursement Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Expense Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Forbearance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Market Summary",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Guarantee",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial Balance",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Trial Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Healthcare",
+    "caseSummaryQueries": [
+      {
+        "name": "Doctors Note",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Doctors Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health Benefits Enrollment Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Health Benefits Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA Release Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.HIPAA Release Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical Clearance Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Medical Clearance Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New Patient Registration",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.New Patient Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient Consent Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Patient Consent Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/HR",
+    "caseSummaryQueries": [
+      {
+        "name": "Accident Incident Investigation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Investigation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident Incident Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate Evaluation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Candidate Evaluation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Compensation Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination Complaint",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Discrimination Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Bonus Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Contract",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Offer Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Offer Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Termination Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Termination Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit Interview Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Exit Interview Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Description",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Job Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave Request",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Leave Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter of Reprimand",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Letter of Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel Change Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Personnel Change Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Severance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers Compensation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Workers Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Insurance",
+    "caseSummaryQueries": [
+      {
+        "name": "Dental Claim Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Dental Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Complaint Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Complaint Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Proposal Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Proposal Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability Claim Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Liability Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/IT",
+    "caseSummaryQueries": [
+      {
+        "name": "Online Terms & Conditions",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Online Terms & Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless Customer Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Wireless Customer Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Legal",
+    "caseSummaryQueries": [
+      {
+        "name": "Affidavit of Heirship",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit of Marriage",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest Log",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Arrest Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary Designation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Beneficiary Designation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Order",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract Amendment",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Contract Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce Settlement Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Divorce Settlement Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold Harmless Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Hold Harmless Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Briefs",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Legal Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Motion",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Motion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution of Attorney",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Substitution of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter Registration Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Voter Registration Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Miscellaneous",
+    "caseSummaryQueries": [
+      {
+        "name": "Absentee Ballot Request",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Absentee Ballot Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor List",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Donor List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Sales",
+    "caseSummaryQueries": [
+      {
+        "name": "Bill of Sale",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Bill of Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Card Authorization",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Credit Card Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invoice",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Invoice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase Order",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Purchase Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Receipt.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/defaultModel",
+    "caseSummaryQueries": [
+      {
+        "name": "Building & Construction",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Career Planning & Employment",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crime & Law Enforcement",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Direct PII",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Economics & Finance",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Education",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government & Politics",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Indirect PII",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect PII.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "News & Media",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Science",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Tourism & Travel",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Building & Construction",
+    "caseSummaryQueries": [
+      {
+        "name": "Electrical",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Electrical.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Plumbing",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Plumbing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Surfacing",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Surfacing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Windows & Doors",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Windows & Doors.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Law & Crimes",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Law & Crimes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Management",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Management.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employees",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Employees.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Human Resources",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Human Resources.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Career Planning & Employment",
+    "caseSummaryQueries": [
+      {
+        "name": "Employee Benefits",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Employee Benefits.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Application Process",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Job Application Process.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Retirement & Termination",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Retirement & Termination.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Crime & Law Enforcement",
+    "caseSummaryQueries": [
+      {
+        "name": "Civil Law",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Civil Law.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crimes & Criminals",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Crimes & Criminals.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Criminal Justice",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Criminal Justice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Practices",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Legal Practices.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Direct PII",
+    "caseSummaryQueries": [
+      {
+        "name": "Contact Information",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Contact Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financial Information",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Financial Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Home Information",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Home Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Individual Information",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Individual Information.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Information Technology",
+        "query": "nlp:\"model.defaultModel.dictionary.Direct PII.topic.Information Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Economics & Finance",
+    "caseSummaryQueries": [
+      {
+        "name": "Accounting",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Accounting.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Banking",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Banking.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cryptocurrency",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Cryptocurrency.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Insurance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Investment",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Investment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Loans.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stocks",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Stocks.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Education",
+    "caseSummaryQueries": [
+      {
+        "name": "Awards & Ceremonies",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.Awards & Ceremonies.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "College & University",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.College & University.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research & Academia",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.Research & Academia.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "School System",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.School System.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Government & Politics",
+    "caseSummaryQueries": [
+      {
+        "name": "Campaign Finance",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Campaign Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Courts & Judiciary",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Courts & Judiciary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Elections",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Elections.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government Finance",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Government Finance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Infrastructure",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Infrastructure.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Services",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Social Services.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Indirect PII",
+    "caseSummaryQueries": [
+      {
+        "name": "Time",
+        "query": "nlp:\"model.defaultModel.dictionary.Indirect PII.topic.Time.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/News & Media",
+    "caseSummaryQueries": [
+      {
+        "name": "Journalism",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.Journalism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "News Organizations",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.News Organizations.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Types of Media",
+        "query": "nlp:\"model.defaultModel.dictionary.News & Media.topic.Types of Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Science",
+    "caseSummaryQueries": [
+      {
+        "name": "Astronomy",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Astronomy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Chemistry",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Chemistry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Earth Science",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Earth Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Oceanography",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Oceanography.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Physics",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Physics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Tourism & Travel",
+    "caseSummaryQueries": [
+      {
+        "name": "Air Travel",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Air Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hospitality Industry",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Hospitality Industry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Overland Travel",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Overland Travel.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Traveling",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Traveling.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business Operations",
+    "caseSummaryQueries": [
+      {
+        "name": "Building Sign-In Sign-Out",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Building Sign-In Sign-Out.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Requirements Document",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Business Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equipment Sign Out Sheet",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equipment Sign Out Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Equity Research Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Feasibility Study",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Feasibility Study.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation for Bid",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Invitation for Bid.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Online Advertising Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project Proposal",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Project Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Referral Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Referral Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Proposal",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Proposal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Request for Quotation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Request for Quotation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Statement of Work",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Statement of Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Status Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supplemental Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Supplemental Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term Sheet",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Business Organization",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Plan",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Business Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "General Partnership Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission Statement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Mission Statement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Communications",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Introduction Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Business Introduction Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Invitation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Itinerary",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Itinerary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Agenda",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Agenda.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Meeting Minutes",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.Meeting Minutes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "RSVP",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Communications.skill.RSVP.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Financial",
+    "caseSummaryQueries": [
+      {
+        "name": "401k or 403b Enrollment Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.401k or 403b Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Purchase Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Purchase Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Credit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Debenture Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Debenture Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reimbursement Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Employee Reimbursement Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expense Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Expense Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forbearance Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Forbearance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Market Summary",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Guarantee",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Guarantee.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Personal Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trial Balance",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Trial Balance.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Healthcare",
+    "caseSummaryQueries": [
+      {
+        "name": "Doctors Note",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Doctors Note.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health Benefits Enrollment Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Health Benefits Enrollment Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HIPAA Release Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.HIPAA Release Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medical Clearance Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Medical Clearance Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New Patient Registration",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.New Patient Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient Consent Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Healthcare.skill.Patient Consent Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/HR",
+    "caseSummaryQueries": [
+      {
+        "name": "Accident Incident Investigation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Investigation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accident Incident Report",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Accident Incident Report.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Candidate Evaluation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Candidate Evaluation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Compensation Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Discrimination Complaint",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Discrimination Complaint.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Bonus Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Reference Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Reference Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Contract",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Contract.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Offer Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Offer Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Termination Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employment Termination Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Exit Interview Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Exit Interview Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Description",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Job Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Leave Request",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Leave Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter of Reprimand",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Letter of Reprimand.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personnel Change Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Personnel Change Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Severance Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Workers Compensation",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Workers Compensation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Insurance",
+    "caseSummaryQueries": [
+      {
+        "name": "Dental Claim Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Dental Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Complaint Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Complaint Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Proposal Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Proposal Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Liability Claim Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Liability Claim Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/IT",
+    "caseSummaryQueries": [
+      {
+        "name": "Online Terms & Conditions",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Online Terms & Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Wireless Customer Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - IT.skill.Wireless Customer Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Legal",
+    "caseSummaryQueries": [
+      {
+        "name": "Affidavit of Heirship",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Affidavit of Marriage",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Marriage.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest Log",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Arrest Log.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Beneficiary Designation Form",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Beneficiary Designation Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Letter",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Letter.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cease and Desist Order",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Cease and Desist Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contract Amendment",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Contract Amendment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Divorce Settlement Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Divorce Settlement Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hold Harmless Agreement",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Hold Harmless Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Briefs",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Legal Briefs.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Motion",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Motion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Substitution of Attorney",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Substitution of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Voter Registration Application",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Voter Registration Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Miscellaneous",
+    "caseSummaryQueries": [
+      {
+        "name": "Absentee Ballot Request",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Absentee Ballot Request.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor List",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Donor List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Sales",
+    "caseSummaryQueries": [
+      {
+        "name": "Bill of Sale",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Bill of Sale.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Credit Card Authorization",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Credit Card Authorization.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invoice",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Invoice.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Purchase Order",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Purchase Order.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Sales.skill.Receipt.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk Type",
+    "caseSummaryQueries": [
+      {
+        "name": "Business Management",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Business Management.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employees",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Employees.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Loans.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Compensation Policy.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Receipt.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AverageRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High AverageRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AverageRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AverageRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AverageRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AvgClassifierRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High AvgClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AvgClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AvgClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/AvgEntityRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High AvgEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium AvgEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low AvgEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.AvgEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Date Information",
+    "caseSummaryQueries": [
+      {
+        "name": "High Date Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Date Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Date Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Date Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/DictionaryRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High DictionaryRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium DictionaryRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low DictionaryRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DictionaryRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/DoctypeRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High DoctypeRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium DoctypeRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low DoctypeRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.DoctypeRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxClassifierRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High MaxClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxEntityRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High MaxEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/MaxRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High MaxRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium MaxRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low MaxRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.MaxRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Personal Information",
+    "caseSummaryQueries": [
+      {
+        "name": "High Personal Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Personal Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Personal Information",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Personal Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalClassifierRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High TotalClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalClassifierRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalClassifierRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalEntityRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High TotalEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalEntityRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalEntityRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/TotalRisk",
+    "caseSummaryQueries": [
+      {
+        "name": "High TotalRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium TotalRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low TotalRisk",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.TotalRisk\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Entities/Default",
+    "caseSummaryQueries": [
+      {
+        "name": "Australian Telephone Number",
+        "query": "named-entities:\"australian-telephone-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Australian Tfn",
+        "query": "named-entities:\"australian-tfn;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Generic Card Number",
+        "query": "named-entities:\"generic-card-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Generic Licence Number",
+        "query": "named-entities:\"generic-licence-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Money",
+        "query": "named-entities:\"money;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Person Name",
+        "query": "named-entities:\"person-name;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Entities/Contextual",
+    "caseSummaryQueries": [
+      {
+        "name": "Cardinal",
+        "query": "named-entities:\"nlp_cardinal;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Date",
+        "query": "named-entities:\"nlp_date;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Date Of Birth",
+        "query": "named-entities:\"nlp_date-of-birth;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Event",
+        "query": "named-entities:\"nlp_event;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Expiration Date",
+        "query": "named-entities:\"nlp_expiration-date;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Facility",
+        "query": "named-entities:\"nlp_facility;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Geo Political Entity",
+        "query": "named-entities:\"nlp_geo_political_entity;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Group",
+        "query": "named-entities:\"nlp_group;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Language",
+        "query": "named-entities:\"nlp_language;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Law",
+        "query": "named-entities:\"nlp_law;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Location",
+        "query": "named-entities:\"nlp_location;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Money",
+        "query": "named-entities:\"nlp_money;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Ordinal",
+        "query": "named-entities:\"nlp_ordinal;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Organization",
+        "query": "named-entities:\"nlp_organization;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Percent",
+        "query": "named-entities:\"nlp_percent;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Person",
+        "query": "named-entities:\"nlp_person;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product",
+        "query": "named-entities:\"nlp_product;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Quantity",
+        "query": "named-entities:\"nlp_quantity;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Street Address",
+        "query": "named-entities:\"nlp_street-address;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Time",
+        "query": "named-entities:\"nlp_time;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Work Of Art",
+        "query": "named-entities:\"nlp_work_of_art;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Top Types",
+    "caseSummaryQueries": [
+      {
+        "name": "Voter Registration Application",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Voter Registration Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Bonus Plan",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Employee Bonus Plan\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "401k or 403b Enrollment Form",
+        "query": "custom-metadata:\"nlp.topDocType\":\"401k or 403b Enrollment Form\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Loan Application",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Personal Loan Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Compensation Policy",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Compensation Policy\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk Types/Top Types",
+    "caseSummaryQueries": [
+      {
+        "name": "Date Information",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Date Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Personal Information",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Personal Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Management",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Business Management\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Receipt\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Loans",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Loans\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  }
+]
