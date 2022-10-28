@@ -3,7 +3,7 @@
     "id": "30978773-3638570520-1647911410532",
     "name": "Send Email",
     "description": "",
-    "lastEditedOn": 1649657273737,
+    "lastEditedOn": 1665366147689,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": null,
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -47,11 +47,9 @@
         "Send Email"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -97,8 +95,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -124,8 +122,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -174,8 +171,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -201,8 +198,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -217,8 +213,8 @@
       ]
     }
   ],
-  "id": 358,
-  "createdOn": 1649657273737,
+  "id": 50,
+  "createdOn": 1665366147689,
   "archived": false,
   "nonBlockingStepIds": [
 

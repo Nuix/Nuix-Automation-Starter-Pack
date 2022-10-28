@@ -25,6 +25,10 @@ class Automation
 	def getCases()
 		return doCall('/cases',nil)
 	end
+	
+	def getRegisteredImsInstances()
+		return doCall('/registeredImsInstances',nil)
+	end
 
 	def getWorkflows()
 		return doCall('/workflowTemplates?includeDrafts=false',nil)

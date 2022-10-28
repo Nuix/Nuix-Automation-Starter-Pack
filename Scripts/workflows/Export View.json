@@ -3,7 +3,7 @@
     "id": "38910502-3008472949-1649811714359",
     "name": "Export View",
     "description": "",
-    "lastEditedOn": 1649811830910,
+    "lastEditedOn": 1665366147095,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": null,
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -46,11 +46,9 @@
         "Export View"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -96,8 +94,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -123,8 +121,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -139,8 +136,8 @@
       ]
     }
   ],
-  "id": 376,
-  "createdOn": 1649811830910,
+  "id": 35,
+  "createdOn": 1665366147095,
   "archived": false,
   "nonBlockingStepIds": [
 

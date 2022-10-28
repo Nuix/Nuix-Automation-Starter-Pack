@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<production-profile xmlns="http://schemas.nuix.com/2016/production-profile" version="1" created-by="9.6.5.283">
+<production-profile xmlns="http://schemas.nuix.com/2016/production-profile" version="1" created-by="9.10.3.279">
   <id>ce0aec60-9dac-4fbe-8c4c-a3c2c8afe3c9</id>
   <headers-and-footers>
     <header-left>
@@ -40,7 +40,6 @@
       <item-condition>
         <mime-type>application/planmaker.spreadsheetml.sheet</mime-type>
         <mime-type>application/vnd.apple.numbers</mime-type>
-        <mime-type>application/vnd.apple.numbers.13</mime-type>
         <mime-type>application/vnd.corel-quattro</mime-type>
         <mime-type>application/vnd.google-drive-spreadsheet</mime-type>
         <mime-type>application/vnd.lotus-123</mime-type>

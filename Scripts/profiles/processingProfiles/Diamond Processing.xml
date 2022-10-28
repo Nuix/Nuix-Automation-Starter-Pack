@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <processing-profile xmlns="http://schemas.nuix.com/2017/processing-profile" version="1" created-by="9.10.3.279">
-  <id>32a1c036-9f21-4bbf-9a9a-47707c5ae8f8</id>
+  <id>aa5331ba-8f85-43f9-a7cb-6c81bfaeb62c</id>
   <data-processing-settings>
-    <create-thumbnails>false</create-thumbnails>
+    <create-thumbnails>true</create-thumbnails>
+    <thumbnail-size>350</thumbnail-size>
     <workstation-thumbnail-enabled>false</workstation-thumbnail-enabled>
-    <web-thumbnail-enabled>false</web-thumbnail-enabled>
+    <web-thumbnail-enabled>true</web-thumbnail-enabled>
     <custom-thumbnail-enabled>false</custom-thumbnail-enabled>
-    <process-text>false</process-text>
-    <process-loose-file-contents>false</process-loose-file-contents>
+    <process-text>true</process-text>
+    <process-loose-file-contents>true</process-loose-file-contents>
     <process-forensic-images>true</process-forensic-images>
     <index-chars-fields>false</index-chars-fields>
     <store-binary>false</store-binary>
@@ -20,14 +21,14 @@
     </digests>
     <max-digest-size>250000000</max-digest-size>
     <max-binary-size>250000000</max-binary-size>
-    <reuse-evidence-stores>false</reuse-evidence-stores>
-    <extract-named-entities-from-text>false</extract-named-entities-from-text>
+    <reuse-evidence-stores>true</reuse-evidence-stores>
+    <extract-named-entities-from-text>true</extract-named-entities-from-text>
     <extract-named-entities-from-properties>false</extract-named-entities-from-properties>
-    <extract-named-entities-from-communications>false</extract-named-entities-from-communications>
-    <extract-named-entities-from-text-stripped>false</extract-named-entities-from-text-stripped>
+    <extract-named-entities-from-communications>true</extract-named-entities-from-communications>
+    <extract-named-entities-from-text-stripped>true</extract-named-entities-from-text-stripped>
     <use-custom-named-entity-profile>false</use-custom-named-entity-profile>
     <process-text-summaries>false</process-text-summaries>
-    <extract-shingles>false</extract-shingles>
+    <extract-shingles>true</extract-shingles>
     <calculate-audited-size>false</calculate-audited-size>
     <process-family-fields>false</process-family-fields>
     <hide-embedded-immaterial-data>false</hide-embedded-immaterial-data>
@@ -73,22 +74,22 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_REGISTRY</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
         <mime-type>APPLICATION_VND_MS_CAB_COMPRESSED</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>PROCESS_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>IMAGE_VND_AUTOCAD_DWF</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
           <store-binary>true</store-binary>
         </mime-type-processing-setting>
       </mime-type-setting>
@@ -103,9 +104,9 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_DWF</mime-type>
+        <mime-type>APPLICATION_VND_MS_REGISTRY</mime-type>
         <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>true</process-embedded>
@@ -193,7 +194,7 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>FILESYSTEM_X_NTFS_USNJRNL</mime-type>
+        <mime-type>FILESYSTEM_X_NTFS_LOGFILE</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -203,7 +204,7 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>FILESYSTEM_X_NTFS_LOGFILE</mime-type>
+        <mime-type>FILESYSTEM_X_NTFS_USNJRNL</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -233,9 +234,9 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_IIS_LOG</mime-type>
+        <mime-type>APPLICATION_VND_MS_WINDOWS_PREFETCH</mime-type>
         <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>false</process-embedded>
@@ -243,9 +244,9 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_WINDOWS_PREFETCH</mime-type>
+        <mime-type>APPLICATION_VND_MS_IIS_LOG</mime-type>
         <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>false</process-embedded>
@@ -314,6 +315,7 @@
       </mime-type-setting>
     </mime-type-settings>
     <calculate-processing-size>false</calculate-processing-size>
+    <worker-script-settings><![CDATA[{"scriptList":[{"language":"ruby","script":"$badNames\u003d[\"FileSlack\",\"unallocated space\",\"Windows\",\"AppData\",\"startupCache\",\"cache2\",\"session-store-backups\",\"Imager_Lite\",\"Source\"].map{|name|name.downcase}\n$badTypes\u003d[\"application/vnd.ms-registry\",\"application/vnd.ms-registry-journal\",\"application/vnd.ms-registry-decoded\",\"application/vnd.ms-registry-key\",\"application/x-empty\",\"text/x-ini\",\"application/octet-stream\",\"application/dll\"]\n\n# Define our worker item callback\ndef nuix_worker_item_callback(worker_item)\n\tmySourceItem\u003dworker_item.getSourceItem()\n\t#if any part of a bad name matches don\u0027t include it, with a length greater than 5... (that keeps the A,B,C folders and a few others)\n\tif(mySourceItem.getName().length \u003e 5)\n\t\tif($badNames.select{|name|mySourceItem.getName().downcase.include? name}.length \u003e 0)\n\t\t\tworker_item.setProcessItem(false) #don\u0027t show this item or process it at all\n\t\tend\n\tend\n\t#if any of the types is the source type don\u0027t bother.\n\tif($badTypes.include? mySourceItem.getType().getName())\n\t\tworker_item.setProcessItem(false) #don\u0027t show this item or process it at all\n\tend\nend\n\n# Define cleanup method\ndef nuix_worker_item_callback_close\n\t# Cleanup, finalize, report, etc\nend","logName":"script"}]}]]></worker-script-settings>
     <processing-settings-software-version>9.10.3.279</processing-settings-software-version>
     <calculate-ss-deep-fuzzy-hash>false</calculate-ss-deep-fuzzy-hash>
     <calculate-photo-dna-robust-hash>false</calculate-photo-dna-robust-hash>
@@ -325,12 +327,12 @@
     <export-metadata>false</export-metadata>
   </data-processing-settings>
   <data-settings>
-    <software-version>9.6.6.317</software-version>
+    <software-version>9.8.2.262</software-version>
     <extract-from-slack-space>false</extract-from-slack-space>
     <carve-file-system-unallocated-space>false</carve-file-system-unallocated-space>
     <carve-unidentified-data>false</carve-unidentified-data>
     <extract-end-of-file-slack-space>false</extract-end-of-file-slack-space>
-    <smart-process-registry>false</smart-process-registry>
+    <smart-process-registry>true</smart-process-registry>
     <recover-deleted-files>false</recover-deleted-files>
     <expose-binary-data-for-directories>false</expose-binary-data-for-directories>
     <direct-access-to-mailboxes>false</direct-access-to-mailboxes>
@@ -344,10 +346,10 @@
   </data-settings>
   <parallel-processing-settings>
     <worker-count>2</worker-count>
-    <worker-memory>1870</worker-memory>
+    <worker-memory>2004</worker-memory>
     <embed-broker>true</embed-broker>
     <broker-memory>4096</broker-memory>
-    <worker-temp-directory>C:\Users\CSTILL~1\AppData\Local\Temp\Nuix</worker-temp-directory>
+    <worker-temp-directory>C:\temp</worker-temp-directory>
     <user-defined-temp-directory>true</user-defined-temp-directory>
   </parallel-processing-settings>
   <case-evidence-settings>
@@ -360,5 +362,5 @@
   <password-discovery-settings>
     <mode>NONE</mode>
   </password-discovery-settings>
-  <keys-location>C:\Users\cstiller01\AppData\Roaming\Nuix\Processing Profiles</keys-location>
+  <keys-location>C:\ProgramData\Nuix\Processing Profiles</keys-location>
 </processing-profile>

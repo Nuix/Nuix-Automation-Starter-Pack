@@ -1,9 +1,9 @@
 {
   "templateMetadata": {
     "id": "74690283-3764385788-1658876799310",
-    "name": "Batch NLP Workflow (for Grafana)",
+    "name": "Batch NLP Workflow (for Graphana)",
     "description": "",
-    "lastEditedOn": 1658892531105,
+    "lastEditedOn": 1665366146814,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -46,11 +46,9 @@
         "Bulk Production Set"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -112,8 +110,8 @@
           "scopeToBatch": false,
           "parallelProcessingSettings": null,
           "usesWorkers": true,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": true,
+          "selectableLicenceType": true,
           "umsSession": null
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkProductionSetContext",
@@ -140,8 +138,7 @@
         "Batch Upload NLP Information"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case",
         "ingestionStepId": null
@@ -191,8 +188,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -218,8 +215,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -234,8 +230,8 @@
       ]
     }
   ],
-  "id": 496,
-  "createdOn": 1658892531105,
+  "id": 30,
+  "createdOn": 1665366146814,
   "archived": false,
   "nonBlockingStepIds": [
 

@@ -3,7 +3,7 @@
     "id": "99432282-3235262181-1648788158700",
     "name": "Backup Environment",
     "description": "",
-    "lastEditedOn": 1649657273956,
+    "lastEditedOn": 1665366146767,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -52,10 +52,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -71,11 +71,9 @@
         "Backup Environment"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -119,8 +117,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -146,8 +144,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New or Existing Case"
       },
@@ -173,8 +170,8 @@
       ]
     }
   ],
-  "id": 362,
-  "createdOn": 1649657273956,
+  "id": 29,
+  "createdOn": 1665366146767,
   "archived": false,
   "nonBlockingStepIds": [
 

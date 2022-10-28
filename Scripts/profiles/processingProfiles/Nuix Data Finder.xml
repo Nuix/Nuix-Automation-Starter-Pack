@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<processing-profile xmlns="http://schemas.nuix.com/2017/processing-profile" version="1" created-by="9.6.5.283">
+<processing-profile xmlns="http://schemas.nuix.com/2017/processing-profile" version="1" created-by="9.10.3.279">
   <id>aa01b0ef-6fe3-43fe-a460-39c98d4ff0af</id>
   <data-processing-settings>
     <create-thumbnails>false</create-thumbnails>
@@ -33,6 +33,56 @@
     <hide-embedded-immaterial-data>false</hide-embedded-immaterial-data>
     <mime-type-settings>
       <mime-type-setting>
+        <mime-type>IMAGE_VND_AUTOCAD_DWG</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_X_PLIST</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_VND_SQLITE_DATABASE</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_X_PCAPNG</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_VND_MS_REGISTRY</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
         <mime-type>APPLICATION_VND_MS_CAB_COMPRESSED</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>PROCESS_TEXT</text-processing-mode>
@@ -53,6 +103,36 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
+        <mime-type>IMAGE_VND_AUTOCAD_DWF</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>IMAGE_VND_AUTOCAD_DWFX</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_JAVA_ARCHIVE</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
         <mime-type>TEXT_X_COMMON_LOG</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
@@ -63,9 +143,29 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>FILESYSTEM_UNALLOCATED_SPACE_CHUNK</mime-type>
+        <mime-type>FILESYSTEM_X_NTFS_MFT</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>TEXT_TAB_SEPARATED_VALUES</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>IMAGE_VND_AUTOCAD_SHP</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>true</process-embedded>
@@ -73,27 +173,7 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_SQLITE_DATABASE</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>FILESYSTEM_X_NTFS_USNJRNL</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_JAVA_ARCHIVE</mime-type>
+        <mime-type>APPLICATION_VND_MS_WIM</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>PROCESS_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -113,106 +193,6 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_WINDOWS_EVENT_LOG</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_IIS_LOG</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_DWFX</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_WINDOWS_EVENT_LOGX</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_X_PCAPNG</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_DWF</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_DWG</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_SHP</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_X_PLIST</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>APPLICATION_VND_DEBIAN_BINARY_PACKAGE</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>false</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
         <mime-type>FILESYSTEM_X_NTFS_LOGFILE</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
@@ -223,27 +203,7 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_EXE</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>SKIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>IMAGE_VND_AUTOCAD_DXF</mime-type>
-        <mime-type-processing-setting>
-          <text-processing-mode>STRIP_TEXT</text-processing-mode>
-          <process-named-entities>true</process-named-entities>
-          <process-images>true</process-images>
-          <process-embedded>true</process-embedded>
-          <store-binary>true</store-binary>
-        </mime-type-processing-setting>
-      </mime-type-setting>
-      <mime-type-setting>
-        <mime-type>FILESYSTEM_X_NTFS_MFT</mime-type>
+        <mime-type>FILESYSTEM_X_NTFS_USNJRNL</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -253,9 +213,9 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_REGISTRY</mime-type>
+        <mime-type>IMAGE_VND_AUTOCAD_DXF</mime-type>
         <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>true</process-embedded>
@@ -273,7 +233,7 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_TCPDUMP_PCAP</mime-type>
+        <mime-type>APPLICATION_VND_MS_IIS_LOG</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -293,7 +253,37 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>TEXT_TAB_SEPARATED_VALUES</mime-type>
+        <mime-type>APPLICATION_VND_MS_WINDOWS_EVENT_LOG</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_EXE</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>SKIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_VND_TCPDUMP_PCAP</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>false</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>APPLICATION_VND_DEBIAN_BINARY_PACKAGE</mime-type>
         <mime-type-processing-setting>
           <text-processing-mode>PROCESS_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
@@ -303,19 +293,29 @@
         </mime-type-processing-setting>
       </mime-type-setting>
       <mime-type-setting>
-        <mime-type>APPLICATION_VND_MS_WIM</mime-type>
+        <mime-type>APPLICATION_VND_MS_WINDOWS_EVENT_LOGX</mime-type>
         <mime-type-processing-setting>
-          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <text-processing-mode>STRIP_TEXT</text-processing-mode>
           <process-named-entities>true</process-named-entities>
           <process-images>true</process-images>
           <process-embedded>false</process-embedded>
           <store-binary>true</store-binary>
         </mime-type-processing-setting>
       </mime-type-setting>
+      <mime-type-setting>
+        <mime-type>FILESYSTEM_UNALLOCATED_SPACE_CHUNK</mime-type>
+        <mime-type-processing-setting>
+          <text-processing-mode>PROCESS_TEXT</text-processing-mode>
+          <process-named-entities>true</process-named-entities>
+          <process-images>true</process-images>
+          <process-embedded>true</process-embedded>
+          <store-binary>true</store-binary>
+        </mime-type-processing-setting>
+      </mime-type-setting>
     </mime-type-settings>
     <calculate-processing-size>false</calculate-processing-size>
     <worker-script-settings><![CDATA[{"scriptList":[{"language":"ruby","script":"require \u0027json\u0027\nrequire \u0027pathname\u0027\nrequire \u0027java\u0027\n\ndef initNDF(workerItem)\n\tif($nuixWssInstance.nil?)\n\t\tconfigPath\u003dworkerItem.getWorkerStoreDir().getParent().getParent().to_s + \"/config_ndf.profile.file.json\"\n\t\tputs \"reading from:#{configPath}\"\n\t\tjsonFile\u003dJSON.parse(File.read(configPath))\n\t\tputs \"reading JSON from:#{jsonFile}\"\n\t\tjsonContents\u003dFile.read(jsonFile)\n\t\tputs jsonContents\n\t\tconfig \u003d $ndfProcessor.getProcessingConfigurationFactory().readProcessingConfigurationFromJSON(jsonContents)\n\t\t$nuixWssInstance \u003d $ndfProcessor.getNDFWorkerProcessor()\n\t\t$nuixWssInstance.setProcessingConfiguration(config)\n\tend\nend\n\ndef nuixWorkerItemCallbackInit()\n\t$nuixWssInstance \u003d nil\n\t$ndfProcessor \u003d Java::NuixNdfPlugin::NDFProcessor.getNDFProcessor()\nend\n\ndef nuixWorkerItemCallback(workerItem)\n\tinitNDF(workerItem)\n\t$ndfProcessor.getProcessingConfigurationFactory().persistSettings($nuixWssInstance.getProcessingConfiguration(), workerItem.getWorkerStoreDir(), true)\n\t$nuixWssInstance.accept(workerItem)\nend\n\ndef nuixWorkerItemCallbackClose()\n\t$nuixWssInstance.close()\nend","logName":"script"}]}]]></worker-script-settings>
-    <processing-settings-software-version>9.6.5.283</processing-settings-software-version>
+    <processing-settings-software-version>9.10.3.279</processing-settings-software-version>
     <calculate-ss-deep-fuzzy-hash>false</calculate-ss-deep-fuzzy-hash>
     <calculate-photo-dna-robust-hash>false</calculate-photo-dna-robust-hash>
     <classify-images-with-deep-learning>false</classify-images-with-deep-learning>
@@ -344,7 +344,6 @@
     </disabled-mime-types>
   </data-settings>
   <parallel-processing-settings>
-    <run-local-workers>true</run-local-workers>
     <worker-count>2</worker-count>
     <worker-memory>2304</worker-memory>
     <embed-broker>true</embed-broker>

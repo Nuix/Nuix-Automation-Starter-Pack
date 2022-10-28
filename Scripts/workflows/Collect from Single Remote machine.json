@@ -3,7 +3,7 @@
     "id": "92199324-2202654021-1646964663664",
     "name": "Collect from Single Remote machine",
     "description": "Matching ECC Configuration and machine name",
-    "lastEditedOn": 1649657273534,
+    "lastEditedOn": 1665366146892,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -74,11 +74,9 @@
         "ECC Collection by Target"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -124,8 +122,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -151,8 +149,7 @@
         "Process FileSafe"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case"
       },
@@ -269,8 +266,8 @@
               "isValid": false
             }
           },
-          "canUseRemoteWorkers": false,
           "usesWorkers": true,
+          "canUseRemoteWorkers": true,
           "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
@@ -305,8 +302,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case"
       },
@@ -321,8 +317,8 @@
       ]
     }
   ],
-  "id": 353,
-  "createdOn": 1649657273534,
+  "id": 32,
+  "createdOn": 1665366146892,
   "archived": false,
   "nonBlockingStepIds": [
 

@@ -3,7 +3,7 @@
     "id": "19424495-1219708212-1646964212812",
     "name": "Early Case Assessment ",
     "description": "custodians, cull, dedup, exclude,ocr,search and tag",
-    "lastEditedOn": 1649657273628,
+    "lastEditedOn": 1665366147001,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -74,11 +74,9 @@
         "Assign Custodians"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -111,8 +109,7 @@
               "fileName": "NUIX_Determine_Custodians.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "758e45ad-2dcd-4f45-9c43-fe19b46a5b00",
               "uiMetadata": {
@@ -122,8 +119,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -149,8 +146,7 @@
         "Bulk Item Set"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case"
       },
@@ -215,8 +211,8 @@
           ],
           "scopeToBatch": false,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkItemSetContext",
@@ -242,8 +238,7 @@
         "Bulk Exclusion"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case",
         "ingestionStepId": null
@@ -340,8 +335,8 @@
           ],
           "reportDisplayName": "ECA",
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkExclusionContext",
@@ -367,8 +362,7 @@
         "Optical Character Recognition"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case"
       },
@@ -439,8 +433,8 @@
           "exportProcessingJob": null,
           "scopeToBatch": false,
           "usesWorkers": true,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": true
+          "canUseRemoteWorkers": true,
+          "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.OcrContext",
         "lockableProperties": [
@@ -476,8 +470,7 @@
         "Bulk Search And Tag"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case",
         "ingestionStepId": null
@@ -591,8 +584,8 @@
           },
           "uiMetadata": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
@@ -620,8 +613,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "New Case"
       },
@@ -649,8 +641,8 @@
       ]
     }
   ],
-  "id": 355,
-  "createdOn": 1649657273628,
+  "id": 33,
+  "createdOn": 1665366147001,
   "archived": false,
   "nonBlockingStepIds": [
 

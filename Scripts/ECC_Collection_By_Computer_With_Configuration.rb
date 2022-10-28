@@ -33,7 +33,7 @@ begin
 	config.set('ecc.configuration.id',configurationId)
 	collectionJobs=[]
 	collectionIds=[]
-	computerUUIDs=$ECC.getComputerUUIdsFromNames('/^AUSYD-W-INO-.*$/')
+	computerUUIDs=$ECC.getComputerUUIdsFromNames(config.customArguments["computer.name"])
 
 	threads = []
 	singleProcessingLock = Mutex.new
@@ -41,7 +41,7 @@ begin
 		thread=Thread.new(computerUUID) { | thisComputerUUID |
 			
 			#collect by Computer name
-			collectionId=$ECC.runCollectionByComputer($currentCase.getName() + ":" + thisComputerUUID,caseId,configurationId,thisComputerUUID)
+			collectionId=$ECC.runCollectionByComputer($currentCase.getName() + "_" + thisComputerUUID,caseId,configurationId,thisComputerUUID)
 			collectionIds.push(collectionId)
 				
 			#wait it out

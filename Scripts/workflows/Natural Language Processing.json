@@ -3,7 +3,7 @@
     "id": "44002756-4404036681-1651707219866",
     "name": "Natural Language Processing",
     "description": "",
-    "lastEditedOn": 1652064556036,
+    "lastEditedOn": 1665366147298,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -52,10 +52,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": null,
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -71,11 +71,9 @@
         "Create NLP Profile"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -122,8 +120,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -149,8 +147,7 @@
         "Reprocess"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -267,8 +264,8 @@
               "isValid": false
             }
           },
-          "canUseRemoteWorkers": false,
           "usesWorkers": true,
+          "canUseRemoteWorkers": true,
           "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
@@ -303,8 +300,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -319,8 +315,8 @@
       ]
     }
   ],
-  "id": 461,
-  "createdOn": 1652064556036,
+  "id": 40,
+  "createdOn": 1665366147298,
   "archived": false,
   "nonBlockingStepIds": [
 

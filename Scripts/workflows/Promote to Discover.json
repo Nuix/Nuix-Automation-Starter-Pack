@@ -3,7 +3,7 @@
     "id": "66112748-1419546009-1646964051768",
     "name": "Promote to Discover",
     "description": "Matching search -> Production Set -> Discover",
-    "lastEditedOn": 1649657406868,
+    "lastEditedOn": 1665366147439,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -75,11 +75,9 @@
         "Populate Stores"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -184,8 +182,7 @@
         "Bulk Production Set"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -278,8 +275,8 @@
             "embedBroker": true
           },
           "usesWorkers": true,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": true,
+          "selectableLicenceType": true,
           "umsSession": null
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkProductionSetContext",
@@ -306,8 +303,7 @@
         "Promote to Discover"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case",
         "ingestionStepId": null
@@ -367,8 +363,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -394,8 +390,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -454,8 +449,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -481,8 +476,7 @@
         "Discover - Assign Me to the Case"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -518,8 +512,7 @@
               "fileName": "DISCOVER_Assign_Users_To_Case.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "ab5fd9c4-e952-4162-8d6a-4ffc0b9fd052",
               "uiMetadata": {
@@ -529,8 +522,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -556,8 +549,7 @@
         "Promote to Discover"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -615,8 +607,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -642,8 +634,7 @@
         "Discover - Assign Users to the Case"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -691,8 +682,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -718,8 +709,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -734,8 +724,8 @@
       ]
     }
   ],
-  "id": 367,
-  "createdOn": 1649657406868,
+  "id": 44,
+  "createdOn": 1665366147439,
   "archived": false,
   "nonBlockingStepIds": [
 

@@ -3,7 +3,7 @@
     "id": "73226452-2534957617-1648082360624",
     "name": "Advanced Prefiltering",
     "description": "Create NDF Profile on demand and use it",
-    "lastEditedOn": 1649657273690,
+    "lastEditedOn": 1665366146705,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": null,
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -46,11 +46,9 @@
         "Prefilter"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -115,8 +113,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -142,8 +140,7 @@
         "Ingestion"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -254,8 +251,8 @@
           "umsUrl": null,
           "umsSession": null,
           "usesWorkers": true,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": true
+          "canUseRemoteWorkers": true,
+          "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.IngestionContext",
         "lockableProperties": [
@@ -270,8 +267,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -286,8 +282,8 @@
       ]
     }
   ],
-  "id": 357,
-  "createdOn": 1649657273690,
+  "id": 28,
+  "createdOn": 1665366146705,
   "archived": false,
   "nonBlockingStepIds": [
 

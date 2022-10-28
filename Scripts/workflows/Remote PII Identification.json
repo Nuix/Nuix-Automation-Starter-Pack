@@ -3,7 +3,7 @@
     "id": "74089043-1927812518-1649912752271",
     "name": "Remote PII Identification",
     "description": "Detect and apply remediation for a filtered list of computers",
-    "lastEditedOn": 1651124941219,
+    "lastEditedOn": 1666149116902,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -74,11 +74,9 @@
         "Identify"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -111,9 +109,9 @@
               "fileName": "ECC_Collection_By_Computer_With_Configuration.rb",
               "async": true,
               "customArguments": {
-                "case.name": "Automation",
-                "computer.name": "/^AUSYD-W-INO-.*$/",
-                "configuration.name": "Credit Cards"
+                "computer.name": "AUSYD-FIN-WD-007",
+                "configuration.name": "Australian Sensitive Check",
+                "case.name": "Automation"
               },
               "writeOutputToFileSystem": false,
               "scriptId": "4d86c1b6-9fd0-4a56-a30c-2306505fd1c7",
@@ -124,8 +122,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -148,17 +146,90 @@
       "runtimeConfigurable": true,
       "continueOnFailure": false,
       "nextSteps": [
-        "Understand"
+        "Choose Criteria"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
       "uiMetadata": {
         "graph": {
           "x": 200,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_ChooseNDFProfile.rb",
+              "async": true,
+              "customArguments": {
+                "ndf.profileName": "australian"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "ef983968-f8ca-42ae-a858-9ad507ef5ab2",
+              "uiMetadata": {
+                "paneId": "pane-8209179181-1665442580543"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Choose Criteria",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Understand"
+      ],
+      "customArguments": {
+},
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Request"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 400,
           "y": 0
         }
       },
@@ -250,7 +321,7 @@
             "depth": null
           },
           "configurationProfile": null,
-          "processingProfile": "Text and Sensitive Information",
+          "processingProfile": "Nuix Data Finder",
           "query": "mime-type:application/vnd.microforensics-filesafe",
           "nuixLicenceType": "enterprise-workstation",
           "requireNewNuixLicence": true,
@@ -269,8 +340,8 @@
               "isValid": false
             }
           },
-          "canUseRemoteWorkers": false,
           "usesWorkers": true,
+          "canUseRemoteWorkers": true,
           "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.ReprocessIngestionContext",
@@ -302,17 +373,16 @@
       "runtimeConfigurable": true,
       "continueOnFailure": false,
       "nextSteps": [
-        "Analyse"
+        "Protect"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
       "uiMetadata": {
         "graph": {
-          "x": 400,
+          "x": 600,
           "y": 0
         }
       },
@@ -356,8 +426,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -376,21 +446,96 @@
           "umsSession"
         ]
       },
-      "id": "Analyse",
+      "id": "Protect",
+      "runtimeConfigurable": true,
+      "continueOnFailure": false,
+      "nextSteps": [
+        "Content Analysis"
+      ],
+      "customArguments": {
+},
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Request"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 800,
+          "y": 0
+        }
+      },
+      "templateLockedProperties": [
+
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "NUIX_NLP_SaaS.rb",
+              "async": true,
+              "customArguments": {
+                "query": "flag:top_level content:*",
+                "includeFamilies": "true",
+                "updateDuplicates": "true"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "2cf758ef-1123-49ce-9a21-b81e8f8344c8",
+              "uiMetadata": {
+                "paneId": "pane-4205537060-1665442707241"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Content Analysis",
       "runtimeConfigurable": true,
       "continueOnFailure": false,
       "nextSteps": [
         "Notify"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
       "uiMetadata": {
         "graph": {
-          "x": 600,
+          "x": 1000,
           "y": 0
         }
       },
@@ -422,7 +567,7 @@
               "customArguments": {
                 "subject": "${$currentCase.getName} has finished",
                 "to": "cameron.stiller@nuix.com",
-                "body": "Identification has been completed.\n\n\nDetected ${$currentCase.count(\"named-entities:*\")} items with credit cards across ${$currentCase.getRootItems().size()} computers."
+                "body": "Identification has been completed.\n\n\nDetected ${$currentCase.count(\"named-entities:*\")} items with entities across ${$currentCase.getRootItems().size()} computers."
               },
               "writeOutputToFileSystem": false,
               "scriptId": "7172d9ab-74a7-43ba-9d40-b691c5d3a8c2",
@@ -433,8 +578,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -460,14 +605,13 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
       "uiMetadata": {
         "graph": {
-          "x": 800,
+          "x": 1200,
           "y": 0
         }
       },
@@ -476,8 +620,8 @@
       ]
     }
   ],
-  "id": 455,
-  "createdOn": 1651124941219,
+  "id": 97,
+  "createdOn": 1666149116902,
   "archived": false,
   "nonBlockingStepIds": [
 

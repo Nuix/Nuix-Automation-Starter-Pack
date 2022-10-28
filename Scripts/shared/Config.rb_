@@ -113,6 +113,15 @@ class Config
 		return someString
 	end
 	
+	def getNUIX_VERSION()
+		if(defined?(NUIX_VERSION))
+			return NUIX_VERSION
+		end
+		auto_config=Config.new({},[],[],["Automation"]) #loading automation class...
+		tempAutomation=Automation.new($creds['automation']['server'],$creds['automation']['username'],$creds['automation']['password'])
+		return tempAutomation.getRegisteredImsInstances().first()["engineVersion"]		
+	end
+	
 end
 
 

@@ -3,7 +3,7 @@
     "id": "95915491-1333207295-1646964988147",
     "name": "Hydrating Data",
     "description": "OCR + Third party integrations",
-    "lastEditedOn": 1649657343584,
+    "lastEditedOn": 1665366147126,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -76,11 +76,9 @@
         "Translate"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -124,8 +122,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -151,8 +149,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -188,8 +185,7 @@
               "fileName": "NUIX_Determine_OCR_Candidates.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "ae0c3ae7-2ae5-40cc-b5cb-bfd30c683818",
               "uiMetadata": {
@@ -199,8 +195,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -226,8 +222,7 @@
         "Optical Character Recognition OCR"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -298,8 +293,8 @@
           "exportProcessingJob": null,
           "scopeToBatch": false,
           "usesWorkers": true,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": true
+          "canUseRemoteWorkers": true,
+          "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.OcrContext",
         "lockableProperties": [
@@ -335,8 +330,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case",
         "ingestionStepId": null
@@ -406,8 +400,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -433,8 +427,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -460,8 +453,8 @@
       ]
     }
   ],
-  "id": 365,
-  "createdOn": 1649657343584,
+  "id": 36,
+  "createdOn": 1665366147126,
   "archived": false,
   "nonBlockingStepIds": [
 

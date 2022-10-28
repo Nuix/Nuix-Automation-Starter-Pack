@@ -3,7 +3,7 @@
     "id": "80982230-1910433596-1648522412052",
     "name": "Integrity Check",
     "description": "Run a smoke test across a case to verify it's integrity. Handy to migrate cases",
-    "lastEditedOn": 1649656784693,
+    "lastEditedOn": 1665366147189,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -52,10 +52,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -71,11 +71,9 @@
         "Smoke Test"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -108,8 +106,7 @@
               "fileName": "NUIX_SmokeTest.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "1d49ff3d-2537-4b00-8d22-d5fec32106eb",
               "uiMetadata": {
@@ -119,8 +116,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -146,8 +143,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing Case"
       },
@@ -173,8 +169,8 @@
       ]
     }
   ],
-  "id": 328,
-  "createdOn": 1649656784693,
+  "id": 38,
+  "createdOn": 1665366147189,
   "archived": false,
   "nonBlockingStepIds": [
 

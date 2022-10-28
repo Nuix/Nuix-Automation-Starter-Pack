@@ -3,7 +3,7 @@
     "id": "11363407-2916118328-1647490307651",
     "name": "NRT Testing",
     "description": "",
-    "lastEditedOn": 1649657273659,
+    "lastEditedOn": 1665366147361,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": null,
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -46,11 +46,9 @@
         "Case Summary NRT"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -95,8 +93,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -122,8 +120,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -138,8 +135,8 @@
       ]
     }
   ],
-  "id": 356,
-  "createdOn": 1649657273659,
+  "id": 42,
+  "createdOn": 1665366147361,
   "archived": false,
   "nonBlockingStepIds": [
 

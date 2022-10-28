@@ -3,7 +3,7 @@
     "id": "71678066-2317024080-1651109894274",
     "name": "Remote PII  Remediation",
     "description": "Apply remediation for a filtered list of computers",
-    "lastEditedOn": 1651124961079,
+    "lastEditedOn": 1665459186521,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -74,11 +74,9 @@
         "Report"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -126,8 +124,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -153,15 +151,14 @@
         "Act"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
       "uiMetadata": {
         "graph": {
           "x": 200,
-          "y": -0.6798334121704102
+          "y": 0
         }
       },
       "templateLockedProperties": [
@@ -203,8 +200,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -230,8 +227,7 @@
         "Notify"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
@@ -269,7 +265,7 @@
               "customArguments": {
                 "subject": "${$currentCase.getName} has finished",
                 "to": "cameron.stiller@nuix.com",
-                "body": "Remediation has been completed.\n\n\nDetected ${$currentCase.count(\"named-entities:*\")} items with credit cards across ${$currentCase.getRootItems().size()} computers."
+                "body": "Remediation has been completed.\n\n\nDetected ${$currentCase.count(\"named-entities:*\")} items with entities across ${$currentCase.getRootItems().size()} computers."
               },
               "writeOutputToFileSystem": false,
               "scriptId": "7172d9ab-74a7-43ba-9d40-b691c5d3a8c2",
@@ -280,8 +276,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -307,8 +303,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Request"
       },
@@ -323,8 +318,8 @@
       ]
     }
   ],
-  "id": 456,
-  "createdOn": 1651124961079,
+  "id": 79,
+  "createdOn": 1665459186521,
   "archived": false,
   "nonBlockingStepIds": [
 

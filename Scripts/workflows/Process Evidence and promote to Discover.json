@@ -3,7 +3,7 @@
     "id": "79388898-1893386124-1645667016056",
     "name": "Process Evidence and promote to Discover",
     "description": "Evidence -> Uses NDF Settings -> Discover",
-    "lastEditedOn": 1649657549741,
+    "lastEditedOn": 1665443236425,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -55,10 +55,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -74,11 +74,9 @@
         "Choose NDF Profile"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -122,8 +120,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -150,8 +148,7 @@
         "Discover - Clone case"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -262,8 +259,8 @@
           "umsUrl": null,
           "umsSession": null,
           "usesWorkers": true,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": true
+          "canUseRemoteWorkers": true,
+          "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.IngestionContext",
         "lockableProperties": [
@@ -278,8 +275,7 @@
         "Ingestion Report"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -305,8 +301,8 @@
           "umsUrl": null,
           "userId": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.RequiresNuixLicenceContext",
@@ -330,8 +326,7 @@
         "Assign Custodians"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case",
         "ingestionStepId": "Ingestion"
@@ -377,8 +372,7 @@
               "fileName": "NUIX_Determine_Custodians.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "758e45ad-2dcd-4f45-9c43-fe19b46a5b00",
               "uiMetadata": {
@@ -388,8 +382,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -415,8 +409,7 @@
         "Bulk Item Set"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -481,8 +474,8 @@
           ],
           "scopeToBatch": false,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkItemSetContext",
@@ -508,8 +501,7 @@
         "Bulk Exclusion"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case",
         "ingestionStepId": "Ingestion"
@@ -606,8 +598,8 @@
           ],
           "reportDisplayName": "ECA",
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkExclusionContext",
@@ -635,8 +627,7 @@
         "Transcribe Candidates"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -683,8 +674,7 @@
               "fileName": "NUIX_Determine_OCR_Candidates.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "ae0c3ae7-2ae5-40cc-b5cb-bfd30c683818",
               "uiMetadata": {
@@ -694,8 +684,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -721,8 +711,7 @@
         "Perform OCR"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -793,8 +782,8 @@
           "exportProcessingJob": null,
           "scopeToBatch": false,
           "usesWorkers": true,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": true
+          "canUseRemoteWorkers": true,
+          "selectableLicenceType": true
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.OcrContext",
         "lockableProperties": [
@@ -830,8 +819,7 @@
         "Bulk Search And Tag"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case",
         "ingestionStepId": "Ingestion"
@@ -901,8 +889,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -928,100 +916,13 @@
         "Bulk Search And Tag"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
       "uiMetadata": {
         "graph": {
           "x": 1400,
-          "y": 100
-        }
-      },
-      "templateLockedProperties": [
-        "numberOfWorkers",
-        "canUseRemoteWorkers",
-        "usesWorkers",
-        "selectableLicenceType",
-        "name",
-        "umsUrl",
-        "requireNewNuixLicence",
-        "nuixLicenceType",
-        "requests",
-        "class",
-        "userId",
-        "umsSession"
-      ]
-    },
-    {
-      "activity": {
-        "activityType": "bulkRunUserScript",
-        "cancelRequested": false,
-        "executionContext": null,
-        "activityContext": {
-          "numberOfWorkers": null,
-          "nuixLicenceType": "enterprise-workstation",
-          "requireNewNuixLicence": true,
-          "umsUrl": null,
-          "userId": null,
-          "requests": [
-            {
-              "restClusterSettings": null,
-              "script": null,
-              "language": "RUBY",
-              "name": null,
-              "description": null,
-              "relativeOutputDirectory": null,
-              "fileName": "GENERIC_DeleteDirectory.rb",
-              "async": true,
-              "customArguments": {
-                "directory": "PopulateStores"
-              },
-              "writeOutputToFileSystem": false,
-              "scriptId": "87513b84-e8b7-469a-9d2a-5308d27c87af",
-              "uiMetadata": {
-                "paneId": "pane-3630430614-1645674683076"
-              }
-            }
-          ],
-          "name": null,
-          "umsSession": null,
-          "selectableLicenceType": true,
-          "canUseRemoteWorkers": false,
-          "usesWorkers": false
-        },
-        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
-        "lockableProperties": [
-          "numberOfWorkers",
-          "canUseRemoteWorkers",
-          "usesWorkers",
-          "selectableLicenceType",
-          "name",
-          "umsUrl",
-          "requireNewNuixLicence",
-          "nuixLicenceType",
-          "requests",
-          "class",
-          "userId",
-          "umsSession"
-        ]
-      },
-      "id": "Clean Up from Populating Stores",
-      "runtimeConfigurable": false,
-      "continueOnFailure": true,
-      "nextSteps": [
-
-      ],
-      "customArguments": {
-
-      },
-      "stepIdDependencies": {
-        "caseSelectionStepId": "Create a NEW Elasticsearch Case"
-      },
-      "uiMetadata": {
-        "graph": {
-          "x": 2400,
           "y": 100
         }
       },
@@ -1073,8 +974,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1100,8 +1001,7 @@
         "Bulk Search And Tag"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1203,8 +1103,8 @@
           },
           "uiMetadata": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkSearchAndTagContext",
@@ -1232,8 +1132,7 @@
         "Bulk Redact"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1295,8 +1194,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1322,8 +1221,7 @@
         "Populate Stores"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1442,8 +1340,7 @@
         "Bulk Production Set"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1474,6 +1371,91 @@
         "nuixLicenceType",
         "class",
         "loadFileTypes",
+        "umsSession"
+      ]
+    },
+    {
+      "activity": {
+        "activityType": "bulkRunUserScript",
+        "cancelRequested": false,
+        "executionContext": null,
+        "activityContext": {
+          "numberOfWorkers": null,
+          "nuixLicenceType": "enterprise-workstation",
+          "requireNewNuixLicence": true,
+          "umsUrl": null,
+          "userId": null,
+          "requests": [
+            {
+              "restClusterSettings": null,
+              "script": null,
+              "language": "RUBY",
+              "name": null,
+              "description": null,
+              "relativeOutputDirectory": null,
+              "fileName": "GENERIC_DeleteDirectory.rb",
+              "async": true,
+              "customArguments": {
+                "directory": "PopulateStores"
+              },
+              "writeOutputToFileSystem": false,
+              "scriptId": "87513b84-e8b7-469a-9d2a-5308d27c87af",
+              "uiMetadata": {
+                "paneId": "pane-3630430614-1645674683076"
+              }
+            }
+          ],
+          "name": null,
+          "umsSession": null,
+          "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
+          "usesWorkers": false
+        },
+        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
+        "lockableProperties": [
+          "numberOfWorkers",
+          "canUseRemoteWorkers",
+          "usesWorkers",
+          "selectableLicenceType",
+          "name",
+          "umsUrl",
+          "requireNewNuixLicence",
+          "nuixLicenceType",
+          "requests",
+          "class",
+          "userId",
+          "umsSession"
+        ]
+      },
+      "id": "Clean Up from Populating Stores",
+      "runtimeConfigurable": false,
+      "continueOnFailure": true,
+      "nextSteps": [
+
+      ],
+      "customArguments": {
+},
+      "stepIdDependencies": {
+        "caseSelectionStepId": "Create a NEW Elasticsearch Case"
+      },
+      "uiMetadata": {
+        "graph": {
+          "x": 2400,
+          "y": 200
+        }
+      },
+      "templateLockedProperties": [
+        "numberOfWorkers",
+        "canUseRemoteWorkers",
+        "usesWorkers",
+        "selectableLicenceType",
+        "name",
+        "umsUrl",
+        "requireNewNuixLicence",
+        "nuixLicenceType",
+        "requests",
+        "class",
+        "userId",
         "umsSession"
       ]
     },
@@ -1536,8 +1518,8 @@
             "embedBroker": true
           },
           "usesWorkers": true,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": true,
+          "selectableLicenceType": true,
           "umsSession": null
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkProductionSetContext",
@@ -1564,8 +1546,7 @@
         "Promote to Discover"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case",
         "ingestionStepId": "Ingestion"
@@ -1626,8 +1607,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1653,8 +1634,7 @@
         "Discover - Assign Me to the Case"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1690,8 +1670,7 @@
               "fileName": "DISCOVER_Assign_Users_To_Case.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "ab5fd9c4-e952-4162-8d6a-4ffc0b9fd052",
               "uiMetadata": {
@@ -1701,8 +1680,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1728,8 +1707,7 @@
         "Promote to Discover"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
@@ -1787,8 +1765,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1814,15 +1792,14 @@
         "Discover - Assign Users to the Case"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
       "uiMetadata": {
         "graph": {
           "x": 2600,
-          "y": 400
+          "y": 500
         }
       },
       "templateLockedProperties": [
@@ -1863,8 +1840,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1890,15 +1867,14 @@
         "Send Email"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
       "uiMetadata": {
         "graph": {
           "x": 2800,
-          "y": 400
+          "y": 500
         }
       },
       "templateLockedProperties": [
@@ -1940,8 +1916,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -1967,15 +1943,14 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Create a NEW Elasticsearch Case"
       },
       "uiMetadata": {
         "graph": {
           "x": 3000,
-          "y": 400
+          "y": 500
         }
       },
       "templateLockedProperties": [
@@ -1983,8 +1958,8 @@
       ]
     }
   ],
-  "id": 373,
-  "createdOn": 1649657549741,
+  "id": 69,
+  "createdOn": 1665443236425,
   "archived": false,
   "nonBlockingStepIds": [
 

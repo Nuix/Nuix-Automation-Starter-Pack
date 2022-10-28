@@ -3,7 +3,7 @@
     "id": "61320040-2487543419-1648600390276",
     "name": "Bulk Scheduler",
     "description": "",
-    "lastEditedOn": 1649656784740,
+    "lastEditedOn": 1665366146845,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -52,10 +52,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
-          "numberOfWorkers": null,
           "nuixLicenceType": "enterprise-workstation",
-          "selectableLicenceType": true,
+          "numberOfWorkers": null,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -71,11 +71,9 @@
         "Bulk Schedule - Integrity Check"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -120,8 +118,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -147,8 +145,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Existing case"
       },
@@ -163,8 +160,8 @@
       ]
     }
   ],
-  "id": 329,
-  "createdOn": 1649656784740,
+  "id": 31,
+  "createdOn": 1665366146845,
   "archived": false,
   "nonBlockingStepIds": [
 

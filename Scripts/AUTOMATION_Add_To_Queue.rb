@@ -32,10 +32,14 @@ begin
 		cazes=cazes.select{| caze |caze['name']==customArguments['caseName']}
 	end
 	cazes.each do | caze |
-		confirmation=$automation.scheduleJob(caze,workflow,customArguments["notify"],true) #true=migrate case
-		puts "Schedule ID:#{confirmation['value']}\t#{caze['name']} has been scheduled for #{workflow['templateMetadata']['name']}, "
+		begin
+			confirmation=$automation.scheduleJob(caze,workflow,customArguments["notify"],true) #true=migrate case
+			puts "Schedule ID:#{confirmation['value']}\t#{caze['name']} has been scheduled for #{workflow['templateMetadata']['name']}, "
+		rescue Exception => ex
+			puts "ERROR:" + caze['name'] + ", " + ex.message
+		end
 	end
 	return "all finished"
-rescue Exception => ex
-	raise Exception.new(ex.message + "\n" + ex.backtrace.to_s)
+rescue Exception => ex2
+	raise Exception.new(ex2.message + "\n" + ex2.backtrace.to_s)
 end

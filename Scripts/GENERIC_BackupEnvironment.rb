@@ -8,7 +8,7 @@ begin
 	end
 	userScriptsLocation=('"' + configMap['userScriptsLocation'] + '"').undump.strip()
 	load userScriptsLocation + "/shared/Config.rb_"
-	config=Config.new(configMap,customArguments,[],["Automation"])
+	config=Config.new(configMap,customArguments,["includeDefault"],["Automation"])
 rescue Exception => ex
 	raise ex.message + " does your automation config have a line for userScriptsLocation=some path? Expected file at: #{filePath}"
 end
@@ -20,8 +20,8 @@ FileUtils.mkdir_p(userScriptsLocation + "/workflows")
 $automation=Automation.new($creds['automation']['server'],$creds['automation']['username'],$creds['automation']['password'])
 $automation.getWorkflows().each do | workflow |
 	keep=true
-	if(workflow['templateMetadata']['name'].include? "Default")
-		if(customArguments["includeDefault"]!="true")
+	if(customArguments["includeDefault"]=="false")
+		if(workflow['templateMetadata']['name'].include? "Default")
 			keep=false
 		end
 	end

@@ -1,9 +1,9 @@
 {
   "templateMetadata": {
-    "id": "91591381-2327298499-1648677207168",
-    "name": "Schedule Loop",
+    "id": "29528722-4280319902-1665023354543",
+    "name": "NLP Saas",
     "description": "",
-    "lastEditedOn": 1665366147658,
+    "lastEditedOn": 1665443236550,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -39,11 +39,11 @@
           "elasticSearchSettings"
         ]
       },
-      "id": "Job Setup",
+      "id": "Existing Case",
       "runtimeConfigurable": true,
       "continueOnFailure": false,
       "nextSteps": [
-        "Sleep for 10 seconds"
+        "Process with NLP SaaS"
       ],
       "customArguments": {
 },
@@ -78,15 +78,17 @@
               "name": null,
               "description": null,
               "relativeOutputDirectory": null,
-              "fileName": "sleepTest.rb",
+              "fileName": "NUIX_NLP_SaaS.rb",
               "async": true,
               "customArguments": {
-                "time": "10"
+                "query": "flag:top_level content:*",
+                "includeFamilies": "false",
+                "updateDuplicates": "false"
               },
               "writeOutputToFileSystem": false,
-              "scriptId": "b8957feb-8c5c-448b-b516-fa4ea75262da",
+              "scriptId": "d6dcf9ff-820d-4498-8db2-fea37def6e75",
               "uiMetadata": {
-                "paneId": "pane-1629079387-1648677307023"
+                "paneId": "pane-3697550574-1665023368734"
               }
             }
           ],
@@ -112,16 +114,16 @@
           "umsSession"
         ]
       },
-      "id": "Sleep for 10 seconds",
+      "id": "Process with NLP SaaS",
       "runtimeConfigurable": true,
       "continueOnFailure": false,
       "nextSteps": [
-        "Reschedule this job"
+
       ],
       "customArguments": {
 },
       "stepIdDependencies": {
-        "caseSelectionStepId": "Job Setup"
+        "caseSelectionStepId": "Existing Case"
       },
       "uiMetadata": {
         "graph": {
@@ -132,86 +134,10 @@
       "templateLockedProperties": [
 
       ]
-    },
-    {
-      "activity": {
-        "activityType": "bulkRunUserScript",
-        "cancelRequested": false,
-        "executionContext": null,
-        "activityContext": {
-          "numberOfWorkers": null,
-          "nuixLicenceType": null,
-          "requireNewNuixLicence": true,
-          "umsUrl": null,
-          "userId": null,
-          "requests": [
-            {
-              "restClusterSettings": null,
-              "script": null,
-              "language": "RUBY",
-              "name": null,
-              "description": null,
-              "relativeOutputDirectory": null,
-              "fileName": "AUTOMATION_Add_To_Queue.rb",
-              "async": true,
-              "customArguments": {
-                "workflowName": "Schedule Loop",
-                "notify": "cameron.stiller@nuix.com",
-                "caseName": "Empty Case for testing"
-              },
-              "writeOutputToFileSystem": false,
-              "scriptId": "69514534-1c99-4a8f-87a2-3c2f96f3cf41",
-              "uiMetadata": {
-                "paneId": "pane-3659194541-1648677237631"
-              }
-            }
-          ],
-          "name": null,
-          "umsSession": null,
-          "canUseRemoteWorkers": false,
-          "selectableLicenceType": true,
-          "usesWorkers": false
-        },
-        "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
-        "lockableProperties": [
-          "numberOfWorkers",
-          "canUseRemoteWorkers",
-          "usesWorkers",
-          "selectableLicenceType",
-          "name",
-          "umsUrl",
-          "requireNewNuixLicence",
-          "nuixLicenceType",
-          "requests",
-          "class",
-          "userId",
-          "umsSession"
-        ]
-      },
-      "id": "Reschedule this job",
-      "runtimeConfigurable": true,
-      "continueOnFailure": false,
-      "nextSteps": [
-
-      ],
-      "customArguments": {
-},
-      "stepIdDependencies": {
-        "caseSelectionStepId": "Job Setup"
-      },
-      "uiMetadata": {
-        "graph": {
-          "x": 400,
-          "y": 0
-        }
-      },
-      "templateLockedProperties": [
-
-      ]
     }
   ],
-  "id": 49,
-  "createdOn": 1665366147658,
+  "id": 71,
+  "createdOn": 1665443236550,
   "archived": false,
   "nonBlockingStepIds": [
 

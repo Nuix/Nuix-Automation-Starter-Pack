@@ -3,7 +3,7 @@
     "id": "51344952-3917123065-1649811776925",
     "name": "Snap Workflows",
     "description": "",
-    "lastEditedOn": 1649811830941,
+    "lastEditedOn": 1665443099380,
     "lastEditedBy": "demo",
     "productVersion": null
   },
@@ -27,10 +27,10 @@
           "requireNewNuixLicence": true,
           "umsSession": null,
           "umsUrl": null,
+          "nuixLicenceType": "enterprise-workstation",
           "numberOfWorkers": null,
-          "nuixLicenceType": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.CaseCreationOrSelectionContext",
@@ -46,11 +46,9 @@
         "Snap Workflows"
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
-
-      },
+},
       "uiMetadata": {
         "graph": {
           "x": 0,
@@ -68,7 +66,7 @@
         "executionContext": null,
         "activityContext": {
           "numberOfWorkers": null,
-          "nuixLicenceType": null,
+          "nuixLicenceType": "enterprise-workstation",
           "requireNewNuixLicence": true,
           "umsUrl": null,
           "userId": null,
@@ -83,8 +81,7 @@
               "fileName": "GENERIC_SnapWorkflows.rb",
               "async": true,
               "customArguments": {
-
-              },
+},
               "writeOutputToFileSystem": false,
               "scriptId": "10cfcdcf-4f26-4628-9f17-6d4a020e8c39",
               "uiMetadata": {
@@ -94,8 +91,8 @@
           ],
           "name": null,
           "umsSession": null,
-          "selectableLicenceType": true,
           "canUseRemoteWorkers": false,
+          "selectableLicenceType": true,
           "usesWorkers": false
         },
         "activityContextClass": "com.nuix.us.automation.activity.context.BulkRunUserScriptContext",
@@ -121,8 +118,7 @@
 
       ],
       "customArguments": {
-
-      },
+},
       "stepIdDependencies": {
         "caseSelectionStepId": "Job Setup"
       },
@@ -137,8 +133,8 @@
       ]
     }
   ],
-  "id": 377,
-  "createdOn": 1649811830941,
+  "id": 65,
+  "createdOn": 1665443099380,
   "archived": false,
   "nonBlockingStepIds": [
 
