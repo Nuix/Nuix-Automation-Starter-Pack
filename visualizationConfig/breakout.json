@@ -289,6 +289,62 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Contract Manufacturing Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Contract Manufacturing Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health and Safety Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Health and Safety Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Implementation Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Implementation Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Materials List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Materials List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent License Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Patent License Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Software Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Technical Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Technical Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trademark License Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Trademark License Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -313,6 +369,20 @@
         "name": "General Partnership Agreement",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "List of Shareholders",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.List of Shareholders.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stock Certificate",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Stock Certificate.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -533,6 +603,34 @@
         "name": "Market Summary",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accounting Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Accounting Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Indenture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Indenture.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Business Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stock Purchase Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Stock Purchase Agreement.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -895,6 +993,55 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Workers-Compensation.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Application for Employment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Application for Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Corporate Travel Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Corporate Travel Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Stock Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Stock Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Parking Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Parking Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Performance Appraisal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Performance Appraisal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Resume",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Resume.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Shareholder Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Shareholder Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -954,6 +1101,13 @@
         "name": "Liability-Claim-Form",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Liability-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Benefits Change Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Benefits Change Form.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1176,6 +1330,34 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Copyright Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Copyright Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Patent.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Photo Release Forms",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Photo Release Forms.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Power of Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Power of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -1221,6 +1403,55 @@
         "name": "Product-Description",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Product-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Data Request Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Data Request Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Installation Manual",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Installation Manual.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Manual",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Manual.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Recall",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Recall.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Warranty",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Warranty.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research Paper",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Research Paper.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Restaurant Menu",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Restaurant Menu.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1415,6 +1646,118 @@
         "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Arts & Entertainment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Consumerism & Shopping",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Consumerism & Shopping.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Environment & Nature",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financial Transaction",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Financial Transaction.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Food & Drink",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Food & Drink.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health, Wellness & Medicine",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Home & Garden",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Primary Sector",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Primary Sector.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Recreation & Leisure",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Religion, Spirituality & Ideology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sensitive Data Types",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sensitive Data Types.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Society & Culture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sports",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Style & Fashion",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "War & Weaponry",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -1446,6 +1789,62 @@
         "name": "Plumbing",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Plumbing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Architecture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Architecture.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Building Codes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Building Codes.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Building Development",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Building Development.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Building Envelope",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Building Envelope.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Decking",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Decking.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "HVAC",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.HVAC.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insulation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Insulation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Siding Systems",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Building & Construction.topic.Siding Systems.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1495,6 +1894,55 @@
         "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Law & Crimes.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Business Types & Forms",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Business Types & Forms.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Financing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Manufacturing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Manufacturing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Marketing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Marketing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Real Estate",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Real Estate.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research & Development",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Research & Development.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Supply Chain",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Business.topic.Supply Chain.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -1519,6 +1967,41 @@
         "name": "Retirement & Termination",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Retirement & Termination.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Career Planning",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Career Planning.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employment Services",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Employment Services.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Independent Contracting & Self-Employment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Independent Contracting & Self-Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Internships & Apprenticeships",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.Internships & Apprenticeships.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "IT Careers",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Career Planning & Employment.topic.IT Careers.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1615,6 +2098,27 @@
         "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Stocks.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Economy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Economy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Financial Planning",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Financial Planning.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trade",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Economics & Finance.topic.Trade.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -1660,6 +2164,83 @@
         "name": "Social Services",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Social Services.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Activism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Activism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Diplomacy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Diplomacy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Government Officials",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Government Officials.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Intelligence & National Security",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Intelligence & National Security.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legislature",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Legislature.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Local Politics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Local Politics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Political Figures",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Political Figures.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Political Unrest",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Political Unrest.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Public Safety",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Public Safety.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Types of Government",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.Types of Government.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "US Government",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Government & Politics.topic.US Government.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1712,6 +2293,27 @@
         "name": "Earth Science",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Earth Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Ecology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Ecology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Environmental Science",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Environmental Science.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Sciences",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Science.topic.Social Sciences.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -1824,6 +2426,62 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Term Sheet.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Contract Manufacturing Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Contract Manufacturing Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Health and Safety Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Health and Safety Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Implementation Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Implementation Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Materials List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Materials List.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent License Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Patent License Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Software Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Technical Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Technical Requirements Document.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Trademark License Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Operations.skill.Trademark License Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -1848,6 +2506,20 @@
         "name": "General Partnership Agreement",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.General Partnership Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "List of Shareholders",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.List of Shareholders.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stock Certificate",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Business Organization.skill.Stock Certificate.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -2068,6 +2740,34 @@
         "name": "Market Summary",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Market Summary.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accounting Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Accounting Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Indenture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Bond Indenture.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Business Loan Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Stock Purchase Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Financial.skill.Stock Purchase Agreement.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -2430,6 +3130,55 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---HR.skill.Workers-Compensation.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Application for Employment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Application for Employment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Corporate Travel Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Corporate Travel Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employee Stock Plan",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Employee Stock Plan.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Parking Registration",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Parking Registration.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Performance Appraisal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Performance Appraisal.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Resume",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Resume.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Shareholder Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - HR.skill.Shareholder Agreement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -2489,6 +3238,13 @@
         "name": "Liability-Claim-Form",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Insurance.skill.Liability-Claim-Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Benefits Change Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Insurance.skill.Insurance Benefits Change Form.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -2711,6 +3467,34 @@
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Affidavit of Heirship.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Copyright Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Copyright Policy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Patent.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Photo Release Forms",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Photo Release Forms.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Power of Attorney",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Legal.skill.Power of Attorney.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -2756,6 +3540,55 @@
         "name": "Product-Description",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.skillsets.Doctypes---Miscellaneous.skill.Product-Description.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Data Request Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Data Request Form.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Installation Manual",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Installation Manual.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Manual",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Manual.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Recall",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Recall.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Warranty",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Product Warranty.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research Paper",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Research Paper.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Restaurant Menu",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Miscellaneous.skill.Restaurant Menu.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -2871,6 +3704,125 @@
         "name": "Compensation-Policy",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Compensation-Policy.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Analytics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Analytics.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Artificial Intelligence.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Law & Crimes",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Business Law & Crimes.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Computers",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Computers.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Consumer Software",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Consumer Software.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crimes & Criminals",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Crimes & Criminals.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Law Enforcement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Law Enforcement.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Manufacturing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Manufacturing.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Security Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Security Technology.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Social Media.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Development",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DictionaryRisk.riskName.Software Development.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Equity Research Report.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Materials List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Materials List.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Online Advertising Agreement.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Product Description.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Software Requirements Document.indexed\":true",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.classifierRisk.riskType.DoctypeRisk.riskName.Status Report.indexed\":true",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -3231,6 +4183,13 @@
         "name": "Person Name",
         "query": "named-entities:\"person-name;*\"",
         "view": "grid"
+      },
+      {
+        "name": "Australia Passport Number",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"australia-passport-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ],
     "name": "Entities/Default"
@@ -3382,6 +4341,62 @@
         "name": "Date Of Birth",
         "icon": "Nuix_Icon_8.png",
         "query": "named-entities:\"nlp_date-of-birth;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Phone Number",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_phone-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Email Address",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_email-address;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Password",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_password;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Fax Number",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_fax-number;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Username",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_username;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Facility Phone #",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_facility-phone-#;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Ip Address",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_ip-address;*\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Driver's License",
+        "icon": "Nuix_Icon_8.png",
+        "query": "named-entities:\"nlp_driver's-license;*\"",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -3920,6 +4935,27 @@
         "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Legal Practices.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Forensics & Investigation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Forensics & Investigation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Law Enforcement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Law Enforcement.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Police Misconduct",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Crime & Law Enforcement.topic.Police Misconduct.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -3951,6 +4987,13 @@
         "name": "School System",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Education.topic.School System.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Standardized Tests",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Education.topic.Standardized Tests.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -4010,6 +5053,27 @@
         "name": "Traveling",
         "icon": "Nuix_Icon_8.png",
         "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Traveling.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Historic Sites",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Historic Sites.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Tourism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Tourism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Travel Booking",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Tourism & Travel.topic.Travel Booking.proximity\":[0.7 TO *]",
         "metadataProfile": "",
         "view": "grid"
       }
@@ -4078,6 +5142,244 @@
         "query": "custom-metadata:\"nlp.topDocType\":\"Compensation Policy\"",
         "metadataProfile": "",
         "view": "grid"
+      },
+      {
+        "name": "Materials List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Materials List\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Receipt",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Receipt\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Arrest Log",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Arrest Log\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Legal Briefs",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Legal Briefs\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patient Consent Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Patient Consent Form\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Research Paper",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Research Paper\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Term Sheet",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Term Sheet\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Project Proposal",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Project Proposal\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Software Requirements Document\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Bond Indenture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Bond Indenture\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Job Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Job Description\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Accounting Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Accounting Policy\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Severance Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Severance Agreement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Resume",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Resume\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Status Report\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Letter of Reprimand",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Letter of Reprimand\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Copyright Policy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Copyright Policy\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Product Description\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Restaurant Menu",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Restaurant Menu\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Installation Manual",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Installation Manual\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Online Advertising Agreement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Equity Research Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Equity Research Report\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent License Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Patent License Agreement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mission Statement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Mission Statement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Invitation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Invitation\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Business Requirements Document\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Business Loan Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Business Loan Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Recall",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Product Recall\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Shareholder Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Shareholder Agreement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Insurance Benefits Change Form",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Insurance Benefits Change Form\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Technical Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Technical Requirements Document\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Patent",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Patent\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Rental Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Rental Application\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Donor List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topDocType\":\"Donor List\"",
+        "metadataProfile": "",
+        "view": "grid"
       }
     ]
   },
@@ -4116,6 +5418,1135 @@
         "name": "Loans",
         "icon": "Nuix_Icon_8.png",
         "query": "custom-metadata:\"nlp.topRiskType\":\"Loans\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Materials List",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Materials List\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "IT Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"IT Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Manufacturing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Manufacturing\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Consumer Software",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Consumer Software\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Contact Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Contact Information\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Analytics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Analytics\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Development",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Software Development\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Crimes & Criminals",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Crimes & Criminals\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Social Media\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Artificial Intelligence\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Online Advertising Agreement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Online Advertising Agreement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Requirements Document",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Software Requirements Document\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Law Enforcement",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Law Enforcement\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Security Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Security Technology\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Status Report",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Status Report\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Computers",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Computers\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Employees",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Employees\"",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Product Description",
+        "icon": "Nuix_Icon_8.png",
+        "query": "custom-metadata:\"nlp.topRiskType\":\"Product Description\"",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Document Type/Properties",
+    "breakoutQueries": [
+      {
+        "name": "Building Permit Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Building Permit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Property Deed",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Property Deed.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Rental Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Rental Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Arts & Entertainment",
+    "breakoutQueries": [
+      {
+        "name": "Anime & Comics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Anime & Comics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Comedy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Comedy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Film & TV",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Film & TV.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Literature",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Literature.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Music",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Music.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "New Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.New Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Performing Arts",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Performing Arts.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Visual Art World",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Arts & Entertainment.topic.Visual Art World.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Consumerism & Shopping",
+    "breakoutQueries": [
+      {
+        "name": "Marketing & Advertising",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Consumerism & Shopping.topic.Marketing & Advertising.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Packaging & Shipping",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Consumerism & Shopping.topic.Packaging & Shipping.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sales",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Consumerism & Shopping.topic.Sales.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Types of Products",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Consumerism & Shopping.topic.Types of Products.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Environment & Nature",
+    "breakoutQueries": [
+      {
+        "name": "Bodies of Water",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Bodies of Water.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Fungi",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Fungi.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Landforms",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Landforms.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Natural Habitats & Ecosystems",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Natural Habitats & Ecosystems.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Plants",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Plants.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Pollution",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Pollution.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sustainable Energy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Sustainable Energy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Weather & Natural Disasters",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Environment & Nature.topic.Weather & Natural Disasters.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Financial Transaction",
+    "breakoutQueries": [
+      {
+        "name": "Action",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Financial Transaction.topic.Action.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Object",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Financial Transaction.topic.Object.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Food & Drink",
+    "breakoutQueries": [
+      {
+        "name": "Beverages",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Food & Drink.topic.Beverages.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cooking & Food Preparation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Food & Drink.topic.Cooking & Food Preparation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Food & Cuisine",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Food & Drink.topic.Food & Cuisine.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Health, Wellness & Medicine",
+    "breakoutQueries": [
+      {
+        "name": "Alternative Medicine",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Alternative Medicine.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Drugs, Prescriptions, & Pharmacology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Drugs, Prescriptions, & Pharmacology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Emergency Medicine",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Emergency Medicine.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Fitness",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Fitness.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Healthcare",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Healthcare.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hospitals & Secondary Care",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Hospitals & Secondary Care.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Neurological Conditions",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Health, Wellness & Medicine.topic.Neurological Conditions.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Home & Garden",
+    "breakoutQueries": [
+      {
+        "name": "Apartments",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Apartments.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Gardening & Yard Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Gardening & Yard Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Gardening Equipment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Gardening Equipment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Homeownership",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Homeownership.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Kitchen Appliances & Tools",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Kitchen Appliances & Tools.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Paint & Coating",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Paint & Coating.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Pets",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Pets.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Rooms in a Home",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Rooms in a Home.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Types of Home",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Home & Garden.topic.Types of Home.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Primary Sector",
+    "breakoutQueries": [
+      {
+        "name": "Agriculture",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Primary Sector.topic.Agriculture.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Fishing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Primary Sector.topic.Fishing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Forestry",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Primary Sector.topic.Forestry.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Mining",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Primary Sector.topic.Mining.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Recreation & Leisure",
+    "breakoutQueries": [
+      {
+        "name": "Bars, Clubs & Nightlife",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Bars, Clubs & Nightlife.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hobbies & Interests",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Hobbies & Interests.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Outdoor Activities",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Outdoor Activities.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Gatherings",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Social Gatherings.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Tabletop Games",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Tabletop Games.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Video Games",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Recreation & Leisure.topic.Video Games.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Religion, Spirituality & Ideology",
+    "breakoutQueries": [
+      {
+        "name": "Bahai",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Bahai.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Christianity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Christianity.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Common Terms, Figures & Practices",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Common Terms, Figures & Practices.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Confucianism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Confucianism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Conspiracy Theories",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Conspiracy Theories.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Islam",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Islam.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sikhism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Sikhism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Taoism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Taoism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Zoroastrianism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Religion, Spirituality & Ideology.topic.Zoroastrianism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Sensitive Data Types",
+    "breakoutQueries": [
+      {
+        "name": "API Keys",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sensitive Data Types.topic.API Keys.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Azure Keywords",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sensitive Data Types.topic.Azure Keywords.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Filesharing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sensitive Data Types.topic.Filesharing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Google Keywords",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sensitive Data Types.topic.Google Keywords.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Society & Culture",
+    "breakoutQueries": [
+      {
+        "name": "Ethnicity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Ethnicity.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Gender & Sexuality",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Gender & Sexuality.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Human Rights Issues",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Human Rights Issues.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Language & Communication",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Language & Communication.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Philanthropy & Charity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Philanthropy & Charity.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Sciences & Humanities",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Social Sciences & Humanities.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Work",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Social Work.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Socioeconomics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Socioeconomics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sustainable Communities",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Society & Culture.topic.Sustainable Communities.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Sports",
+    "breakoutQueries": [
+      {
+        "name": "Baseball",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Baseball.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Basketball",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Basketball.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "College Athletic Conferences",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.College Athletic Conferences.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cycling",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Cycling.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Dance & Gymnastics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Dance & Gymnastics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Football",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Football.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hockey",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Hockey.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Lacrosse",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Lacrosse.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Motor Sports",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Motor Sports.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Olympics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Olympics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Rugby",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Rugby.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Skiing & Snowboarding",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Skiing & Snowboarding.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sledding & Skating",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Sledding & Skating.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Soccer",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Soccer.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sports Equipment",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Sports Equipment.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Track/Field/Running",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Sports.topic.Track/Field/Running.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Style & Fashion",
+    "breakoutQueries": [
+      {
+        "name": "Clothing",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.Clothing.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cosmetics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.Cosmetics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Fashion Accessories",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.Fashion Accessories.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Footwear",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.Footwear.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Hair",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.Hair.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "High Fashion",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Style & Fashion.topic.High Fashion.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Technology",
+    "breakoutQueries": [
+      {
+        "name": "Air & Space",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Air & Space.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Analytics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Analytics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Artificial Intelligence",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Artificial Intelligence.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Assistive Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Assistive Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Computers",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Computers.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Consumer Software",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Consumer Software.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Cybersecurity",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Cybersecurity.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Internet and Web",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Internet and Web.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Music & Audio",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Music & Audio.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Robotics",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Robotics.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Security Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Security Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Smart Technology",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Smart Technology.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Social Media",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Social Media.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Software Development",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Software Development.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Sustainable Energy",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Sustainable Energy.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Television",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Television.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Transportation",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.Technology.topic.Transportation.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/War & Weaponry",
+    "breakoutQueries": [
+      {
+        "name": "Armed Conflict",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.topic.Armed Conflict.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Military Vehicles",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.topic.Military Vehicles.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Military",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.topic.Military.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Terrorism",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.topic.Terrorism.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Weapons",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.dictionary.War & Weaponry.topic.Weapons.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary/Properties",
+    "breakoutQueries": [
+      {
+        "name": "Building Permit Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Building Permit Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Property Deed",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Property Deed.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Rental Application",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.skillsets.Doctypes - Properties.skill.Rental Application.proximity\":[0.7 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/Contact Information",
+    "breakoutQueries": [
+      {
+        "name": "High Contact Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Contact Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium Contact Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Contact Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low Contact Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.Contact Information\":[0 TO 0.25}",
+        "metadataProfile": "",
+        "view": "grid"
+      }
+    ]
+  },
+  {
+    "name": "Risk/IT Information",
+    "breakoutQueries": [
+      {
+        "name": "High IT Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.IT Information\":[0.75 TO *]",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Medium IT Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.IT Information\":[0.25 TO 0.75}",
+        "metadataProfile": "",
+        "view": "grid"
+      },
+      {
+        "name": "Low IT Information",
+        "icon": "Nuix_Icon_8.png",
+        "query": "nlp:\"model.defaultModel.risk.summaryRisk.IT Information\":[0 TO 0.25}",
         "metadataProfile": "",
         "view": "grid"
       }
