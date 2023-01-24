@@ -19,9 +19,9 @@ This step is optional, however some workflows will require elements to function.
 >  C:\Program Files\Nuix\Web Platform\Nuix-Automation\scripts
 4. Update the credentials as best you can, for now the only important fields are for Nuix Automation.
 > "automation": {
->		"server": "http://nuix-demo-auto.nuixdemo.local:8780",
->		"username": "demo",
->		"password": "P@55w0rd"
+>		"server": "http://server.domain.com:8780",
+>		"username": "demoUsername",
+>		"password": "demoPassword"
 >	}
 5. Open Nuix Automation and Create a new Workflow titled "Restore Environment"
 6. Inside the new Workflow add a task for "Bulk Run User Script"
